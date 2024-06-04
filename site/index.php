@@ -14,11 +14,9 @@
 
 <?php include './card.php' ?>
 
-<h1>Hello World</h1>
-
 <?php include './footer.php' ?>
 
-
+<script src="./js/java.js"></script>
 </body>
 
 </html>
