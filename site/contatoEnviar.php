@@ -4,7 +4,7 @@
 
     $nomeBancoDeDados = "bdContato";
 
-    $usuario = "root";
+    $remetente = "root";
 
     $senha = "";
 
@@ -16,12 +16,12 @@
     $assunto = $_POST['assunto'];
     $mensagem = $_POST['mensagem'];
 
-    $pdo = new PDO("mysql:host=$servidor;dbname=$nomeBancoDeDados", $usuario, $senha);
+    $pdo = new PDO("mysql:host=$servidor;dbname=$nomeBancoDeDados", $remetente, $senha);
 
-    $pdo->query("INSERT INTO tbusuario(nomeUsuario, emailUsuario, salaUsuario, rmUsuario)
+    $pdo->query("INSERT INTO tbRemetente(nomeRemetente, emailRemetente, salaRemetente, rmRemetente)
     VALUES ('$nome', '$email', $sala, $rm)");
 
-    $pdo->query("INSERT INTO tbMensagem(assuntoMensagem, conteudoMensagem, idUsuario)
-    VALUES ('$assunto', '$mensagem', (SELECT MAX(idUsuario) FROM tbUsuario))");
+    $pdo->query("INSERT INTO tbMensagem(assuntoMensagem, conteudoMensagem, idRemetente)
+    VALUES ('$assunto', '$mensagem', (SELECT MAX(idRemetente) FROM tbRemetente))");
 
 ?>

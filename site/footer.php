@@ -2,14 +2,10 @@
 <footer class="footer">
     <div class="footer-01-hr">
         <div class="footer-01">
-            <div class="contact">
-                <div class="inscreva-se">
-                    <h1>Inscreva-se</h1>
-                </div>
-                <div class="btn-footer-button">
-                    <a href="#"><button>Contate-nos </button></a>
-                </div>
+            <div class="inscreva-se">
+                <h1>Inscreva-se para os Vestibulhos da Etec</h1>
             </div>
+            <a href="#" class="inscreva-se-button">Inscreva-se</a>
         </div>
     </div>
 
@@ -17,27 +13,24 @@
         <div class="footer-02">
 
             <div class="footer-part">
-                <div class="left-logo">
-                    <h3>NewsEtec®</h3>
-                    <hr>
-                </div>
-                <h2>inspirado em Designs encotrados no dorik.com/blog/website-footer-examples</h2>
-            </div>
-
-            <div class="footer-part">
                 <h1>Criadores</h1>
                 <hr>
-                <H2>Guilherme Fermino de Souza</H2>
-                <H2>Gustavo Fermino de Souza</H2>
-                <H2>Tiago Soares Magalhães</H2>
-                <H2>Leonardo Lima Souza lopes</H2>
+                <div class="criadores-lista">
+                    <div>
+                        <h2>Guilherme Fermino de Souza</h2>
+                        <h2>Gustavo Fermino de Souza</h2>
+                    </div>
+                    <div>
+                        <h2>Tiago Soares Magalhães</h2>
+                        <h2>Leonardo Lima Souza lopes</h2>
+                    </div>
+                </div>
             </div>
 
             <div class="footer-part">
-                <h1>Quer estar por dentro de tudo que ocorre na Etec?</h1>
+                <h1>Siga-nos</h1>
                 <hr>
-                <H2>Inscreva-se para uma melhor experiência =></H2>
-                <H2>Siga-nos</H2>
+                </hr>
                 <div class="right-icons">
                     <a href="#"><img src="./images/Icon-facebook.png" alt="#"></a>
                     <a href="#"><img src="./images/Icon-linkedin.png" alt="#"></a>
@@ -45,21 +38,16 @@
                     <a href="#"><img src="./images/Icon-whatssap.png" alt="#"></a>
                 </div>
             </div>
-
-        </div>
-    </div>
-
-    <div class="footer-bottom-hr">
-        <hr>
-        <div class="footer-bottom">
-
-            <h1>NewsEtec 2024</h1>
-            <ul class="nav-list">
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Desenvolvedores</a></li>
-                <li><a href="./login.php">Login</a></li>
-            </ul>
+            <div class="footer-part">
+                <h1>Navegação</h1>
+                <hr>
+                <ul class="nav-list">
+                    <li><a href="#"><h2>Início</h2></a></li>
+                    <li><a href="#"><h2>Sobre</h2></a></li>
+                    <li><a href="#"><h2>Desenvolvedores</h2></a></li>
+                    <li><a href="./login.php"><h2>Login</h2></a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </footer>

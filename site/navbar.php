@@ -1,6 +1,6 @@
 <header>
        <nav>
-        <a class="logo">NEWS WALL ETEC</a>
+        <h1 class="logo">NEWS WALL ETEC</h1>
         <div class="mobile-menu">
             <div class="line1" href="">Início</div>
             <div class="line2" href="">Sobre</div>
@@ -13,7 +13,7 @@
                <li><a href="#sobre">Sobre</a></li>
                <li><a href="#cards">Desenvolvedores</a></li>
                <li><a href="./contato.php">Contato</a></li>
-                <a class="nav-button" href="./login.php"><button>Login</button></a>
+               <li><a class="nav-button" href="./login.php">Login</a></li>
            </ul>         
        </nav>
    </header>

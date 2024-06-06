@@ -1,6 +1,7 @@
 :root {
     --branco-principal: #fff;
     --vermelho-principal: rgb(193, 27, 27);
+    --cinza-footer: #51574a;
     --preto-fonte: #000;
     --cinza-fonte-claro: rgb(181, 181, 181);
     --cinza-fonte: rgb(70, 70, 70);
@@ -39,6 +40,7 @@ a:hover {
 
 .logo {
     font-size: var(--font-xs-link);
+    font-weight: normal;
     color: var(--branco-principal);
     letter-spacing: 2px;
 }
@@ -48,6 +50,7 @@ header {
     width: 100%;
     justify-content: center;
     height: auto;
+    padding: 0.25em 0;
 }
 
 nav {
@@ -65,7 +68,8 @@ nav {
 .nav-list {
     list-style: none;
     display: flex;
-    margin: 1% 1% 1% 45%;
+    text-align: right;
+    margin: 1% 1% 1% auto;
 }
 
 .nav-list li {
@@ -73,20 +77,24 @@ nav {
 }
 
 .nav-button {
-    color: var(--branco-principal);
+    background-color: var(--branco-principal);
+    color: var(--vermelho-principal) !important;
+    font-size: var(--font-xx-link);
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--vermelho-principal);
+    border-radius: 5px;
     margin: auto;
 }
 
-.nav-button button {
-    background-color: var(--branco-principal);
-    color: var(--preto-fonte);
-    font-size: var(--font-md-link);
-    border-radius: 35px;
-    padding: 10% 15%;
-}
-
-.nav-button button:hover {
+.nav-button:hover {
     cursor: pointer;
+    opacity: 100;
+    background-color: var(--vermelho-principal);
+    color: var(--branco-principal) !important;
+    border-color: var(--branco-principal);
 }
 
 .mobile-menu {
@@ -148,21 +156,14 @@ nav {
     }
 
     .nav-button {
-        color: var(--branco-principal);
+        color: var(--vermelho-principal);
+        font-size: var(--font-xx-link);
         margin: 0;
     }
 
-    .nav-button button {
-        background: none;
+    .nav-button:hover {
+        background-color: var(--vermelho-principal);
         color: var(--branco-principal);
-        font-size: var(--font-xx-link);
-        border: none;
-        padding: 0;
-        text-align: left;
-    }
-
-    .nav-button button:hover {
-        opacity: 0.7;
     }
 
 }
@@ -292,12 +293,13 @@ nav {
 .fale-conosco {
     display: flex;
     flex-direction: column;
-    align-items: center;   
+    align-items: center;
     margin: 5% auto;
 }
 
 .contato {
-    background-color: rgba(0, 0, 0, 0.5); /* Define a cor de fundo com transparência */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Define a cor de fundo com transparência */
     color: var(--branco-principal);
     border-radius: 20px;
     width: 47.5%;
@@ -349,7 +351,8 @@ nav {
     border: none;
     border-bottom: 2px solid var(--vermelho-principal);
     padding: 5%;
-    background-color: rgba(0, 0, 0, 0.0); /* Define a cor de fundo com transparência */
+    background-color: rgba(0, 0, 0, 0.0);
+    /* Define a cor de fundo com transparência */
     color: var(--preto-principal);
     font-size: var(--font-sm-link);
     box-shadow: none;
@@ -363,14 +366,16 @@ nav {
     border: none;
     border-bottom: 2px solid var(--vermelho-principal);
     padding: 5%;
-    background-color: rgba(0, 0, 0, 0.0); /* Define a cor de fundo com transparência */
+    background-color: rgba(0, 0, 0, 0.0);
+    /* Define a cor de fundo com transparência */
     color: var(--branco-principal);
     font-size: var(--font-sm-link);
     box-shadow: none;
     outline: none;
 }
 
-.espaco-input select:focus, .espaco-input > input:focus {
+.espaco-input select:focus,
+.espaco-input>input:focus {
     border-bottom-color: var(--vermelho-principal);
     outline: none;
 }
@@ -380,7 +385,8 @@ nav {
 }
 
 .fale-conosco input[type="submit"] {
-    background-color: rgba(0, 0, 0, 0.5); /* Define a cor de fundo com transparência */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Define a cor de fundo com transparência */
     color: var(--branco-principal);
     /* Define a cor do texto do botão */
     border-radius: 25%;
@@ -395,7 +401,8 @@ nav {
 }
 
 input[type="submit"]:hover {
-    background-color: rgba(255, 0, 0, 0.5); /* Define a cor de fundo com transparência */
+    background-color: rgba(255, 0, 0, 0.5);
+    /* Define a cor de fundo com transparência */
     /* Muda a cor de fundo quando o mouse passa por cima */
     color: var(--branco-principal);
 }
@@ -422,11 +429,12 @@ input[type="submit"]:hover {
     width: 80%;
     margin: auto;
 }
+
 /*conteiner esquerdo*/
 .conteiner-anun-login {
     margin-top: 7.5%;
     padding-left: 5%;
-    width: 37.5%;                      
+    width: 37.5%;
 }
 
 .conteiner-anun-login a {
@@ -450,15 +458,18 @@ input[type="submit"]:hover {
     font-size: var(--font-sm-link);
     padding-top: 5%;
 }
+
 /*container direito*/
 .container-login {
-    background-color: rgba(0, 0, 0, 0.5); /* Define a cor de fundo com transparência */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Define a cor de fundo com transparência */
     width: 37.5%;
     height: 80%;
-    border-radius: 20px;   
+    border-radius: 20px;
     /*margin: 4% 4% 5% 0%;*/
     margin-left: auto;
 }
+
 .login {
     color: var(--branco-principal);
     width: 50%;
@@ -519,14 +530,16 @@ input[type="submit"]:hover {
     border: none;
     border-bottom: 2px solid var(--vermelho-principal);
     padding: 5%;
-    background-color: rgba(0, 0, 0, 0.0); /* Define a cor de fundo com transparência */
+    background-color: rgba(0, 0, 0, 0.0);
+    /* Define a cor de fundo com transparência */
     color: var(--branco-principal);
     font-size: var(--font-sm-link);
     box-shadow: none;
     outline: none;
 }
 
-.textfield>input:focus {/*  quando um usuário clica em um campo */
+.textfield>input:focus {
+    /*  quando um usuário clica em um campo */
     border-bottom: 2px solid var(--vermelho-principal);
 }
 
@@ -535,7 +548,8 @@ input[type="submit"]:hover {
 }
 
 .container-login input[type="submit"] {
-    background-color: rgba(0, 0, 0, 0.5); /* Define a cor de fundo com transparência */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Define a cor de fundo com transparência */
     color: var(--branco-principal);
     /* Define a cor do texto do botão */
     border-radius: 25%;
@@ -550,7 +564,8 @@ input[type="submit"]:hover {
 }
 
 input[type="submit"]:hover {
-    background-color: rgba(255, 0, 0, 0.5); /* Define a cor de fundo com transparência */
+    background-color: rgba(255, 0, 0, 0.5);
+    /* Define a cor de fundo com transparência */
     /* Muda a cor de fundo quando o mouse passa por cima */
     color: var(--branco-principal);
 }
@@ -561,7 +576,7 @@ input[type="submit"]:hover {
 .footer {
     display: flex;
     flex-direction: column;
-    background-color: #51574a;
+    background-color: var(--cinza-footer);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: 100%;
     justify-content: center;
@@ -569,30 +584,42 @@ input[type="submit"]:hover {
 }
 
 .footer-01-hr {
-    background-color: var(--vermelho-principal); 
+    background-color: var(--vermelho-principal);
     color: var(--branco-principal);
     width: 100%;
 }
 
-.footer-01 { 
+.footer-01 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 80%;
-    margin: 1% auto;
-    padding: 0.5rem;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 .footer-01 h1 {
-    font-size: var(--font-xx-link); 
+    font-size: var(--font-xx-link);
 }
 
-.footer-01 button {
-    font-size: var(--font-xs-link);
+.inscreva-se-button {
     background-color: var(--branco-principal);
-    color: var(--preto-fonte);
-    border-radius: 35px;
-    width: 120%;
+    color: var(--vermelho-principal);
+    font-size: var(--font-xs-link);
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--vermelho-principal);
+    border-radius: 5px;
+}
+
+.inscreva-se-button:hover {
+    cursor: pointer;
+    opacity: 100;
+    background-color: var(--vermelho-principal);
+    color: var(--branco-principal);
+    border-color: var(--branco-principal);
 }
 
 .contact {
@@ -607,23 +634,22 @@ input[type="submit"]:hover {
     margin-left: 0vw;
 }
 
-.inscreva-se {
-    padding-right: 37.5vw;
-}
-
 .footer-02-hr {
     background-color: var(--cinza-fonte);
     color: var(--branco-principal);
+    
     width: 100%;
 }
 
 .footer-02 {
     display: flex;
+    justify-content: space-around;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    padding-top: 1em;
 }
 
 .footer-02 h1 {
@@ -641,63 +667,50 @@ input[type="submit"]:hover {
 
 .footer-part {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.criadores-lista {
+    display: flex;
+    flex-direction: row;
 }
 
 .right-icons {
     display: flex;
-    width: 25%;
+    justify-content: space-between;
 }
 
 .right-icons a {
     height: auto;
-    padding-left: 10%;
-    padding-top: 3%;
 }
 
 .right-icons img {
     width: 4vw;
+    margin: 1em 1em;
 }
 
-.footer-bottom-hr {
-    background-color: var(--cinza-fonte);
-    color: var(--branco-principal);
-    font-size: var(--font-sm-link);
-    width: 100%;
-}
-
-.footer-bottom {
-    display: flex;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-}
-
-.footer-bottom a {
-    color: var(--preto-principal);
-    font-size: var(--font-sm-link);
-}
 /* - - - RESPONSIVE - - - */
 @media (max-width: 1050px) {
     .footer-02 {
         flex-direction: column;
     }
+
     .footer-02 h1 {
         font-size: var(--font-xx-link);
     }
+
     .footer-02 h2 {
         font-size: var(--font-xs-link);
     }
+
     .footer-02 h3 {
         font-size: var(--font-xx-link);
     }
+
     .footer-part {
         padding: 7.5% 2.5% 0% 3%;
     }
-    .footer-bottom h1 {
-        text-align: center;
-        font-size: var(--font-xs-link);
-    }
 }
+
 /*FOOTER END*/
