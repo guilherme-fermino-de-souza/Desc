@@ -24,7 +24,7 @@
             <div class="container-login">
                 <div class="login">
                     <div class="card-login">
-                        <form class="faca-login" name="login" action="#" method="post">
+                        <form class="faca-login" name="login" action="loginEnviar.php" method="post">
                             <h1>LOGIN</h1>
                             <p>Novo por aqui? <a href="#">Crie uma conta</a></p>
 

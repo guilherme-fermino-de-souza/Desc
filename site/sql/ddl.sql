@@ -1,6 +1,15 @@
-CREATE DATABASE bdContato;
+CREATE DATABASE bdNewsWallEtec;
 
-USE bdContato;
+--DROP DATABASE bdNewsWallEtec;
+
+USE bdNewsWallEtec;
+
+CREATE TABLE tbUsuario (
+    idUsuario INT PRIMARY KEY AUTO_INCREMENT
+    , nomeUsuario VARCHAR (70)
+    , emailUsuario VARCHAR (70)
+    , senhaUsuario VARCHAR (256)
+);
 
 CREATE TABLE tbRemetente (
 	idRemetente INT PRIMARY KEY AUTO_INCREMENT
