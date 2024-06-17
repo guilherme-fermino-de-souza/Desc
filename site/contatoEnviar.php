@@ -1,36 +1,37 @@
-<?php
+<?php 
+    $servidor = "localhost";
 
-$servidor = "localhost";
+    $nomeBancoDeDados = "bdNewsWallEtec";
 
-$nomeBancoDeDados = "bdNewsWallEtec";
+    $usuarioBd = "root";
 
-$usuarioBd = "root";
+    $senhaBd = "";
 
-$senhaBd = "";
+    $remetente = $_POST['nome'];
+    $email = $_POST['email'];
+    $sala = (int) $_POST['sala'];
+    $rm = (int) $_POST['rm'];
 
-$remetente = $_POST['nome'];
-$email = $_POST['email'];
-$sala = (int) $_POST['sala'];
-$rm = (int) $_POST['rm'];
+    $assunto = $_POST['assunto'];
+    $mensagem = $_POST['mensagem'];
 
-$assunto = $_POST['assunto'];
-$mensagem = $_POST['mensagem'];
+    $pdo = new PDO("mysql:host=$servidor;dbname=$nomeBancoDeDados", $usuarioBd, $senhaBd);
 
-$pdo = new PDO("mysql:host=$servidor;dbname=$nomeBancoDeDados", $usuarioBd, $senhaBd);
+    $pdo->quote($remetente);
+    $pdo->quote($email);
+    $pdo->quote($sala);
+    $pdo->quote($rm);
+    $pdo->quote($assunto);
+    $pdo->quote($mensagem);
 
-$pdo->quote($remetente);
-$pdo->quote($email);
-$pdo->quote($sala);
-$pdo->quote($rm);
-$pdo->quote($assunto);
-$pdo->quote($mensagem);
-
-$stmt = $pdo->prepare("INSERT INTO tbRemetente(nomeRemetente, emailRemetente, salaRemetente, rmRemetente)
+    $stmt = $pdo->prepare("INSERT INTO tbRemetente(nomeRemetente, emailRemetente, salaRemetente, rmRemetente)
     VALUES ('$remetente', '$email', $sala, $rm)");
 
-$stmt->execute();
+    $stmt->execute();
 
-$stmt = $pdo->prepare("INSERT INTO tbMensagem(assuntoMensagem, conteudoMensagem, idRemetente)
+    $stmt = $pdo->prepare("INSERT INTO tbMensagem(assuntoMensagem, conteudoMensagem, idRemetente)
     VALUES ('$assunto', '$mensagem', (SELECT MAX(idRemetente) FROM tbRemetente))");
 
-$stmt->execute();
+    $stmt->execute();
+
+?>
