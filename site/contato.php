@@ -69,6 +69,7 @@
                             <label for="mensagem" class="label">Mensagem:</label>
                             <input type="text" class="input" name="mensagem" placeholder="Digite sua mensagem aqui" />
                         </div> <!--Deixe este placeholder maior-->
+                                <!--E se eu não quiser?-->
 
 
                         <div class="contato-enviar">
