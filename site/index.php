@@ -12,7 +12,7 @@
 
 <?php include './navbar.php' ?>
 
-<?php include './card.php' ?>
+<?php include './sobre.php' ?>
 
 <?php include './footer.php' ?>
 
