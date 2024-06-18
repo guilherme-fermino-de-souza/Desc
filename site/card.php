@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilo.css">
+    <title>Desenvolvedores</title>
+</head>
+<body>
+    
+<?php include './navbar.php' ?>
 <!--card start-->
 <section id="cards">
     <div class="container-cards">
@@ -62,3 +73,9 @@
     </div>
 </section>
 <!--card end-->
+
+<?php include './footer.php' ?>
+
+<script src="./js/java.js"></script>
+</body>
+</html>
