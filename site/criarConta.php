@@ -1,50 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LoginScreen</title>
     <link rel="stylesheet" href="./css/estilo.css">
+    <title>Nova Conta</title>
 </head>
-
 <body>
+<?php include './navbar.php' ?>
 
+<!--account start--> <!--INÍCIO-->
+<section class="container-account-principal">
 
-    <!--login start--> <!--INÍCIO-->
-    <section class="container-login-principal">
+        <div class="account-principal">
 
-        <div class="login-principal">
-
-        <div class="conteiner-anun-login">
-           <a href="./index.php">NEWS WALL ETEC</a>
-           <h3>Provisorio Criar Conta, alguem do grupo faz ai a página mais trabalhada</h3>
-        </div>
-
-            <div class="container-login">
-                <div class="login">
-                    <div class="card-login">
-                        <form class="faca-login" name="login" action="criarContaEnviar.php" method="post">
-                            <h1>Provisorio Criar Conta</h1>
-                            <p>Já tem uma conta? <a href="./login.php">login</a></p>
+            <div class="container-account">
+                <div class="account">
+                    <div class="card-account">
+                        <form class="create-account" name="create-account" action="#" method="post">
+                            <h1>Nova Conta</h1>
+                            <p>Já tem uma conta? <a href="./login.php">Acesse-a aqui</a></p>
 
                             <div class="textfield">
-                                <label for="nome">Nome</label>
-                                <input type="text" name="nome" placeholder="Nome">
+                                <label for="usuario">Nome Do Usuário</label>
+                                <input type="text" name="usuario" placeholder="Usuário">
                             </div>
 
                             <div class="textfield">
-                                <label for="email">E-mail</label>
+                                <label for="email">Seu E-mail</label>
                                 <input type="email" name="email" placeholder="E-mail">
                             </div>
 
                             <div class="textfield">
-                                <label for="senha">Senha</label>
+                            <label for="tipoconta" class="label">Tipo:</label>
+                            <select class="input" name="sala">
+                                <option value="1">Aluno</option>
+                                <option value="2">Resposável</option>
+                                <option value="3">Professor</option>
+                                <option value="4">Cordernador</option>
+                            </select>
+                        </div>
+
+                            <div class="textfield">
+                                <label for="senha">Crie Uma Senha</label>
                                 <input type="password" name="senha" placeholder="Senha">
                             </div>
 
 
-                            <div class="enviar">
+                            <div class="criar">
                                 <input type="submit" value="Criar">
                             </div>
                         </form>
@@ -54,11 +57,9 @@
         </div>
     </section>
 
+    <?php include './footer.php' ?>
 
-
-    <script src="./js/java.js"></script>
+    <script src="./js/java.js"></script>  
 </body>
 
-</html>
-</body>
 </html>
