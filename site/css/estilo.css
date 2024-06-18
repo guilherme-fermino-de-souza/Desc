@@ -1,7 +1,6 @@
 :root {
     --branco-principal: #fff;
     --vermelho-principal: rgb(193, 27, 27);
-    --cinza-footer: #51574a;
     --preto-fonte: #000;
     --cinza-fonte-claro: rgb(181, 181, 181);
     --cinza-fonte: rgb(70, 70, 70);
@@ -18,13 +17,18 @@
     --font-sm-link: 1vw;
     --font-md-link: 0.75vw;
 }
-
 * {
     margin: 0;
     padding: 0;
     font-family: var(--fonte-principal);
 }
-
+body {
+    background-image: url("../images/Etec-Butbunito-1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
 /*NAVBAR START*/
 .nav-list a {
     color: var(--branco-principal);
@@ -33,26 +37,20 @@
     margin: 0% 10px;
     transition: 0.3s;
 }
-
 a:hover {
     opacity: 0.7;
 }
-
 .logo {
     font-size: var(--font-xs-link);
-    font-weight: normal;
     color: var(--branco-principal);
     letter-spacing: 2px;
 }
-
 header {
     background: var(--vermelho-principal);
     width: 100%;
     justify-content: center;
     height: auto;
-    padding: 0.25em 0;
 }
-
 nav {
     display: flex;
     width: 80%;
@@ -64,39 +62,30 @@ nav {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
 }
-
 .nav-list {
     list-style: none;
     display: flex;
-    text-align: right;
-    margin: 1% 1% 1% auto;
+    margin: 1% 1% 1% 45%;
 }
 
 .nav-list li {
     align-items: center;
 }
-
 .nav-button {
-    background-color: var(--branco-principal);
-    color: var(--vermelho-principal) !important;
-    font-size: var(--font-xx-link);
-    text-decoration: none;
-    padding: 0.5em 1em;
-    border-width: 1px;
-    border-style: solid;
-    border-color: var(--vermelho-principal);
-    border-radius: 5px;
+    color: var(--branco-principal);
     margin: auto;
 }
-
-.nav-button:hover {
-    cursor: pointer;
-    opacity: 100;
-    background-color: var(--vermelho-principal);
-    color: var(--branco-principal) !important;
-    border-color: var(--branco-principal);
+.nav-button button {
+    background-color: var(--branco-principal);
+    color: var(--preto-fonte);
+    font-size: var(--font-md-link);
+    border-radius: 35px;
+    padding: 10% 15%;
 }
 
+.nav-button button:hover {
+    cursor: pointer;
+}
 .mobile-menu {
     display: none;
     cursor: pointer;
@@ -110,22 +99,18 @@ nav {
     background-color: var(--branco-principal);
     margin: 8px;
 }
-
 /* - - - RESPONSIVE - - - */
 @media (max-width: 1050px) {
     header {
         position: fixed;
     }
-
     body {
         overflow-x: hidden;
         /*esconde tudo que transborda o eixo X*/
     }
-
     .nav-list a {
         font-size: var(--font-xx-link);
     }
-
     .nav-list {
         position: absolute;
         top: 5.1vh;
@@ -141,44 +126,42 @@ nav {
         transition: transform 0.3s ease-in;
         font-size: var(--font-xx-link);
     }
-
     .nav-list li {
         margin-left: 0%;
         opacity: 0;
     }
-
     .mobile-menu {
         display: block;
     }
-
     .mobile-menu div {
         font-size: 0%;
     }
-
     .nav-button {
-        color: var(--vermelho-principal);
-        font-size: var(--font-xx-link);
+        color: var(--branco-principal);
         margin: 0;
     }
-
-    .nav-button:hover {
-        background-color: var(--vermelho-principal);
+    .nav-button button {
+        background: none;
         color: var(--branco-principal);
+        font-size: var(--font-xx-link);
+        border: none;
+        padding: 0;
+        text-align: left;
     }
 
+    .nav-button button:hover {
+        opacity: 0.7;
+    }
 }
-
 .nav-list.active {
     transform: translateX(0);
     /*coloca na tela*/
 }
-
 @keyframes navLinkFade {
     from {
         opacity: 0;
         transform: translate(50px);
     }
-
     to {
         opacity: 1;
         transform: translateX(0);
@@ -188,71 +171,91 @@ nav {
 /* - - - RESPONSIVE - - - */
 /*NAVBAR END*/
 
+/*SOBRE START*/
+.container-sobre {
+    width: 80%;
+    margin: auto;
+    height: 80vh;
+}
+.container-sobre h1{
+    font-size: var(--font-xx-link);
+    color: var(--branco-principal); 
+    margin-top: 11%;
+    text-align: center; 
+}
+.container-sobre p{
+    font-size: var(--font-xs-link);
+    color: var(--branco-principal);
+}
+.container-sobre img{
+    height: 20vw;
+}
+.text-sobre {
+    display: flex;
+    margin-top: 7%;
+    padding: 2vw;
+}
+/*SOBRE END*/
+
 /*CARD START*/
 .container-cards {
-    margin: 0 17%;
+    width: 100%;
+    background-color: var(--branco-principal); /* Define a cor de fundo com transparência */
 }
-
+.cards-firstrow {
+    margin-right: auto;
+}
+.cards-secondrow {
+    margin-left: auto;
+}
 .cards {
     display: flex;
     flex-direction: column;
-    background-color: rgb(255, 185, 185);
     margin-right: 17%;
     margin-left: 17%;
     margin-top: 12.5%;
 }
-
 .bnt {
-    width: 90px;
-    height: 20px;
-    margin-top: 10px;
-    margin-left: 65px;
+    width: 110%;
+    height: 2%;
+    margin: auto;
 }
-
 .bnt button:hover {
     background-color: var(--vermelho-principal);
 }
-
 .button-card {
     width: 100px;
 }
-
 .cards-firstrow {
     display: flex;
     flex-direction: row;
 }
-
 .cards-secondrow {
     display: flex;
     flex-direction: row;
 }
-
 .card {
-    width: 320px;
-    padding: 100px 150px;
-    background-color: var(--branco-principal);
+    width: 50%;
+    padding: 10% 15%;
 }
-
 .card img {
-    width: 225px;
-    height: 225px;
-    border-radius: 50%;
-    margin-top: 20px;
-    margin-left: 45px;
+    width: 10vw;
+    height: 10vw;
 }
-
+.img-card {
+    margin-left: 20%;
+}
 .card h2 {
     text-align: center;
-    margin-top: 20px;
-    color: var(--preto-fonte);
+    margin-top: 2%;
+    color: var(--branco-principal);
+    font-size: var(--font-sm-link);
 }
-
 .card p {
     text-align: center;
     margin-top: 20px;
     color: var(--preto-fonte);
 }
-
 .card button {
     background-color: var(--branco-principal);
     border-radius: 20px;
@@ -260,13 +263,12 @@ nav {
     border-color: var(--preto-fonte);
     font-size: 15px;
     margin-top: 20px;
-    margin-left: 110px;
+    margin-left: 110px;justify-content: center;
 }
-
 .card button:hover {
-    background-color: var(--branco-principal);
+    background-color: rgba(255, 0, 0, 0.5); /* Define a cor de fundo com transparência */
+    color: var(--branco-principal);
 }
-
 .text-card a {
     font-size: large;
     color: var(--link-fonte);
@@ -284,22 +286,18 @@ nav {
     display: flex;
     flex-direction: row;
 }
-
 .fundo h1 {
     font-size: var(--font-xs-link);
     margin: auto;
 }
-
 .fale-conosco {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;   
     margin: 5% auto;
 }
-
 .contato {
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Define a cor de fundo com transparência */
+    background-color: rgba(0, 0, 0, 0.75); /* Define a cor de fundo com transparência */
     color: var(--branco-principal);
     border-radius: 20px;
     width: 47.5%;
@@ -307,7 +305,6 @@ nav {
     margin: 10% auto;
     padding: 10px 10px;
 }
-
 .inputs {
     width: 60%;
     display: flex;
@@ -322,38 +319,32 @@ nav {
     font-weight: 800;
     margin: 0;
 }
-
 .inputs-first-column {
     margin-right: auto;
 }
-
 .inputs-second-column {
     margin-left: auto;
 }
-
 .espaco-input {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
 }
-
 .espaco-input label {
     font-size: large;
     font-weight: 700;
     margin-top: 10%;
 }
-
 .espaco-input select {
     width: 100%;
     margin-top: 2%;
     margin-left: 2%;
     border: none;
     border-bottom: 2px solid var(--vermelho-principal);
-    padding: 5%;
+    padding: 2%;
     background-color: rgba(0, 0, 0, 0.0);
-    /* Define a cor de fundo com transparência */
-    color: var(--preto-principal);
+    color: var(--branco-principal);
     font-size: var(--font-sm-link);
     box-shadow: none;
     outline: none;
@@ -361,48 +352,37 @@ nav {
 
 .espaco-input>input {
     width: 100%;
-    margin-top: 2%;
     margin-left: 2%;
     border: none;
     border-bottom: 2px solid var(--vermelho-principal);
     padding: 5%;
-    background-color: rgba(0, 0, 0, 0.0);
-    /* Define a cor de fundo com transparência */
+    background-color: rgba(0, 0, 0, 0.0); /* Define a cor de fundo com transparência */
     color: var(--branco-principal);
     font-size: var(--font-sm-link);
     box-shadow: none;
     outline: none;
 }
-
-.espaco-input select:focus,
-.espaco-input>input:focus {
+.espaco-input select:focus, .espaco-input > input:focus {
     border-bottom-color: var(--vermelho-principal);
     outline: none;
+    color: #ffffff;
+    background-color: #000;
 }
-
 .contato-enviar {
-    margin-top: 10%;
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: 15%;
 }
-
 .fale-conosco input[type="submit"] {
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Define a cor de fundo com transparência */
-    color: var(--branco-principal);
-    /* Define a cor do texto do botão */
-    border-radius: 25%;
-    /* Remove a borda do botão */
-    padding: 10px 20px;
-    /* Adiciona preenchimento interno ao botão */
-    cursor: pointer;
-    /* Muda o cursor para indicar que o botão é clicável */
-    width: 8vw;
-    font-size: var(--font-sm-link);
-    margin: auto;
+    background-color: var(--branco-principal);
+    color: var(--preto-fonte);
+    font-size: var(--font-md-link);
+    border-radius: 35px;
+    padding: 20% 35%;
 }
 
 input[type="submit"]:hover {
-    background-color: rgba(255, 0, 0, 0.5);
-    /* Define a cor de fundo com transparência */
+    background-color: rgba(255, 0, 0, 0.5); /* Define a cor de fundo com transparência */
     /* Muda a cor de fundo quando o mouse passa por cima */
     color: var(--branco-principal);
 }
@@ -411,6 +391,212 @@ input[type="submit"]:hover {
 
 /*LOGIN START*/
 .container-login-principal {
+    background-image: url("../images/Etec-Butbunito-1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    width: auto;
+    align-items: center;
+}
+.login-principal {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: auto;
+}
+.container-login {
+    background-color: rgba(0, 0, 0, 0.75); /* Define a cor de fundo com transparência */
+    width: 37.5%;
+    height: 80%;
+    border-radius: 20px; 
+    margin: auto ;
+    margin-top: 10%;
+    margin-bottom: 11%;
+}
+.login {
+    color: var(--branco-principal);
+    width: 50%;
+    height: auto;
+    padding: 5% 4.5%;
+    margin: auto;
+}
+.login h1 {
+    font-size: var(--font-xs-link);
+    margin-top: 10%;
+}
+.login p {
+    font-size: var(--font-sm-link);
+    color: var(--branco-principal);
+}
+.login a {
+    font-size: var(--font-sm-link);
+    color: var(--link-fonte);
+}
+.card-login {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 6px 5px;
+}
+.card-login>h1 {
+    color: var(--branco-principal);
+    font-weight: 800;
+    margin: 0;
+}
+.textfield {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.textfield label {
+    font-size: var(--font-ms-link);
+    font-weight: 700;
+    margin-top: 10%;
+}
+.textfield input::placeholder {
+    font-size: var(--font-sm-link);
+}
+.textfield>input {
+    width: 100%;
+    margin-top: 2%;
+    margin-left: 2%;
+    border: none;
+    border-bottom: 2px solid var(--vermelho-principal);
+    padding: 5%;
+    background-color: rgba(0, 0, 0, 0.0); /* Define a cor de fundo com transparência */
+    color: var(--branco-principal);
+    font-size: var(--font-sm-link);
+    box-shadow: none;
+    outline: none;
+}
+.textfield>input:focus {/*  quando um usuário clica em um campo */
+    border-bottom: 2px solid var(--vermelho-principal);
+}
+.enviar {
+    margin: 10% 1% 1% 90%;
+}
+.container-login input[type="submit"] {
+    background-color: var(--branco-principal);
+    color: var(--preto-fonte);
+    font-size: var(--font-md-link);
+    border-radius: 35px;
+    padding: 30% 90%;
+}
+input[type="submit"]:hover {
+    background-color: rgba(255, 0, 0, 0.7); /* Define a cor de fundo com transparência */
+    /* Muda a cor de fundo quando o mouse passa por cima */
+    color: var(--branco-principal);
+}
+/*LOGIN END*/
+
+/*CREATEACCOUNT START*/
+.container-account-principal {
+    background-image: url("../images/Etec-Butbunito-1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    width: auto;
+    align-items: center;
+}
+.account-principal {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: auto;
+}
+.container-account {
+    background-color: rgba(0, 0, 0, 0.75); /* Define a cor de fundo com transparência */
+    width: 37.5%;
+    height: 80%;
+    border-radius: 20px; 
+    margin: auto ;
+    margin-top: 10%;
+    margin-bottom: 11%;
+}
+.account {
+    color: var(--branco-principal);
+    width: 50%;
+    height: auto;
+    padding: 5% 4.5%;
+    margin: auto;
+}
+.account h1 {
+    font-size: var(--font-xs-link);
+    margin-top: 10%;
+}
+.account p {
+    font-size: var(--font-sm-link);
+    color: var(--branco-principal);
+}
+.account a {
+    font-size: var(--font-sm-link);
+    color: var(--link-fonte);
+}
+.card-account {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 6px 5px;
+}
+.card-account>h1 {
+    color: var(--branco-principal);
+    font-weight: 800;
+    margin: 0;
+}
+.criar {
+    margin: 10% 1% 1% 90%;
+}
+.container-account input[type="submit"] {
+    background-color: var(--branco-principal);
+    color: var(--preto-fonte);
+    font-size: var(--font-md-link);
+    border-radius: 35px;
+    padding: 30% 90%;
+}
+.textfield-account label {
+    font-size: var(--font-ms-link);
+    font-weight: 700;
+    margin-top: 10%;
+}
+.textfield-account select {
+    width: 100%;
+    margin-top: 2%;
+    margin-left: 2%;
+    border: none;
+    border-bottom: 2px solid var(--vermelho-principal);
+    padding: 2%;
+    background-color: rgba(0, 0, 0, 0.0);
+    color: var(--branco-principal);
+    font-size: var(--font-sm-link);
+    box-shadow: none;
+    outline: none;
+}
+
+.textfield-account>input {
+    width: 100%;
+    margin-left: 2%;
+    border: none;
+    border-bottom: 2px solid var(--vermelho-principal);
+    padding: 5%;
+    background-color: rgba(0, 0, 0, 0.0); /* Define a cor de fundo com transparência */
+    color: var(--branco-principal);
+    font-size: var(--font-sm-link);
+    box-shadow: none;
+    outline: none;
+}
+.textfield-account select:focus, .textfield-account > input:focus {
+    border-bottom-color: var(--vermelho-principal);
+    outline: none;
+    color: #ffffff;
+    background-color: #000;
+}
+/*CREATEACCOUNT END*/
+
+/*MATRÍCULA START (copia e cola do acima)*/
+.container-matri-principal {
     display: flex;
     flex-direction: row-reverse;
     background-image: url("../images/Etec-Butbunito-1.jpg");
@@ -422,55 +608,22 @@ input[type="submit"]:hover {
     height: 100vh;
     align-items: center;
 }
-
-.login-principal {
+.matri-principal {
     display: flex;
     flex-direction: row;
     width: 80%;
     margin: auto;
 }
-
-/*conteiner esquerdo*/
-.conteiner-anun-login {
-    margin-top: 7.5%;
-    padding-left: 5%;
-    width: 37.5%;
-}
-
-.conteiner-anun-login a {
-    color: var(--branco-principal);
-    font-size: var(--font-xs-link);
-    font-weight: 800;
-    text-decoration: none;
-    margin: 0% 10%;
-    transition: 0.3s;
-}
-
-.conteiner-anun-login a:hover {
-    color: var(--vermelho-principal);
-    font-size: var(--font-xs-link);
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.conteiner-anun-login h3 {
-    color: var(--branco-principal);
-    font-size: var(--font-sm-link);
-    padding-top: 5%;
-}
-
-/*container direito*/
-.container-login {
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Define a cor de fundo com transparência */
+.container-matri {
+    background-color: rgba(0, 0, 0, 0.75); /* Define a cor de fundo com transparência */
     width: 37.5%;
     height: 80%;
-    border-radius: 20px;
-    /*margin: 4% 4% 5% 0%;*/
-    margin-left: auto;
+    border-radius: 20px;  
+    margin: auto ;
+    margin-top: 10%;
+    margin-bottom: 11%;
 }
-
-.login {
+.matri {
     color: var(--branco-principal);
     width: 50%;
     height: auto;
@@ -478,17 +631,17 @@ input[type="submit"]:hover {
     margin: auto;
 }
 
-.login h1 {
+.matri h1 {
     font-size: var(--font-xs-link);
     margin-top: 10%;
 }
 
-.login p {
+.matri p {
     font-size: var(--font-sm-link);
     color: var(--branco-principal);
 }
 
-.login a {
+.matri a {
     font-size: var(--font-sm-link);
     color: var(--link-fonte);
 }
@@ -500,7 +653,7 @@ input[type="submit"]:hover {
     padding: 6px 5px;
 }
 
-.card-login>h1 {
+.card-matri>h1 {
     color: var(--branco-principal);
     font-weight: 800;
     margin: 0;
@@ -512,6 +665,20 @@ input[type="submit"]:hover {
     align-items: flex-start;
     justify-content: center;
 }
+.textfield select {
+    width: 100%;
+    margin-top: 2%;
+    margin-left: 2%;
+    border: none;
+    border-bottom: 2px solid var(--vermelho-principal);
+    padding: 2%;
+    background-color: rgba(0, 0, 0, 0.0);
+    color: var(--branco-principal);
+    font-size: var(--font-sm-link);
+    box-shadow: none;
+    outline: none;
+}
+
 
 .textfield label {
     font-size: var(--font-ms-link);
@@ -525,192 +692,144 @@ input[type="submit"]:hover {
 
 .textfield>input {
     width: 100%;
-    margin-top: 2%;
     margin-left: 2%;
     border: none;
     border-bottom: 2px solid var(--vermelho-principal);
     padding: 5%;
-    background-color: rgba(0, 0, 0, 0.0);
-    /* Define a cor de fundo com transparência */
+    background-color: rgba(0, 0, 0, 0.0); 
     color: var(--branco-principal);
     font-size: var(--font-sm-link);
     box-shadow: none;
     outline: none;
 }
 
-.textfield>input:focus {
-    /*  quando um usuário clica em um campo */
+.textfield>input:focus {/*  quando um usuário clica em um campo */
     border-bottom: 2px solid var(--vermelho-principal);
 }
-
+.textfield select:focus, .textfield > input:focus {
+    border-bottom-color: var(--vermelho-principal);
+    outline: none;
+    color: #ffffff;
+    background-color: #000;
+}
 .enviar {
     margin: 10% 1% 1% 90%;
 }
-
-.container-login input[type="submit"] {
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Define a cor de fundo com transparência */
-    color: var(--branco-principal);
-    /* Define a cor do texto do botão */
-    border-radius: 25%;
-    /* Remove a borda do botão */
-    padding: 10px 20px;
-    /* Adiciona preenchimento interno ao botão */
-    cursor: pointer;
-    /* Muda o cursor para indicar que o botão é clicável */
-    width: 8vw;
-    font-size: var(--font-sm-link);
-    margin: auto;
+.container-matri input[type="submit"] {
+    background-color: var(--branco-principal);
+    color: var(--preto-fonte);
+    font-size: var(--font-md-link);
+    border-radius: 35px;
+    padding: 30% 90%;
 }
-
 input[type="submit"]:hover {
-    background-color: rgba(255, 0, 0, 0.5);
-    /* Define a cor de fundo com transparência */
+    background-color: rgba(255, 0, 0, 0.5); /* Define a cor de fundo com transparência */
     /* Muda a cor de fundo quando o mouse passa por cima */
     color: var(--branco-principal);
 }
-
-/*LOGIN END*/
+/*MATRÍCULA END*/
 
 /*FOOTER START*/
 .footer {
     display: flex;
     flex-direction: column;
-    background-color: var(--cinza-footer);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: 100%;
     justify-content: center;
     justify-content: flex-end;
 }
-
-.footer-01-hr {
-    background-color: var(--vermelho-principal);
-    color: var(--branco-principal);
-    width: 100%;
-}
-
-.footer-01 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    margin: 0 auto;
-    padding: 1rem;
-}
-
-.footer-01 h1 {
-    font-size: var(--font-xx-link);
-}
-
-.inscreva-se-button {
-    background-color: var(--branco-principal);
-    color: var(--vermelho-principal);
-    font-size: var(--font-xs-link);
-    text-decoration: none;
-    padding: 0.5em 1em;
-    border-width: 1px;
-    border-style: solid;
-    border-color: var(--vermelho-principal);
-    border-radius: 5px;
-}
-
-.inscreva-se-button:hover {
-    cursor: pointer;
-    opacity: 100;
-    background-color: var(--vermelho-principal);
-    color: var(--branco-principal);
-    border-color: var(--branco-principal);
-}
-
-.contact {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: auto;
-    padding: 20px;
-}
-
-.btn-footer-button {
-    margin-left: 0vw;
-}
-
 .footer-02-hr {
-    background-color: var(--cinza-fonte);
+    background-color:var(--cinza-fonte);
     color: var(--branco-principal);
-    
     width: 100%;
 }
-
 .footer-02 {
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    padding-top: 1em;
 }
-
 .footer-02 h1 {
     font-size: var(--font-sm-link);
 }
-
 .footer-02 h2 {
     font-size: var(--font-md-link);
     padding: 1vw 1vw 0vw 1.1vw;
 }
-
 .footer-02 h3 {
     font-size: var(--font-xs-link);
 }
-
 .footer-part {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+    width: 33%;
+    padding: 0.7%;
 }
-
-.criadores-lista {
-    display: flex;
-    flex-direction: row;
+.left-logo img{
+    height: 5.5vw;
+    margin-top: 5%;
 }
-
 .right-icons {
     display: flex;
-    justify-content: space-between;
+    width: 25%;
 }
-
 .right-icons a {
     height: auto;
+    padding-left: 10%;
+    padding-top: 3%;
 }
-
 .right-icons img {
-    width: 4vw;
-    margin: 1em 1em;
+    width: 2vw;
 }
-
+.footer-bottom-hr {
+    background-color: var(--vermelho-principal);
+    color: var(--branco-principal);
+    font-size: var(--font-sm-link);
+    width: 100%;
+}
+.footer-bottom {
+    display: flex;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.footer-bottom-h2 {
+    color: var(--branco-principal);
+    font-size: var(--font-sm-link);
+    margin-top: auto;
+    margin-right: auto;
+    padding: 0.5%;
+}
+.footer-bottom-h1 {
+    color: var(--branco-principal);
+    font-size: var(--font-sm-link);
+    margin-top: auto;
+    margin-left: auto;
+    padding: 0.5%;
+}
 /* - - - RESPONSIVE - - - */
 @media (max-width: 1050px) {
     .footer-02 {
         flex-direction: column;
     }
-
     .footer-02 h1 {
         font-size: var(--font-xx-link);
     }
-
     .footer-02 h2 {
         font-size: var(--font-xs-link);
     }
-
     .footer-02 h3 {
         font-size: var(--font-xx-link);
     }
-
     .footer-part {
         padding: 7.5% 2.5% 0% 3%;
     }
+    .footer-bottom h1 {
+        text-align: center;
+        font-size: var(--font-xs-link);
+    }
 }
-
 /*FOOTER END*/
