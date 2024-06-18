@@ -198,21 +198,22 @@ nav {
 /*SOBRE END*/
 
 /*CARD START*/
+/*CARD START*/
 .container-cards {
-    width: 100%;
+    width: 80%;
+    margin: auto;
     background-color: var(--branco-principal); /* Define a cor de fundo com transparência */
 }
 .cards-firstrow {
-    margin-right: auto;
+    margin: auto;
 }
 .cards-secondrow {
-    margin-left: auto;
+    margin: auto;
 }
 .cards {
     display: flex;
     flex-direction: column;
-    margin-right: 17%;
-    margin-left: 17%;
+    margin: auto;
     margin-top: 12.5%;
 }
 .bnt {
@@ -243,16 +244,16 @@ nav {
     height: 10vw;
 }
 .img-card {
-    margin-left: 20%;
+    margin: auto;
 }
 .card h2 {
-    text-align: center;
+    margin: auto;
     margin-top: 2%;
-    color: var(--branco-principal);
+    color: var(--preto-fonte);
     font-size: var(--font-sm-link);
 }
 .card p {
-    text-align: center;
+    margin: auto;
     margin-top: 20px;
     color: var(--preto-fonte);
 }
@@ -273,7 +274,6 @@ nav {
     font-size: large;
     color: var(--link-fonte);
 }
-
 /*CARD END*/
 
 /*CONTATO START*/
