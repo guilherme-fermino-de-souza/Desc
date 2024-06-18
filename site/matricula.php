@@ -19,7 +19,7 @@
             <div class="container-matri">
                 <div class="matri">
                     <div class="card-matri">
-                        <form class="faca-matri" name="matri" action="#" method="post">
+                        <form class="faca-matri" name="matri" action="./matriculaEnviar.php" method="post">
                             <h1>MATRÍCULA</h1>
                             <p>Não é dicente? <a href="login.php">Entre em sua conta.</a></p>
 
@@ -29,9 +29,8 @@
                             </div>
 
                             <div class="textfield">
-                                <label for="ra">Registro de Matrícula (RA)
-                                </label>
-                                <input type="text" minlength="1" maxlength="6" name="ra" id="ra" required placeholder="RA" >
+                                <label for="rm">Registro de Matrícula (RM)</label>
+                                <input type="text" minlength="1" maxlength="6" name="rm" id="rm" required placeholder="RM" >
                             </div>
 
                             <div class="textfield">

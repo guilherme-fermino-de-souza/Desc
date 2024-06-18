@@ -17,13 +17,13 @@
             <div class="container-account">
                 <div class="account">
                     <div class="card-account">
-                        <form class="create-account" name="create-account" action="#" method="post">
+                        <form class="create-account" name="create-account" action="./criarContaEnviar.php" method="post">
                             <h1>Nova Conta</h1>
                             <p>Já tem uma conta? <a href="./login.php">Acesse-a aqui</a></p>
 
                             <div class="textfield">
-                                <label for="usuario">Nome Do Usuário</label>
-                                <input type="text" name="usuario" placeholder="Usuário">
+                                <label for="nome">Nome Do Usuário</label>
+                                <input type="text" name="nome" placeholder="Usuário">
                             </div>
 
                             <div class="textfield">
@@ -33,11 +33,10 @@
 
                             <div class="textfield">
                             <label for="tipoconta" class="label">Tipo:</label>
-                            <select class="input" name="sala">
-                                <option value="1">Aluno</option>
-                                <option value="2">Resposável</option>
-                                <option value="3">Professor</option>
-                                <option value="4">Cordernador</option>
+                            <select class="input" name="tipoconta">
+                                <option value="1">Resposável</option>
+                                <option value="2">Professor</option>
+                                <option value="3">Cordernador</option>
                             </select>
                         </div>
 

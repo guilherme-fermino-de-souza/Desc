@@ -22,7 +22,7 @@
                     <div class="card-login">
                         <form class="faca-login" name="login" action="loginEnviar.php" method="post">
                             <h1>LOGIN</h1>
-                            <p>Novo por aqui? <a href="./createAccount.php">Crie uma conta</a></p>
+                            <p>Novo por aqui? <a href="./criarConta.php">Crie uma conta</a></p>
 
                             <div class="textfield">
                                 <label for="usuario">Usuário</label>
