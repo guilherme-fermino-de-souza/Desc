@@ -10,23 +10,19 @@
 
 <body>
 
+    <?php include './navbar.php' ?>
 
     <!--login start--> <!--INÍCIO-->
     <section class="container-login-principal">
 
         <div class="login-principal">
 
-        <div class="conteiner-anun-login">
-           <a href="./index.php">NEWS WALL ETEC</a>
-           <h3>Faça login para ter acesso aos mais diversos tipos de funcionalidades e ferramentas de nosso site e se manter ligado em tudo que ocorre na ETEC</h3>
-        </div>
-
             <div class="container-login">
                 <div class="login">
                     <div class="card-login">
                         <form class="faca-login" name="login" action="loginEnviar.php" method="post">
                             <h1>LOGIN</h1>
-                            <p>Novo por aqui? <a href="./criarConta.php">Crie uma conta</a></p>
+                            <p>Novo por aqui? <a href="./createAccount.php">Crie uma conta</a></p>
 
                             <div class="textfield">
                                 <label for="usuario">Usuário</label>
@@ -54,11 +50,10 @@
         </div>
     </section>
 
+    <?php include './footer.php' ?>
 
-
-    <script src="./js/java.js"></script>
+    <script src="./js/java.js"></script>  
 </body>
 
 </html>
 </body>
-</html>
