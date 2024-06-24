@@ -1,6 +1,6 @@
 :root {
-    --branco-principal: #fff;
-    --vermelho-principal: rgb(193, 27, 27);
+    --branco-principal: #ffffff;
+    --vermelho-principal: rgb(152, 0, 0);
     --preto-fonte: #000;
     --cinza-fonte-claro: rgb(181, 181, 181);
     --cinza-fonte: rgb(70, 70, 70);
@@ -46,7 +46,7 @@ a:hover {
     letter-spacing: 2px;
 }
 header {
-    background: var(--vermelho-principal);
+    background: var(--preto-fonte);
     width: 100%;
     justify-content: center;
     height: auto;
@@ -85,11 +85,12 @@ nav {
 
 .nav-button button:hover {
     cursor: pointer;
+    background-color: var(--vermelho-principal);
+    color: var(--branco-principal);
 }
 .mobile-menu {
     display: none;
     cursor: pointer;
-    /* muda o cursor */
 }
 
 .mobile-menu div {
@@ -172,28 +173,45 @@ nav {
 /*NAVBAR END*/
 
 /*SOBRE START*/
+.sobre {
+    background-color: #ffffff;
+    height: 100%;
+}
 .container-sobre {
+    display: flex;
     width: 80%;
     margin: auto;
-    height: 80vh;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 .container-sobre h1{
-    font-size: var(--font-xx-link);
-    color: var(--branco-principal); 
-    margin-top: 11%;
+    font-size: var(--font-xs-link);
+    color: var(--preto-fonte); 
     text-align: center; 
 }
 .container-sobre p{
     font-size: var(--font-xs-link);
-    color: var(--branco-principal);
+    color: var(--preto-fonte);
 }
-.container-sobre img{
-    height: 20vw;
-}
-.text-sobre {
-    display: flex;
-    margin-top: 7%;
+.text-sobre {   
+    margin-top: auto;
+    margin-bottom: auto;
     padding: 2vw;
+}
+.img-sobre {
+    height: auto;
+}
+.img-sobre img{
+    width: 100%;
+}
+.faixa-sobre {
+    background-image: url(./img/img-team-01.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 25vh;
+}
+.faixa-sobre:hover {
+    opacity: 0.5;
 }
 /*SOBRE END*/
 
@@ -349,7 +367,12 @@ nav {
     box-shadow: none;
     outline: none;
 }
-
+.espaco-input select:focus, .espaco-input > input:focus {
+    border-bottom-color: var(--vermelho-principal);
+    outline: none;
+    color: #ffffff;
+    background-color: #000;
+}
 .espaco-input>input {
     width: 100%;
     margin-left: 2%;
@@ -362,12 +385,6 @@ nav {
     box-shadow: none;
     outline: none;
 }
-.espaco-input select:focus, .espaco-input > input:focus {
-    border-bottom-color: var(--vermelho-principal);
-    outline: none;
-    color: #ffffff;
-    background-color: #000;
-}
 .contato-enviar {
     margin-top: 3%;
     margin-left: auto;
@@ -378,7 +395,7 @@ nav {
     color: var(--preto-fonte);
     font-size: var(--font-md-link);
     border-radius: 35px;
-    padding: 20% 35%;
+    padding: 1% 5%;
 }
 
 input[type="submit"]:hover {
@@ -783,7 +800,7 @@ input[type="submit"]:hover {
     width: 2vw;
 }
 .footer-bottom-hr {
-    background-color: var(--vermelho-principal);
+    background-color: var(--preto-fonte);
     color: var(--branco-principal);
     font-size: var(--font-sm-link);
     width: 100%;

@@ -13,6 +13,7 @@
     $senha = $_POST['senha'];
 
     $pdo = new PDO("mysql:host=$servidor;dbname=$nomeBancoDeDados", $usuarioBd, $senhaBd);
+    
 
     $pdo->quote($usuario);
     $pdo->quote($email);
