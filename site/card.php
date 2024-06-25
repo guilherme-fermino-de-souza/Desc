@@ -7,8 +7,6 @@
     <title>Desenvolvedores</title>
 </head>
 <body>
-    
-<?php include './navbar.php' ?>
 <!--card start-->
 <section id="cards">
     <div class="container-cards">
@@ -73,9 +71,5 @@
     </div>
 </section>
 <!--card end-->
-
-<?php include './footer.php' ?>
-
-<script src="./js/java.js"></script>
 </body>
 </html>

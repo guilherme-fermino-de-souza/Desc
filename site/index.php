@@ -14,9 +14,11 @@
 
 <?php include './sobre.php' ?>
 
+<?php include './card.php' ?>
+
 <?php include './footer.php' ?>
 
-<script src="./js/java.js"></script>
+<script src="./java.js"></script>
 </body>
 
 </html>
