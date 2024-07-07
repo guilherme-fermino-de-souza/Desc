@@ -35,3 +35,10 @@ CREATE TABLE tbMensagem (
     , idRemetente INT
     , FOREIGN KEY (idRemetente) REFERENCES tbRemetente(idRemetente)
 );
+
+CREATE TABLE tbAviso (
+    idAviso INT PRIMARY KEY AUTO_INCREMENT
+    ,tituloAviso VARCHAR (30)
+    ,subtituloAviso VARCHAR (50)
+    ,descAviso VARCHAR (200)
+);
