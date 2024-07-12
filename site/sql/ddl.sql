@@ -35,10 +35,17 @@ CREATE TABLE tbMensagem (
     , idRemetente INT
     , FOREIGN KEY (idRemetente) REFERENCES tbRemetente(idRemetente)
 );
-
+/* Tabela das notícias*/
 CREATE TABLE tbAviso (
     idAviso INT PRIMARY KEY AUTO_INCREMENT
     ,tituloAviso VARCHAR (30)
     ,subtituloAviso VARCHAR (50)
     ,descAviso VARCHAR (200)
+);
+/* Tabela das contas*/
+CREATE TABLE tbConta (
+    idConta INT PRIMARY KEY AUTO_INCREMENT
+    ,bomeCompletoConta VARCHAR (60)
+    ,emailConta VARCHAR (50)
+    ,senhaConta VARCHAR (30)
 );
