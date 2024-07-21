@@ -1,7 +1,7 @@
 <div class="sobre">
     <div class="container-sobre">
         <div class="text-sobre">
-            <h1>SAIBA SOBRE NOTÍCIAS E EVENTOS DA ETEC</h1>
+            <h1>NOTÍCIAS E EVENTOS DA ETEC</h1>
             <p> O News Wall Etec é um site/calendario que visa
                 facilitar o acesso a informações sobre eventos
                 de relevância na Etec, podendo ser usando por
@@ -10,10 +10,8 @@
                 informações e funcionalidades.</p>
         </div>
         <div class="img-sobre">
-            <img src="./images/img-computer-01.jpg">
+            <img src="./images/Etec-Guaianases-1.jpg">
+            <h2>Rua Feliciano de Mendonça, 290 - Guaianazes - CEP: 08460-365 - SP</h2>
         </div>
     </div>
-    <div class="faixa-sobre">
-            
-        </div>
 </div>

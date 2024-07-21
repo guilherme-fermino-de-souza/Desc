@@ -1,9 +1,9 @@
 :root {
     --branco-principal: #ffffff;
-    --vermelho-principal: rgb(152, 0, 0);
-    --preto-fonte: #000;
-    --cinza-fonte-claro: rgb(181, 181, 181);
-    --cinza-fonte: rgb(70, 70, 70);
+    --vermelho-principal: #F20519;
+    --preto-fonte: #000000;
+    --cinza-fonte-claro: #737373;
+    --cinza-fonte: #404040;
     --link-fonte: #77b0f2;
     --fonte-principal: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
@@ -12,22 +12,19 @@
     --tamanho-fonte-titulo-h1: 40px;
     --tamanho-fonte-grande: 65px;
 
-    --font-xx-link: 3vw;
-    --font-xs-link: 2vw;
+    --font-xx-link: 3.23vw;
+    --font-xs-link: 1.61vw;
     --font-sm-link: 1vw;
-    --font-md-link: 0.75vw;
+    --font-md-link: 0.61vw;
 }
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: var(--fonte-principal);
 }
-body {
-    background-image: url("../images/Etec-Butbunito-1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+html, body {
+    min-height: 100vh;
 }
 /*NAVBAR START*/
 .nav-list a {
@@ -102,9 +99,6 @@ nav {
 }
 /* - - - RESPONSIVE - - - */
 @media (max-width: 1050px) {
-    header {
-        position: fixed;
-    }
     body {
         overflow-x: hidden;
         /*esconde tudo que transborda o eixo X*/
@@ -118,7 +112,7 @@ nav {
         right: 0;
         width: 50vw;
         height: 92vh;
-        background-color: var(--vermelho-principal);
+        background-color: var(--preto-fonte);
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
@@ -168,7 +162,6 @@ nav {
         transform: translateX(0);
     }
 }
-
 /* - - - RESPONSIVE - - - */
 /*NAVBAR END*/
 
@@ -179,573 +172,36 @@ nav {
 }
 .container-sobre {
     display: flex;
-    width: 80%;
+    width: 70%;
     margin: auto;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 .container-sobre h1{
     font-size: var(--font-xs-link);
     color: var(--preto-fonte); 
     text-align: center; 
 }
+.container-sobre h2{
+    font-size: var(--font-sm-link);
+    color: var(--preto-fonte);
+    font-weight: 200; 
+    text-align: center; 
+}
 .container-sobre p{
     font-size: var(--font-xs-link);
     color: var(--preto-fonte);
+    margin-top: 5%;
 }
 .text-sobre {   
     margin-top: auto;
     margin-bottom: auto;
     padding: 2vw;
 }
-.img-sobre {
-    height: auto;
-}
 .img-sobre img{
-    width: 100%;
-}
-.faixa-sobre {
-    background-image: url(./img/img-team-01.jpg);
-    background-position: center;
-    background-size: cover;
-    height: 25vh;
-}
-.faixa-sobre:hover {
-    opacity: 0.5;
+    height: 25vw;
 }
 /*SOBRE END*/
-
-/*CARD START*/
-/*CARD START*/
-.container-cards {
-    width: 80%;
-    margin: auto;
-    background-color: var(--branco-principal); /* Define a cor de fundo com transparência */
-}
-.cards-firstrow {
-    margin: auto;
-}
-.cards-secondrow {
-    margin: auto;
-}
-.cards {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    margin-top: 12.5%;
-}
-.bnt {
-    width: 110%;
-    height: 2%;
-    margin: auto;
-}
-.bnt button:hover {
-    background-color: var(--vermelho-principal);
-}
-.button-card {
-    width: 100px;
-}
-.cards-firstrow {
-    display: flex;
-    flex-direction: row;
-}
-.cards-secondrow {
-    display: flex;
-    flex-direction: row;
-}
-.card {
-    width: 50%;
-    padding: 10% 15%;
-}
-.card img {
-    width: 10vw;
-    height: 10vw;
-}
-.img-card {
-    margin: auto;
-}
-.card h2 {
-    margin: auto;
-    margin-top: 2%;
-    color: var(--preto-fonte);
-    font-size: var(--font-sm-link);
-}
-.card p {
-    margin: auto;
-    margin-top: 20px;
-    color: var(--preto-fonte);
-}
-.card button {
-    background-color: var(--branco-principal);
-    border-radius: 20px;
-    border: 10px;
-    border-color: var(--preto-fonte);
-    font-size: 15px;
-    margin-top: 20px;
-    margin-left: 110px;justify-content: center;
-}
-.card button:hover {
-    background-color: rgba(255, 0, 0, 0.5); /* Define a cor de fundo com transparência */
-    color: var(--branco-principal);
-}
-.text-card a {
-    font-size: large;
-    color: var(--link-fonte);
-}
-/*CARD END*/
-
-/*CONTATO START*/
-.fundo {
-    background-image: url("../images/Etec-Butbunito-1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    display: flex;
-    flex-direction: row;
-}
-.fundo h1 {
-    font-size: var(--font-xs-link);
-    margin: auto;
-}
-.fale-conosco {
-    display: flex;
-    flex-direction: column;
-    align-items: center;   
-    margin: 5% auto;
-}
-.contato {
-    background-color: rgba(0, 0, 0, 0.75); /* Define a cor de fundo com transparência */
-    color: var(--branco-principal);
-    border-radius: 20px;
-    width: 47.5%;
-    height: 80%;
-    margin: 10% auto;
-    padding: 10px 10px;
-}
-.inputs {
-    width: 60%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 2vw 1vw;
-    border-radius: 20px;
-}
-
-.inputs>h1 {
-    color: var(--preto-fonte);
-    font-weight: 800;
-    margin: 0;
-}
-.inputs-first-column {
-    margin-right: auto;
-}
-.inputs-second-column {
-    margin-left: auto;
-}
-.espaco-input {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-.espaco-input label {
-    font-size: large;
-    font-weight: 700;
-    margin-top: 10%;
-}
-.espaco-input select {
-    width: 100%;
-    margin-top: 2%;
-    margin-left: 2%;
-    border: none;
-    border-bottom: 2px solid var(--vermelho-principal);
-    padding: 2%;
-    background-color: rgba(0, 0, 0, 0.0);
-    color: var(--branco-principal);
-    font-size: var(--font-sm-link);
-    box-shadow: none;
-    outline: none;
-}
-.espaco-input select:focus, .espaco-input > input:focus {
-    border-bottom-color: var(--vermelho-principal);
-    outline: none;
-    color: #ffffff;
-    background-color: #000;
-}
-.espaco-input>input {
-    width: 100%;
-    margin-left: 2%;
-    border: none;
-    border-bottom: 2px solid var(--vermelho-principal);
-    padding: 5%;
-    background-color: rgba(0, 0, 0, 0.0); /* Define a cor de fundo com transparência */
-    color: var(--branco-principal);
-    font-size: var(--font-sm-link);
-    box-shadow: none;
-    outline: none;
-}
-.contato-enviar {
-    margin-top: 3%;
-    margin-left: auto;
-    margin-right: 15%;
-}
-.fale-conosco input[type="submit"] {
-    background-color: var(--branco-principal);
-    color: var(--preto-fonte);
-    font-size: var(--font-md-link);
-    border-radius: 35px;
-    padding: 1% 5%;
-}
-
-input[type="submit"]:hover {
-    background-color: rgba(255, 0, 0, 0.5); /* Define a cor de fundo com transparência */
-    /* Muda a cor de fundo quando o mouse passa por cima */
-    color: var(--branco-principal);
-}
-
-/*CONTATO END*/
-
-/*LOGIN START*/
-.container-login-principal {
-    background-image: url("../images/Etec-Butbunito-1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    width: auto;
-    align-items: center;
-}
-.login-principal {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    margin: auto;
-}
-.container-login {
-    background-color: rgba(0, 0, 0, 0.75); /* Define a cor de fundo com transparência */
-    width: 37.5%;
-    height: 80%;
-    border-radius: 20px; 
-    margin: auto ;
-    margin-top: 10%;
-    margin-bottom: 11%;
-}
-.login {
-    color: var(--branco-principal);
-    width: 50%;
-    height: auto;
-    padding: 5% 4.5%;
-    margin: auto;
-}
-.login h1 {
-    font-size: var(--font-xs-link);
-    margin-top: 10%;
-}
-.login p {
-    font-size: var(--font-sm-link);
-    color: var(--branco-principal);
-}
-.login a {
-    font-size: var(--font-sm-link);
-    color: var(--link-fonte);
-}
-.card-login {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 6px 5px;
-}
-.card-login>h1 {
-    color: var(--branco-principal);
-    font-weight: 800;
-    margin: 0;
-}
-.textfield {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-.textfield label {
-    font-size: var(--font-ms-link);
-    font-weight: 700;
-    margin-top: 10%;
-}
-.textfield input::placeholder {
-    font-size: var(--font-sm-link);
-}
-.textfield>input {
-    width: 100%;
-    margin-top: 2%;
-    margin-left: 2%;
-    border: none;
-    border-bottom: 2px solid var(--vermelho-principal);
-    padding: 5%;
-    background-color: rgba(0, 0, 0, 0.0); /* Define a cor de fundo com transparência */
-    color: var(--branco-principal);
-    font-size: var(--font-sm-link);
-    box-shadow: none;
-    outline: none;
-}
-.textfield>input:focus {/*  quando um usuário clica em um campo */
-    border-bottom: 2px solid var(--vermelho-principal);
-}
-.enviar {
-    margin: 10% 1% 1% 90%;
-}
-.container-login input[type="submit"] {
-    background-color: var(--branco-principal);
-    color: var(--preto-fonte);
-    font-size: var(--font-md-link);
-    border-radius: 35px;
-    padding: 30% 90%;
-}
-input[type="submit"]:hover {
-    background-color: rgba(255, 0, 0, 0.7); /* Define a cor de fundo com transparência */
-    /* Muda a cor de fundo quando o mouse passa por cima */
-    color: var(--branco-principal);
-}
-/*LOGIN END*/
-
-/*CREATEACCOUNT START*/
-.container-account-principal {
-    background-image: url("../images/Etec-Butbunito-1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    width: auto;
-    align-items: center;
-}
-.account-principal {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    margin: auto;
-}
-.container-account {
-    background-color: rgba(0, 0, 0, 0.75); /* Define a cor de fundo com transparência */
-    width: 37.5%;
-    height: 80%;
-    border-radius: 20px; 
-    margin: auto ;
-    margin-top: 10%;
-    margin-bottom: 11%;
-}
-.account {
-    color: var(--branco-principal);
-    width: 50%;
-    height: auto;
-    padding: 5% 4.5%;
-    margin: auto;
-}
-.account h1 {
-    font-size: var(--font-xs-link);
-    margin-top: 10%;
-}
-.account p {
-    font-size: var(--font-sm-link);
-    color: var(--branco-principal);
-}
-.account a {
-    font-size: var(--font-sm-link);
-    color: var(--link-fonte);
-}
-.card-account {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 6px 5px;
-}
-.card-account>h1 {
-    color: var(--branco-principal);
-    font-weight: 800;
-    margin: 0;
-}
-.criar {
-    margin: 10% 1% 1% 90%;
-}
-.container-account input[type="submit"] {
-    background-color: var(--branco-principal);
-    color: var(--preto-fonte);
-    font-size: var(--font-md-link);
-    border-radius: 35px;
-    padding: 30% 90%;
-}
-.textfield-account label {
-    font-size: var(--font-ms-link);
-    font-weight: 700;
-    margin-top: 10%;
-}
-.textfield-account select {
-    width: 100%;
-    margin-top: 2%;
-    margin-left: 2%;
-    border: none;
-    border-bottom: 2px solid var(--vermelho-principal);
-    padding: 2%;
-    background-color: rgba(0, 0, 0, 0.0);
-    color: var(--branco-principal);
-    font-size: var(--font-sm-link);
-    box-shadow: none;
-    outline: none;
-}
-
-.textfield-account>input {
-    width: 100%;
-    margin-left: 2%;
-    border: none;
-    border-bottom: 2px solid var(--vermelho-principal);
-    padding: 5%;
-    background-color: rgba(0, 0, 0, 0.0); /* Define a cor de fundo com transparência */
-    color: var(--branco-principal);
-    font-size: var(--font-sm-link);
-    box-shadow: none;
-    outline: none;
-}
-.textfield-account select:focus, .textfield-account > input:focus {
-    border-bottom-color: var(--vermelho-principal);
-    outline: none;
-    color: #ffffff;
-    background-color: #000;
-}
-/*CREATEACCOUNT END*/
-
-/*MATRÍCULA START (copia e cola do acima)*/
-.container-matri-principal {
-    display: flex;
-    flex-direction: row-reverse;
-    background-image: url("../images/Etec-Butbunito-1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    width: auto;
-    height: 100vh;
-    align-items: center;
-}
-.matri-principal {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    margin: auto;
-}
-.container-matri {
-    background-color: rgba(0, 0, 0, 0.75); /* Define a cor de fundo com transparência */
-    width: 37.5%;
-    height: 80%;
-    border-radius: 20px;  
-    margin: auto ;
-    margin-top: 10%;
-    margin-bottom: 11%;
-}
-.matri {
-    color: var(--branco-principal);
-    width: 50%;
-    height: auto;
-    padding: 5% 4.5%;
-    margin: auto;
-}
-
-.matri h1 {
-    font-size: var(--font-xs-link);
-    margin-top: 10%;
-}
-
-.matri p {
-    font-size: var(--font-sm-link);
-    color: var(--branco-principal);
-}
-
-.matri a {
-    font-size: var(--font-sm-link);
-    color: var(--link-fonte);
-}
-
-.card-login {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 6px 5px;
-}
-
-.card-matri>h1 {
-    color: var(--branco-principal);
-    font-weight: 800;
-    margin: 0;
-}
-
-.textfield {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-.textfield select {
-    width: 100%;
-    margin-top: 2%;
-    margin-left: 2%;
-    border: none;
-    border-bottom: 2px solid var(--vermelho-principal);
-    padding: 2%;
-    background-color: rgba(0, 0, 0, 0.0);
-    color: var(--branco-principal);
-    font-size: var(--font-sm-link);
-    box-shadow: none;
-    outline: none;
-}
-
-
-.textfield label {
-    font-size: var(--font-ms-link);
-    font-weight: 700;
-    margin-top: 10%;
-}
-
-.textfield input::placeholder {
-    font-size: var(--font-sm-link);
-}
-
-.textfield>input {
-    width: 100%;
-    margin-left: 2%;
-    border: none;
-    border-bottom: 2px solid var(--vermelho-principal);
-    padding: 5%;
-    background-color: rgba(0, 0, 0, 0.0); 
-    color: var(--branco-principal);
-    font-size: var(--font-sm-link);
-    box-shadow: none;
-    outline: none;
-}
-
-.textfield>input:focus {/*  quando um usuário clica em um campo */
-    border-bottom: 2px solid var(--vermelho-principal);
-}
-.textfield select:focus, .textfield > input:focus {
-    border-bottom-color: var(--vermelho-principal);
-    outline: none;
-    color: #ffffff;
-    background-color: #000;
-}
-.enviar {
-    margin: 10% 1% 1% 90%;
-}
-.container-matri input[type="submit"] {
-    background-color: var(--branco-principal);
-    color: var(--preto-fonte);
-    font-size: var(--font-md-link);
-    border-radius: 35px;
-    padding: 30% 90%;
-}
-input[type="submit"]:hover {
-    background-color: rgba(255, 0, 0, 0.5); /* Define a cor de fundo com transparência */
-    /* Muda a cor de fundo quando o mouse passa por cima */
-    color: var(--branco-principal);
-}
-/*MATRÍCULA END*/
-
 /*FOOTER START*/
 .footer {
     display: flex;
@@ -756,48 +212,46 @@ input[type="submit"]:hover {
     justify-content: flex-end;
 }
 .footer-02-hr {
-    background-color:var(--cinza-fonte);
-    color: var(--branco-principal);
-    width: 100%;
+    background-color:var(--preto-fonte);
 }
 .footer-02 {
     display: flex;
     flex-direction: row;
-    width: 80%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    justify-content: space-around;
 }
-.footer-02 h1 {
+.left-logo h1 {
     font-size: var(--font-sm-link);
+    color: var(--branco-principal);
+}
+.footer-02 a {
+    font-size: var(--font-sm-link);
+    color: var(--cinza-fonte);
+    padding-top: 1%;
 }
 .footer-02 h2 {
-    font-size: var(--font-md-link);
-    padding: 1vw 1vw 0vw 1.1vw;
+    font-size: var(--font-sm-link);
+    color: var(--cinza-fonte);
+    padding-top: 1%;
 }
 .footer-02 h3 {
     font-size: var(--font-xs-link);
 }
 .footer-part {
-    width: 33%;
-    padding: 0.7%;
-}
-.left-logo img{
-    height: 5.5vw;
-    margin-top: 5%;
-}
-.right-icons {
     display: flex;
-    width: 25%;
+    flex-direction: column;
+    margin: 2.5% 0% 2.5% 2.5%;
 }
-.right-icons a {
-    height: auto;
-    padding-left: 10%;
-    padding-top: 3%;
+.footer-part h1 {
+    color: var(--branco-principal);
+    font-size: var(--font-xs-link);
+    padding-left: 2%;
 }
-.right-icons img {
-    width: 2vw;
+.left-logo h1{
+    font-size: var(--font-xx-link);
+    font-weight: 700;
 }
 .footer-bottom-hr {
     background-color: var(--preto-fonte);
@@ -805,47 +259,42 @@ input[type="submit"]:hover {
     font-size: var(--font-sm-link);
     width: 100%;
 }
+.footer-bottom-hr hr{
+    width: 70%;
+    margin: auto;
+}
 .footer-bottom {
     display: flex;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    background-color: var(--preto-fonte);
+    color: var(--cinza-fonte);
+    width: 70%;
+    margin: auto;
 }
 .footer-bottom-h2 {
-    color: var(--branco-principal);
     font-size: var(--font-sm-link);
-    margin-top: auto;
-    margin-right: auto;
-    padding: 0.5%;
 }
-.footer-bottom-h1 {
-    color: var(--branco-principal);
-    font-size: var(--font-sm-link);
-    margin-top: auto;
+.right-icons {
+    display: flex;
     margin-left: auto;
-    padding: 0.5%;
+    margin-right: 5%;
+}
+.right-icons a {
+    color: var(--branco-principal);
+    background-color: var(--preto-fonte);
+    padding: 2%;
+}
+.right-icons img {
+    height: 1.25vw;
 }
 /* - - - RESPONSIVE - - - */
 @media (max-width: 1050px) {
     .footer-02 {
-        flex-direction: column;
+        flex-direction: row;
     }
     .footer-02 h1 {
         font-size: var(--font-xx-link);
     }
     .footer-02 h2 {
-        font-size: var(--font-xs-link);
-    }
-    .footer-02 h3 {
-        font-size: var(--font-xx-link);
-    }
-    .footer-part {
-        padding: 7.5% 2.5% 0% 3%;
-    }
-    .footer-bottom h1 {
-        text-align: center;
         font-size: var(--font-xs-link);
     }
 }
