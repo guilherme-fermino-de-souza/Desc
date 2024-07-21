@@ -14,6 +14,8 @@
 
 <?php include './sobre.php' ?>
 
+<?php include './card.php' ?>
+
 <?php include './footer.php' ?>
 
 <script src="./java.js"></script>
