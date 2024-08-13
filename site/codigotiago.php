@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil usuario prototype</title>
+    <link rel="stylesheet" href="./css/estilo.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
@@ -15,7 +16,7 @@
             <th scope="col">#</th>
             <th scope="col">Nome</th>
             <th scope="col">Rm</th>
-            <th scope="col">Codigo Etecc</th>
+            <th scope="col">Codigo Etec</th>
             <th scope="col">Senha </th>
             </tr>
         </thead>
@@ -45,6 +46,7 @@
             <?php }	?>
         </tbody>
         </table>
+
     <?php include './footer.php' ?>
 </body>
 </html>
