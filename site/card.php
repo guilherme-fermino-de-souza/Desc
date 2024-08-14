@@ -100,7 +100,6 @@
     </style>
 </head>
 <body>
-<?php include './navbar.php' ?>
 
 <div class="conteudo-card">
 <!--card start-->
@@ -172,7 +171,6 @@
     <!--admin end-->
 
 </div>
-<?php include './footer.php' ?>
 
 <script src="./js/java.js"></script>
 </section>

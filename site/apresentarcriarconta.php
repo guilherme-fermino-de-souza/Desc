@@ -35,6 +35,11 @@
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
         }
+        .card-apresentarcriarconta a {
+            font-weight: 600;
+            margin: 45%;
+            font-size: var(--font-sm-link);
+        }
     </style>
     <title>Apresentar Conta</title>
 </head>
@@ -52,6 +57,7 @@
             <h3>Nome: <?php echo $row["nomeCompletoConta"]; ?></h3>
             <h2>Email: <?php echo $row["emailConta"]; ?></h2>
             <h2>Senha: <?php echo $row["senhaConta"]; ?></h2> 
+            <a href="excluirconta.php?id=<?php echo $row[0]; ?>"> Excluir </a>
         </div>
     <?php } ?>    
 </div>

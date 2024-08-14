@@ -10,7 +10,7 @@
             width: 80%;
             margin: 10% auto;
             padding: 3%;
-            grid-template-rows: 60% 60% 60% ;
+            grid-template-rows: 53% 53% 53% ;
             grid-template-columns: 33.3% 33.3% 33.3%;
         }
         .card-apresentarcontato {   
@@ -34,9 +34,15 @@
             color: var(--branco-principal);
         }
         .card-apresentarcontato p{
-            font-size: var(--font-md-link);
+            font-size: var(--font-sm-link);
             padding: 1%;
             text-indent: 7.5px;
+        }
+        .card-apresentarcontato a {
+            font-weight: 600;
+            margin: 45%;
+            font-size: var(--font-sm-link);
+            text-decoration: none;
         }
     </style>
     <title>Apresentar Contato</title>
@@ -54,7 +60,8 @@
             <div class="card-apresentarcontato">
                 <h3>Assunto: <?php echo $row["assuntoContato"]; ?></h3>
                 <h2>Nome: <?php echo $row["nomeContato"]; ?></h2>
-                <p><?php echo $row["mensagemContato"]; ?></p> 
+                <p><?php echo $row["mensagemContato"]; ?></p>
+                <a href="excluircontato.php?id=<?php echo $row[0]; ?>"> Excluir </a> 
             </div>
     <?php } ?>  
 </div>  

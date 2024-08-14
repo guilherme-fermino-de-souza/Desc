@@ -36,6 +36,31 @@
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
         }
+        .card-painel a {
+            font-weight: 600;
+            margin: 45%;
+            font-size: var(--font-sm-link);
+            text-decoration: none;
+        }
+        .criarnoticia-painel {
+            width: 80%;
+            margin: auto;
+        }
+        .criarnoticia-painel button{
+            text-align: center;
+            background-color: var(--vermelho-principal);
+            color: var(--branco-principal);
+            border-radius: 35px;
+            border: 2px solid var(--preto-fonte);
+            padding: 5px;
+            font-weight: 600;
+            margin: 15px;
+        }
+        .criarnoticia-painel button:hover{
+            background-color: var(--branco-principal);
+            color: var(--vermelho-principal);
+            transition: 0.9s;
+        }
     </style>
 </head>
 <body>
@@ -52,11 +77,12 @@
                   <h3><?php echo $row["tituloAviso"]; ?></h3> 
                   <h2><?php echo $row["subtituloAviso"]; ?></h2> 
                   <h2><?php echo $row["descAviso"]; ?></h2>
+                  <a href="excluirpainel.php?id=<?php echo $row[0]; ?>"> Excluir </a>
         </div>
     <?php } ?>
 </div>
 
-<div>
+<div class="criarnoticia-painel">
   <a class="link" href="./criarnoticia.php"> <button class="butao butaonoticia" type="button" value="">Inserir Noticia</button> </a> 
 </div>
 
