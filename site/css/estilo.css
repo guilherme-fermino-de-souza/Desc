@@ -26,7 +26,7 @@
 html, body {
     min-height: 100vh;
 }
-/*NAVBAR START*/
+/* NAVBAR START*/
 .nav-list a {
     color: var(--branco-principal);
     font-size: var(--font-md-link);
