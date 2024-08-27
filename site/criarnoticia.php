@@ -33,7 +33,9 @@
     </style>
 
 </head>
+
 <body>
+<?php include './navbar.php' ?>
     <a href="index.php"><img src="images/seta.png" width="35px" id=voltar></a>
     <section class="container-enviarnoticia">
         <h1> Criar Noticia</h1>
@@ -58,5 +60,8 @@
         </div>
     </form>
 </section>
+
+<?php include './footer.php' ?>
+
 </body>
 </html>

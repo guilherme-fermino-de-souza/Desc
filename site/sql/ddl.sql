@@ -45,7 +45,7 @@ CREATE TABLE tbAviso (
 /* Tabela das contas registradas em 'nova conta'*/
 CREATE TABLE tbConta (
     idConta INT PRIMARY KEY AUTO_INCREMENT
-    ,bomeCompletoConta VARCHAR (60)
+    ,nomeCompletoConta VARCHAR (60)
     ,emailConta VARCHAR (50)
     ,senhaConta VARCHAR (30)
 );

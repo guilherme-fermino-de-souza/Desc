@@ -129,6 +129,7 @@ input[type="submit"]:hover {
                             <h1>LOGIN</h1>
                             <p>Novo por aqui? <a href="./criarConta.php">Crie uma conta</a></p>
 
+
                             <div class="textfield">
                                 <label for="email">E-mail</label>
                                 <input type="email" name="email" required placeholder="E-mail">
