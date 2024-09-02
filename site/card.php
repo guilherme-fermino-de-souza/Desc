@@ -8,7 +8,7 @@
     <style>
         /*CARD START*/
 .conteudo-card {
-    height: 85vh;
+    height: auto;
 }
 .cards {
     width: 80%;
@@ -100,6 +100,7 @@
     </style>
 </head>
 <body>
+<?php include './navbar.php' ?>
 
 <div class="conteudo-card">
 <!--card start-->
@@ -172,6 +173,7 @@
 
 </div>
 
+<?php include './footer.php' ?>
 <script src="./js/java.js"></script>
 </section>
 <!--card end-->

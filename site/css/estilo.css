@@ -7,11 +7,6 @@
     --link-fonte: #77b0f2;
     --fonte-principal: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-    --tamanho-fonte-pequeno: 14px;
-    --tamanho-fonte-normal: 20px;
-    --tamanho-fonte-titulo-h1: 40px;
-    --tamanho-fonte-grande: 65px;
-
     --font-xx-link: 3.23vw;
     --font-xs-link: 1.61vw;
     --font-sm-link: 1vw;
@@ -29,16 +24,17 @@ html, body {
 /* NAVBAR START*/
 .nav-list a {
     color: var(--branco-principal);
-    font-size: var(--font-md-link);
+    font-size: var(--font-xs-link);
     text-decoration: none;
-    margin: 0% 10px;
+    padding: 0.1vw;
+    margin: 0vw 0.3vw;
     transition: 0.3s;
 }
 a:hover {
     opacity: 0.7;
 }
 .logo {
-    font-size: var(--font-xs-link);
+    font-size: var(--font-xx-link);
     color: var(--branco-principal);
     letter-spacing: 2px;
 }
@@ -62,9 +58,8 @@ nav {
 .nav-list {
     list-style: none;
     display: flex;
-    margin: 1% 1% 1% 45%;
+    margin: 1% 1% 1% 15%;
 }
-
 .nav-list li {
     align-items: center;
 }
@@ -75,9 +70,9 @@ nav {
 .nav-button button {
     background-color: var(--branco-principal);
     color: var(--preto-fonte);
-    font-size: var(--font-md-link);
+    font-size: var(--font-xs-link);
     border-radius: 35px;
-    padding: 10% 15%;
+    padding: 2% 15%;
 }
 
 .nav-button button:hover {
@@ -138,7 +133,7 @@ nav {
     .nav-button button {
         background: none;
         color: var(--branco-principal);
-        font-size: var(--font-xx-link);
+        font-size: var(--font-xs-link);
         border: none;
         padding: 0;
         text-align: left;
