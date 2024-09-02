@@ -77,6 +77,7 @@
                   <h3><?php echo $row["tituloAviso"]; ?></h3> 
                   <h2><?php echo $row["subtituloAviso"]; ?></h2> 
                   <h2><?php echo $row["descAviso"]; ?></h2>
+                  <img src="images/imagensArquivos/noticias/<?php echo $row["imgAviso"]?>.png">
                   <a href="excluirpainel.php?id=<?php echo $row[0]; ?>"> Excluir </a>
         </div>
     <?php } ?>
