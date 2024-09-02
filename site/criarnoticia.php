@@ -39,7 +39,7 @@
     <a href="index.php"><img src="images/seta.png" width="35px" id=voltar></a>
     <section class="container-enviarnoticia">
         <h1> Criar Noticia</h1>
-    <form class="formulario-enviarnoticia" action="inserirnoticia.php" method="post">
+    <form class="formulario-enviarnoticia" action="inserirnoticia.php" method="post" enctype="multipart/form-data">
     <div>
             <label>Título</label>
             <input type="text" id="txTitulo" name="txTitulo" />
@@ -53,6 +53,11 @@
         <div>
             <label class="HORSE">Conteudo</label> <br>
             <textarea id="Descricao" name="txDescricao" rows="8" cols="60"> </textarea>
+        </div>
+
+        <div>
+            <label class="HORSE">Imagem</label> <br>
+            <input type="file" name="inpImg" accept=".png" placeholder="Insira a Imagem em .png"/>
         </div>
 
         <div class="botao-enviarnoticia">

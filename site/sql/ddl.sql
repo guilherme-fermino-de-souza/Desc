@@ -41,6 +41,7 @@ CREATE TABLE tbAviso (
     ,tituloAviso VARCHAR (30)
     ,subtituloAviso VARCHAR (50)
     ,descAviso VARCHAR (200)
+    ,imgAviso INT
 );
 /* Tabela das contas registradas em 'nova conta'*/
 CREATE TABLE tbConta (
