@@ -12,6 +12,6 @@
     unlink($localImagens . '/' . $row["imgAviso"] . '.png');
 
 
-    $stmt = $pdo->prepare("delete from tbaviso where idAviso='$x'");
+    $stmt = $pdo->prepare("delete from tbAviso where idAviso='$x'");
     $stmt ->execute();
 ?>

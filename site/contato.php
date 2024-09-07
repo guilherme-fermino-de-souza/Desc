@@ -158,21 +158,7 @@
                             <label for="email" class="label">Email:</label>
                             <input type="email" class="input" name="email" required placeholder="E-mail" />
                         </div>
-                        <div class="espaco-input">
-                            <label for="sala" class="label">Sala:</label>
-                            <select class="input" name="sala">
-                                <option value="1">1° DS</option>
-                                <option value="2">1° Nutri A</option>
-                                <option value="3">1° Nutri B</option>
-                                <option value="4">2° DS</option>
-                                <option value="5">2° Nutri A</option>
-                                <option value="6">2° Nutri B</option>
-                                <option value="7">3° DS A</option>
-                                <option value="8">3° DS B</option>
-                                <option value="9">3° Nutri</option>
-                                <option value="10">Modular</option>
-                            </select>
-                        </div>
+                        
                     </div>
                     <div class="inputs-second-column">
                         <div class="espaco-input">

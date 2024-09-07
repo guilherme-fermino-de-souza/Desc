@@ -54,14 +54,15 @@
 
 <div class="conteiner-apresentarcontato">
     <?php
-        $stmt = $pdo->prepare("select * from tbcontato");
+        $stmt = $pdo->prepare("select * from tbContato");
         $stmt -> execute();
-        while($row = $stmt->fetch()){?>
+        while($row = $stmt->fetch(PDO::FETCH_BOTH)){?>
             <div class="card-apresentarcontato">
                 <h3>Assunto: <?php echo $row["assuntoContato"]; ?></h3>
                 <h2>Nome: <?php echo $row["nomeContato"]; ?></h2>
                 <p><?php echo $row["mensagemContato"]; ?></p>
-                <a href="excluircontato.php?id=<?php echo $row[0]; ?>"> Excluir </a> 
+                <a href="excluircontato.php"> Excluir </a> 
+                <a href="alterarcontato.php"> Alterar </a> 
             </div>
     <?php } ?>  
 </div>  

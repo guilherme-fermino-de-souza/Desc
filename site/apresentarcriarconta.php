@@ -50,14 +50,15 @@
 
 <div class="conteiner-apresentarcriarconta">
     <?php
-    $stmt = $pdo->prepare("select * from tbconta");
+    $stmt = $pdo->prepare("select * from tbConta");
     $stmt -> execute();
-    while($row = $stmt->fetch()){?>
+    while($row = $stmt->fetch(PDO::FETCH_BOTH)){?>
         <div class="card-apresentarcriarconta">
-            <h3>Nome: <?php echo $row["nomeCompletoConta"]; ?></h3>
+            <h3>Nome: <?php echo $row["nomeConta"]; ?></h3>
             <h2>Email: <?php echo $row["emailConta"]; ?></h2>
             <h2>Senha: <?php echo $row["senhaConta"]; ?></h2> 
             <a href="excluirconta.php?id=<?php echo $row[0]; ?>"> Excluir </a>
+            <a href="alterarconta.php"> Alterar </a>
         </div>
     <?php } ?>    
 </div>
