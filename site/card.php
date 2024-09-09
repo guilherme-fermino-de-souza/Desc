@@ -108,7 +108,7 @@
         <div class="container-cards">
                 <div class="card">
                     <div class="img-card">
-                    <img src="https://www.kindpng.com/picc/m/24-248729_stockvader-predicted-adig-user-profile-image-png-transparent.png">
+                    <img src="images/gui.jpeg">
                     </div>
                     <div class="text-card">
                         <h2>Guilherme Fermino de Souza</h2>
@@ -121,11 +121,11 @@
 
                 <div class="card">
                     <div class="img-card">
-                        <img src="https://www.kindpng.com/picc/m/24-248729_stockvader-predicted-adig-user-profile-image-png-transparent.png">
+                        <img src="images/gus.jpeg">
                     </div>
                     <div class="text-card">
                         <h2>Gustavo Fermino de Souza</h2> 
-                        <p><a href="#">github</a></p>
+                        <p><a href="https://github.com/GustaFer23">github</a></p>
                     </div>
                     <div class="button-card">
                         <button type="button" class="bnt">Contate-me</button>
@@ -134,11 +134,11 @@
 
                 <div class="card">
                     <div class="img-card">
-                    <img src="https://www.kindpng.com/picc/m/24-248729_stockvader-predicted-adig-user-profile-image-png-transparent.png">
+                    <img src="images/leo.jpeg">
                     </div>
                     <div class="text-card">
-                        <h2>Leonardo Lima Souza Lopes</h2>
-                        <p><a href="#">github</a></p>
+                        <h2>Leonardo Lima de Souza Lopes</h2>
+                        <p><a href="https://github.com/leonardoLimaDeSouzaLopes">github</a></p>
                     </div>
                     <div class="button-card">
                         <button type="button" class="bnt">Contate-me</button>
@@ -147,11 +147,11 @@
 
                 <div class="card">
                     <div class="img-card">
-                    <img src="https://www.kindpng.com/picc/m/24-248729_stockvader-predicted-adig-user-profile-image-png-transparent.png">
+                    <img src="images/tia.jpeg">
                     </div>
                     <div class="text-card">
                         <h2>Tiago Soares Magalhães</h2>
-                        <p><a href="#">github</a></p>
+                        <p><a href="https://github.com/TriaguinDev">github</a></p>
                     </div>
                     <div class="button-card">
                         <button type="button" class="bnt">Contate-me</button>
