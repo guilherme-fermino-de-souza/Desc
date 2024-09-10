@@ -176,6 +176,6 @@
 <?php include './footer.php' ?>
 <script src="./js/java.js"></script>
 </section>
-<!--card end-->
+<!-- CARD END -->
 </body>
 </html>
