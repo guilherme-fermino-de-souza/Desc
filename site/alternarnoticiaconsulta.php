@@ -11,7 +11,7 @@
 <body>
 
     <section>
-        <form action="alterarnoticia.php" method="post">      
+        <form action="alterarnoticia.php" method="post" enctype="multipart/form-data">      
             <div>
                 <input type="hidden" name="txIdAviso" value="<?php echo @$_GET['id']; ?>" />
             </div>		
@@ -29,7 +29,7 @@
             </div>
 
             <div>
-                <input type="text" name="imgAviso" value="<?php echo @$_GET['img']; ?>" placeholder="Imagem" />
+                <input type="file" name="inpImg" accept=".png" placeholder="Altere a Imagem (tem que ser em .png)"/>
             </div>
 
             <div>
@@ -65,7 +65,7 @@
                     <td> <?php echo $row[1] ?> </td>
                     <td> <?php echo $row[2] ?> </td>
                     <td> <?php echo $row[3] ?> </td>
-                    <td> <?php echo $row[4] ?> </td>
+                    <td><img src="images/imagensArquivos/noticias/<?php echo $row[4]?>.png"></td>
                     <td>
                         <a href="excluirpainel.php?id=<?php echo $row[0]; ?>"> Excluir </a> 
                     </td>
