@@ -77,9 +77,19 @@
                   <h3><?php echo $row["tituloAviso"]; ?></h3> 
                   <h2><?php echo $row["subtituloAviso"]; ?></h2> 
                   <h2><?php echo $row["descAviso"]; ?></h2>
-                  <img src="images/imagensArquivos/noticias/<?php echo $row["imgAviso"]?>.png">
+                  <?php 
+
+                    $numImg = $row["imgAviso"];
+
+                    if ($numImg != 0) {
+                        
+                        echo "<img src='images/imagensArquivos/noticias/$numImg.png'>";
+
+                    }
+
+                  ?>
                   <a href="excluirpainel.php?id=<?php echo $row[0]; ?>"> Excluir </a>
-                  <a href="alterarnoticia.php"> Alterar </a>
+                  <a href="alternarnoticiaconsulta.php?id=<?php echo $row[0]?>&titulo=<?php echo $row["tituloAviso"]?>&subtitulo=<?php echo $row["subtituloAviso"]?>&descricao=<?php echo $row["descAviso"]?>&idImgAviso=<?php echo $row["imgAviso"]?>"> Alterar </a>
         </div>
     <?php } ?>
 </div>

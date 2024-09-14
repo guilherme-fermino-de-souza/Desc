@@ -10,16 +10,31 @@
 
     $numImagem = (int) file_get_contents($contadorImagens);
 
-    if($img['error'] == UPLOAD_ERR_OK) {
+    switch ($img['error']) {
 
-        $numImagem++;
+        case UPLOAD_ERR_OK:
 
-        $nomeImagem = $localImagens . '/' . $numImagem . '.png';
+            $numImagem++;
+    
+            $nomeImagem = $localImagens . '/' . $numImagem . '.png';
+    
+            move_uploaded_file($img['tmp_name'], $nomeImagem);
+            
+            file_put_contents($contadorImagens, $numImagem);
 
-        move_uploaded_file($img['tmp_name'], $nomeImagem);
-        
-        file_put_contents($contadorImagens, $numImagem);
+            break;
 
+        case UPLOAD_ERR_NO_FILE:
+
+            $numImagem = 0;
+
+            break;
+
+        default:
+
+            throw(throw new ErrorException("Erro no upload da imagem"));
+
+            break;
     }
 
     $stmt = $pdo->prepare("
@@ -36,5 +51,7 @@
 
     $stmt -> execute();
 
-    header("location:criarnoticia.php");
+
+
+    header("location:painel.php");
 ?>

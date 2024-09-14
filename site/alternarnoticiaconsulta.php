@@ -14,6 +14,7 @@
         <form action="alterarnoticia.php" method="post" enctype="multipart/form-data">      
             <div>
                 <input type="hidden" name="txIdAviso" value="<?php echo @$_GET['id']; ?>" />
+                <input type="hidden" name="txIdImgAviso" value="<?php echo @$_GET['idImgAviso']; ?>" />
             </div>		
 
             <div>
@@ -25,60 +26,18 @@
             </div>
 
             <div>
-                <input type="text" name="descAviso" value="<?php echo @$_GET['descricao']; ?>" placeholder="Descrição" />
+                <input type="text" name="txDescAviso" value="<?php echo @$_GET['descricao']; ?>" placeholder="Descrição" />
             </div>
 
             <div>
-                <input type="file" name="inpImg" accept=".png" placeholder="Altere a Imagem (tem que ser em .png)"/>
+                <label for='inpImg'>Caso queira alterar a imagem insira a nova imagem aqui (tem que ser em .png)</label>
+                <input type="file" id="inpImgAviso" name="inpImgAviso" accept=".png"/>
             </div>
 
             <div>
                 <input type="submit" value="Salvar" />
             </div>
         </form>
-
-    </section>
-
-    <section>
-
-        <table class="table">
-            <thead>
-                <tr>
-                <th scope="col">#</th>
-                <th scope="col">Título</th>
-                <th scope="col">Subtítulo</th>
-                <th scope="col">Descrição</th>
-                <th scope="col">Img</th>
-                </tr>
-            </thead>
-            <tbody>
-                
-            <?php
-                $stmt = $pdo->prepare("select * from tbAviso");	
-                $stmt ->execute();
-
-                while($row = $stmt->fetch(PDO::FETCH_BOTH)){
-                    
-                ?>
-                <tr>
-                    <th scope="row"> <?php echo $row[0] ?> </th>
-                    <td> <?php echo $row[1] ?> </td>
-                    <td> <?php echo $row[2] ?> </td>
-                    <td> <?php echo $row[3] ?> </td>
-                    <td><img src="images/imagensArquivos/noticias/<?php echo $row[4]?>.png"></td>
-                    <td>
-                        <a href="excluirpainel.php?id=<?php echo $row[0]; ?>"> Excluir </a> 
-                    </td>
-                    <td>
-                        <a href='<?php echo "?id=$row[0]&titulo=$row[1]&subtitulo=$row[2]&descricao=$row[3]&img=$row[4]"; ?>'>
-                            Editar 
-                        </a>
-                    </td>
-                </tr>
-
-                <?php } ?>  
-            </tbody>
-            </table>
 
     </section>
     
