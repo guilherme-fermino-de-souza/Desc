@@ -10,17 +10,10 @@
         /*INDEX START*/
         .container-index-principal {
             display: flex;
-            flex-direction: row;
-            background-image: url(../site/images/Etec-Butbunito-1.jpg);
-            background-position: center;
+            flex-direction: column;
+            background-image: url('https://media.istockphoto.com/id/1432727112/pt/foto/woman-programming-software-codes-overnight.jpg?s=2048x2048&w=is&k=20&c=fmotioE-VLCx-oK31MXvPJ1pA8ri2yjEEPBu4yJxSzc=');    
             background-size: cover;
-            height: 85vh;
-        }
-        .index-principal {
-            display: flex;
-            flex-direction: row;
-            width: 80%;
-            margin: auto;
+            background-position: center;
         }
         /*INDEX END*/
     </style>
@@ -30,9 +23,8 @@
 <?php include './navbar.php' ?>
 
 <div class='container-index-principal'>
-    <div class='index-principal'>
+        <?php include './inicio.php' ?>
         <?php include './sobre.php' ?>
-    </div>
 </div>
 
 <?php include './footer.php' ?>
