@@ -8,77 +8,66 @@
     <link rel="stylesheet" href="./css/estilo.css">
     <style>
         /*LOGIN START*/
-.container-login-principal {
-    display: flex;
-    flex-direction: row;
-    background-image: url(../site/images/Etec-Butbunito-1.jpg);
-    background-position: center;
-    background-size: cover;
-    height: 85vh;
-}
 .login-principal {
     display: flex;
-    flex-direction: row;
-    width: 80%;
-    margin: auto;
-}
-.container-login {
-    background-color: rgba(0, 0, 0, 0.75); /* Define a cor de fundo com transparência */
-    width: 37.5%;
-    height: 80%;
-    border-radius: 20px; 
-    margin: auto ;
-    margin-top: 10%;
-    margin-bottom: 11%;
+    justify-content: center; /* Horizontal alignment */
+    align-items: center;     /* Vertical alignment */
+    background-color: var(--branco-principal);
+    background-position: center;
+    background-size: cover;
 }
 .login {
-    color: var(--branco-principal);
-    width: 50%;
-    height: auto;
-    padding: 5% 4.5%;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    background-color: var(--cinza-fonte-claro);
+    border: 2px solid var(--tema-secundario); /* Largura, estilo e cor da borda */
+    border-radius: 25px; 
+    padding: 5% 0%;
+    margin-top: 3%;
+    margin-bottom: 3%;
 }
 .login h1 {
-    font-size: var(--font-xs-link);
-    margin-top: 10%;
+    font-size: var(--fonte-grande);
+    margin: 0% 0% 2% 0%;
+    color: var(--preto-fonte);
+    font-weight: 800;
+    text-align: center;
 }
 .login p {
-    font-size: var(--font-sm-link);
-    color: var(--branco-principal);
+    font-size: var(--fonte-padrao);
+    color: var(--preto-fonte);
+    text-align: center;
 }
 .login a {
-    font-size: var(--font-sm-link);
-    color: var(--link-fonte);
+    font-size: var(--fonte-padrao);
+    color: var(--tema-terciario);
+    text-align: center;
 }
-.card-login {
+.faca-login {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    padding: 6px 5px;
-}
-.card-login>h1 {
-    color: var(--branco-principal);
-    font-weight: 800;
-    margin: 0;
+    width: 80%;
+    margin: auto;
 }
 .textfield {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    padding: 1%;
 }
 .textfield label {
-    font-size: var(--font-ms-link);
+    font-size: var(--fonte-padrao);
     font-weight: 700;
-    margin-top: 10%;
+    margin-top: 2%;
 }
 .textfield input::placeholder {
-    font-size: var(--font-sm-link);
-    color: var(--branco-principal);
+    font-size: var(--fonte-padrao);
+    color: var(--preto-fonte);
+    padding-left: 4%;
 }
 .textfield>input:focus {
     outline: none;
-    color: var(--branco-principal);
+    color: var(--preto-fonte);
     background-color: rgba(0, 0, 0, 0);
     border-radius: 10%;
     transition: 0.5s;
@@ -86,27 +75,25 @@
 .textfield>input {
     width: 100%;
     margin-top: 2%;
-    margin-left: 2%;
     border: none;
-    border-bottom: 2px solid var(--vermelho-principal);
-    padding: 5%;
+    border-bottom: 2px solid var(--tema-secundario);
     background-color: rgba(0, 0, 0, 0.0); /* Define a cor de fundo com transparência */
     color: var(--branco-principal);
-    font-size: var(--font-sm-link);
+    font-size: var(--fonte-padrao);
     box-shadow: none;
     outline: none;
 }
-.container-login input[type="submit"] {
+.login input[type="submit"] {
     background-color: var(--branco-principal);
     color: var(--preto-fonte);
-    font-size: var(--font-md-link);
-    border-radius: 35px;
-    padding:  3% 9%;
-    margin-left: 70%;
-    margin-top: 5%;
+    font-size: var(--fonte-padrao);
+    border-radius: 5px;
+    padding: 1% 0%;
+    width: 100%;
+    margin: 6% 0% ;
 }
 input[type="submit"]:hover {
-    background-color: rgba(255, 0, 0, 0.7);
+    background-color: var(--tema-terciario);
     color: var(--branco-principal);
 }
 /*LOGIN END*/
@@ -118,18 +105,10 @@ input[type="submit"]:hover {
     <?php include './navbar.php' ?>
 
     <!--login start--> <!--INÍCIO-->
-    <section class="container-login-principal">
-
         <div class="login-principal">
-
-            <div class="container-login">
                 <div class="login">
-                    <div class="card-login">
                         <form class="faca-login" name="login" action="./loginEnviar.php" method="post">
                             <h1>LOGIN</h1>
-                            <p>Novo por aqui? <a href="./criarConta.php">Crie uma conta</a></p>
-
-
                             <div class="textfield">
                                 <label for="email">E-mail</label>
                                 <input type="email" name="email" required placeholder="E-mail">
@@ -144,13 +123,10 @@ input[type="submit"]:hover {
                             <div class="enviar">
                                 <input type="submit" value="Entrar">
                             </div>
+                            <p>Novo por aqui? <a href="./criarConta.php">Crie uma conta</a></p>
                         </form>
-                    </div>
                 </div>
-            </div>
         </div>
-    </section>
-
 <!--Dá erro se um dos campos não for preenchido, eu faria da senha mas nã osei ao certo-->
     <?php include './footer.php'?>
 

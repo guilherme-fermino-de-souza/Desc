@@ -8,123 +8,83 @@
     <link rel="stylesheet" href="./css/estilo.css">
     <style>
         /*CONTATO START*/
-        .fundo {
+        .contato-principal {
             display: flex;
-            flex-direction: row;
-            background-image: url(../site/images/Etec-Butbunito-1.jpg);
+            justify-content: center; /* Horizontal alignment */
+            align-items: center;     /* Vertical alignment */
+            background-color: var(--branco-principal);
             background-position: center;
             background-size: cover;
-            height: 85vh;
+        } 
+        .contato {
+            display: flex;
+            flex-direction: column;
+            width: 25%;
+            background-color: var(--cinza-fonte-claro);
+            border: 2px solid var(--tema-secundario); /* Largura, estilo e cor da borda */
+            border-radius: 25px; 
+            padding: 5% 0%;
+            margin-top: 3%;
+            margin-bottom: 3%;
         }
-        .fundo h1 {
-            font-size: var(--font-xx-link);
-            margin: auto;
-        }
-
         .fale-conosco {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            margin: 8%;
+            width: 80%;
+            margin: auto;
         }
-
-        .contato {
-            background-color: rgba(0, 0, 0, 0.75);
-            /* Define a cor de fundo com transparência */
-            color: var(--branco-principal);
-            border-radius: 20px;
-            width: 55vw;
-            height: 35vw;
-            margin: 5% auto;
-            padding: 10px 10px;
-        }
-
-        .inputs {
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-        }
-
-        .inputs>h1 {
+        .contato h1 {
+            font-size: var(--fonte-grande);
+            margin: 0% 0% 2% 0%;
             color: var(--preto-fonte);
             font-weight: 800;
-            margin: 0;
+            text-align: center;
         }
-
-        .inputs-first-column {
-            margin-right: 15%;
-        }
-
-        .espaco-input {
+        .textfield {
             display: flex;
             flex-direction: column;
+            padding: 1%;
         }
-
-        .espaco-input label {
-            font-size: var(--font-xs-link);
-            font-weight: 800;
-            margin-top: 10%;
-        }
-
-        .espaco-input select {
-            width: 100%;
+        .textfield label {
+            font-size: var(--fonte-padrao);
+            font-weight: 700;
             margin-top: 2%;
-            margin-left: 2%;
-            border: none;
-            border-bottom: 2px solid var(--vermelho-principal);
-            padding: 2%;
-            background-color: rgba(0, 0, 0, 0.0);
-            color: var(--branco-principal);
-            font-size: var(--font-sm-link);
-            box-shadow: none;
-            outline: none;
         }
-
-        .espaco-input select:focus{
-        outline: none;
-        color: #ffffff;
-        background-color: #000;
-        border-radius: 10%;
-        transition: 0.5s;
+        .textfield input::placeholder {
+            font-size: var(--fonte-padrao);
+            color: var(--preto-fonte);
+            padding-left: 4%;
         }
-        .espaco-input>input:focus {
+        .textfield>input:focus {
             outline: none;
-            color: var(--branco-principal);
+            color: var(--preto-fonte);
             background-color: rgba(0, 0, 0, 0);
             border-radius: 10%;
             transition: 0.5s;
         }
-
-        .espaco-input>input {
-            width: 130%;
-            margin-left: 2%;
+        .textfield>input {
+            width: 100%;
+            margin-top: 2%;
             border: none;
-            border-bottom: 2px solid var(--vermelho-principal);
-            padding: 5%;
-            background-color: rgba(0, 0, 0, 0.0);
-            /* Define a cor de fundo com transparência */
+            border-bottom: 2px solid var(--tema-secundario);
+            background-color: rgba(0, 0, 0, 0.0); /* Define a cor de fundo com transparência */
             color: var(--branco-principal);
-            font-size: var(--font-sm-link);
+            font-size: var(--fonte-padrao);
+            box-shadow: none;
+            outline: none;
         }
-
-        .contato-enviar {
-            margin-top: 15%;
-            margin-left: auto;
-        }
-
         .fale-conosco input[type="submit"] {
             background-color: var(--branco-principal);
             color: var(--preto-fonte);
-            font-size: var(--font-sm-link);
-            border-radius: 35px;
-            padding: 1% 5%;
+            font-size: var(--fonte-padrao);
+            border-radius: 5px;
+            padding: 1% 0%;
+            width: 100%;
+            margin: 6% 0% ;
         }
 
         input[type="submit"]:hover {
-            background-color: rgba(255, 0, 0, 0.5);
-            /* Define a cor de fundo com transparência */
-            /* Muda a cor de fundo quando o mouse passa por cima */
+            background-color: var(--tema-terciario);
             color: var(--branco-principal);
         }
         @media (max-width: 1360px) {
@@ -143,29 +103,27 @@
 
     <?php include './navbar.php' ?>
     <!--contato start--> <!--INÍCIO-->
-    <section class="fundo">
+    <section class="contato-principal">
         <div class="contato">
 
             <form class="fale-conosco" name="fale-conosco" action="../site/contatoEnviar.php" method="post">
-                <h1 class="titulo-contato">Fale Conosco</h1>
-                <div class="inputs">
-                    <div class="inputs-first-column">
-                        <div class="espaco-input">
+                <h1>FALE CONOSCO</h1>
+                        <div class="textfield">
                             <label for="nome" class="label">Nome:</label>
                             <input type="text" class="input" name="nome" required placeholder="Seu Nome" />
                         </div>
-                        <div class="espaco-input">
+
+                        <div class="textfield">
                             <label for="email" class="label">Email:</label>
                             <input type="email" class="input" name="email" required placeholder="E-mail" />
                         </div>
-                        
-                    </div>
-                    <div class="inputs-second-column">
-                        <div class="espaco-input">
+
+                        <div class="textfield">
                             <label for="assunto" class="label">Assunto:</label>
                             <input type="text" class="input" name="assunto" required placeholder="Tema da mensagem" />
                         </div>
-                        <div class="espaco-input">
+
+                        <div class="textfield">
                             <label for="mensagem" class="label">Mensagem:</label>
                             <input type="text" class="input" name="mensagem" required placeholder="Digite sua mensagem aqui" maxlength="250" />
                         </div> <!--Deixe este placeholder maior-->
@@ -173,8 +131,6 @@
                         <div class="contato-enviar">
                             <input type="submit" class="botao-enviar" name="botao" required placeholder="Enviar" />
                         </div>
-                    </div>
-                </div>
             </form>
         </div>  
     </section>

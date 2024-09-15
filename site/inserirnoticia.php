@@ -32,7 +32,7 @@
 
         default:
 
-            throw(throw new ErrorException("Erro no upload da imagem"));
+            throw new ErrorException("Erro no upload da imagem");
 
             break;
     }
