@@ -1,7 +1,7 @@
    <!--navbar start--> <!--INÍCIO-->
    <header>
        <nav>
-        <a class="logo">NEWS WALL ETEC</a>
+        <a class="logo" href="./index.php">NEWS WALL ETEC</a>
         <div class="mobile-menu">
             <div class="line1" href="./sobre.php">Início</div>
             <div class="line2" href="./contato.php">Contato</div>
@@ -14,9 +14,9 @@
                <li><a href="./contato.php">Contato</a></li>
                <li><a href="./painel.php">Notícias</a></li>
                <li><a href="./card.php">Desenvolvedores</a></li> 
-               <a class="nav-button" href="./login.php"><button>Login</button></a>
+               <li><a class="nav-button" href="./login.php"><button>Login</button></a></li>
            </ul>         
        </nav>
    </header>
-   <!--navbar end-->
+   <!--navbar end--> <!--FINAL-->
    <script src="./java.js"></script>
