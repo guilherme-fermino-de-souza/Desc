@@ -1,16 +1,19 @@
 :root {
     --branco-principal: #ffffff;
-    --vermelho-principal: #F20519;
+    /*SCARLET:FF2400;CANDY APPLE:FF0800; BLUE:035ca1*/
+    --tema-primario:#035ca1;
+    --tema-secundario:#A16203;
+    --tema-terciario:#1A4261;
     --preto-fonte: #000000;
     --cinza-fonte-claro: #737373;
     --cinza-fonte: #404040;
     --link-fonte: #77b0f2;
     --fonte-principal: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-    --font-xx-link: 3.23vw;
-    --font-xs-link: 1.61vw;
-    --font-sm-link: 1vw;
-    --font-md-link: 0.61vw;
+    --fonte-grande: 3vw;
+    --fonte-media: 2vw;
+    --fonte-padrao: 1vw;
+    --fonte-pequena: 0.61vw;
 }
 * {
     margin: 0;
@@ -22,32 +25,18 @@ html, body {
     min-height: 100vh;
 }
 /* NAVBAR START*/
-.nav-list a {
-    color: var(--branco-principal);
-    font-size: var(--font-xs-link);
-    text-decoration: none;
-    padding: 0.1vw;
-    margin: 0vw 0.3vw;
-    transition: 0.3s;
-}
 a:hover {
     opacity: 0.7;
 }
-.logo {
-    font-size: var(--font-xx-link);
-    color: var(--branco-principal);
-    letter-spacing: 2px;
-}
 header {
-    background: var(--preto-fonte);
+    background: var(--tema-primario);
     width: 100%;
     justify-content: center;
-    height: auto;
+    height: 7.5vh;
 }
 nav {
     display: flex;
     width: 80%;
-    height: 5.vh;
     justify-content: space-around;
     align-items: center;
     margin-left: auto;
@@ -55,13 +44,27 @@ nav {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
 }
+.logo {
+    font-size: 1.50vw;
+    color: var(--branco-principal);
+    letter-spacing: 2px;
+    text-decoration: none;
+}
 .nav-list {
     list-style: none;
     display: flex;
     margin: 1% 1% 1% 15%;
 }
 .nav-list li {
-    align-items: center;
+    padding: 3.5% 1%;
+}
+.nav-list a {
+    color: var(--branco-principal);
+    font-size: var(--fonte-padrao);
+    text-decoration: none;
+    padding: 0.1vw;
+    margin: 2.5% 0.3vw;
+    transition: 0.3s;
 }
 .nav-button {
     color: var(--branco-principal);
@@ -70,14 +73,15 @@ nav {
 .nav-button button {
     background-color: var(--branco-principal);
     color: var(--preto-fonte);
-    font-size: var(--font-xs-link);
-    border-radius: 35px;
-    padding: 2% 15%;
+    font-size: var(--fonte-padrao);
+    border-radius: 15px;
+    padding: 4% 9%;
+    margin: 0% 15%;
 }
 
 .nav-button button:hover {
     cursor: pointer;
-    background-color: var(--vermelho-principal);
+    background-color: var(--tema-terciario);
     color: var(--branco-principal);
 }
 .mobile-menu {
@@ -86,8 +90,8 @@ nav {
 }
 
 .mobile-menu div {
-    color: var(--vermelho-principal);
-    width: 32px;
+    color: var(--tema-terciario);
+    width: 100%;
     height: 2px;
     background-color: var(--branco-principal);
     margin: 8px;
@@ -99,7 +103,7 @@ nav {
         /*esconde tudo que transborda o eixo X*/
     }
     .nav-list a {
-        font-size: var(--font-xx-link);
+        font-size: var(--fonte-grande);
     }
     .nav-list {
         position: absolute;
@@ -114,7 +118,7 @@ nav {
         transform: translateX(100%);
         /*manda para fora da tela*/
         transition: transform 0.3s ease-in;
-        font-size: var(--font-xx-link);
+        font-size: var(--fonte-grande);
     }
     .nav-list li {
         margin-left: 0%;
@@ -133,7 +137,7 @@ nav {
     .nav-button button {
         background: none;
         color: var(--branco-principal);
-        font-size: var(--font-xs-link);
+        font-size: var(--fonte-media);
         border: none;
         padding: 0;
         text-align: left;
@@ -160,43 +164,103 @@ nav {
 /* - - - RESPONSIVE - - - */
 /*NAVBAR END*/
 
+/*INÍCIO START*/
+.container-inicio {
+    background-image: url('https://www.pexels.com/photo/people-wearing-backpacks-1454360/');    
+    background-size: cover;
+}
+.conteudo-inicio {
+    width: 70%;
+    margin: auto;
+    margin-top: 6%;
+    margin-bottom: 6%;
+}
+.conteudo-inicio h1{
+    font-size: var(--fonte-grande);
+    color: var(--tema-secundario);
+    font-weight: 800;
+    text-align: center;
+}
+.conteudo-inicio p{
+    font-size: var(--fonte-media);
+    color: var(--branco-principal);
+    font-weight: 700;
+    text-align: center;
+    border: 2px solid rgba(0, 0, 0, 0);
+    transition: 0.5s;
+    margin: 7.5% 5%;
+}
+.conteudo-inicio p:hover{
+    font-size: var(--fonte-media);
+    color: var(--branco-principal);
+    font-weight: 700;
+    text-align: center;
+    border: 2px solid var(--tema-terciario); /* Largura, estilo e cor da borda */
+    margin: 7.5% 5%;
+}
+.text-inicio {
+    margin-right: auto;
+    width: 50%;
+}
+.botao-inicio {
+    color: var(--branco-principal);
+}
+.botao-inicio button {
+    background-color: var(--branco-principal);
+    color: var(--preto-fonte);
+    font-size: var(--fonte-padrao);
+    border-radius: 15px;
+    padding:1% 20%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.botao-inicio button:hover {
+    cursor: pointer;
+    background-color: var(--tema-terciario);
+    color: var(--branco-principal);
+}
+/*INÍCIO END*/
+
 /*SOBRE START*/
 .sobre {
     background-color: #ffffff;
-    height: 100%;
 }
 .container-sobre {
     display: flex;
-    width: 70%;
-    margin: auto;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    flex-direction: column;
+    width: 80%;
+    margin: 2.5% auto;
 }
 .container-sobre h1{
-    font-size: var(--font-xs-link);
-    color: var(--preto-fonte); 
+    font-size: var(--fonte-media);
+    color: var(--tema-primario); 
     text-align: center; 
 }
 .container-sobre h2{
-    font-size: var(--font-sm-link);
-    color: var(--preto-fonte);
-    font-weight: 200; 
-    text-align: center; 
+    font-size: var(--fonte-padrao);
+    color: var(--tema-terciario);
+    font-weight: 600; 
+    text-align: center;
 }
-.container-sobre p{
-    font-size: var(--font-xs-link);
-    color: var(--preto-fonte);
-    margin-top: 5%;
+.text-sobre { 
+    display: flex;
+    justify-content: center; /* Horizontal alignment */
+    align-items: center;     /* Vertical alignment */
+    flex-direction: row; 
 }
-.text-sobre {   
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 2vw;
+.text-sobre p{
+    font-size: var(--fonte-padrao);
+    color: var(--tema-terciario);
+    font-weight: 600;
+    text-indent: 2.5%; /* Recuo do pragrafo */
 }
+
 .img-sobre img{
     height: 25vw;
 }
 /*SOBRE END*/
+
 /*FOOTER START*/
 .footer {
     display: flex;
@@ -207,7 +271,7 @@ nav {
     justify-content: flex-end;
 }
 .footer-02-hr {
-    background-color:var(--preto-fonte);
+    background-color:var(--tema-primario);
 }
 .footer-02 {
     display: flex;
@@ -217,65 +281,69 @@ nav {
     margin-right: auto;
     justify-content: space-around;
 }
-.left-logo h1 {
-    font-size: var(--font-sm-link);
-    color: var(--branco-principal);
-}
 .footer-02 a {
-    font-size: var(--font-sm-link);
-    color: var(--cinza-fonte);
+    font-size: var(--fonte-padrao);
+    color: var(--branco-principal);
     padding-top: 1%;
 }
 .footer-02 h2 {
-    font-size: var(--font-sm-link);
-    color: var(--cinza-fonte);
+    font-size: var(--fonte-padrao);
+    color: var(--branco-principal);
     padding-top: 1%;
 }
 .footer-02 h3 {
-    font-size: var(--font-xs-link);
+    font-size: var(--fonte-media);
 }
 .footer-part {
     display: flex;
     flex-direction: column;
     margin: 2.5% 0% 2.5% 2.5%;
 }
+.footer-part hr {
+    width: 70%;
+    height: 6px;
+    border: none;
+    background-color: var(--tema-secundario);
+}
 .footer-part h1 {
     color: var(--branco-principal);
-    font-size: var(--font-xs-link);
+    font-size: var(--fonte-media);
     padding-left: 2%;
 }
 .left-logo h1{
-    font-size: var(--font-xx-link);
+    font-size: var(--fonte-grande);
     font-weight: 700;
 }
 .footer-bottom-hr {
-    background-color: var(--preto-fonte);
+    background-color: var(--tema-primario);
     color: var(--branco-principal);
-    font-size: var(--font-sm-link);
+    font-size: var(--fonte-padrao);
     width: 100%;
 }
 .footer-bottom-hr hr{
     width: 70%;
     margin: auto;
+    height: 6px;
+    border: none;
+    background-color: var(--tema-secundario);
 }
 .footer-bottom {
     display: flex;
-    background-color: var(--preto-fonte);
-    color: var(--cinza-fonte);
+    background-color: var(--tema-primario);
+    color: var(--branco-principal);
     width: 70%;
     margin: auto;
 }
 .footer-bottom-h2 {
-    font-size: var(--font-sm-link);
+    font-size: var(--fonte-padrao);
 }
 .right-icons {
     display: flex;
-    margin-left: auto;
-    margin-right: 5%;
+    margin-left: 60%;
 }
 .right-icons a {
     color: var(--branco-principal);
-    background-color: var(--preto-fonte);
+    background-color: var(--tema-primario);
     padding: 2%;
 }
 .right-icons img {
@@ -287,10 +355,10 @@ nav {
         flex-direction: row;
     }
     .footer-02 h1 {
-        font-size: var(--font-xx-link);
+        font-size: var(--fonte-grande);
     }
     .footer-02 h2 {
-        font-size: var(--font-xs-link);
+        font-size: var(--fonte-media);
     }
 }
 /*FOOTER END*/
