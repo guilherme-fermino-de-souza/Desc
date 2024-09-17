@@ -15,6 +15,7 @@
             background-color: var(--branco-principal);
             background-position: center;
             background-size: cover;
+            height: 85vh;
         } 
         .contato {
             display: flex;
@@ -74,8 +75,8 @@
             outline: none;
         }
         .fale-conosco input[type="submit"] {
-            background-color: var(--branco-principal);
-            color: var(--preto-fonte);
+            background-color: var(--tema-terciario);
+            color: var(--branco-principal);
             font-size: var(--fonte-padrao);
             border-radius: 5px;
             padding: 1% 0%;
@@ -84,15 +85,14 @@
         }
 
         input[type="submit"]:hover {
-            background-color: var(--tema-terciario);
-            color: var(--branco-principal);
+            background-color: var(--branco-principal);
+            color: var(--tema-terciario);
+            cursor: pointer;
+            transition: 0.5s;
         }
-        @media (max-width: 1360px) {
-            .contato {
-            width: 65vw;
-            height: 40vw;
-            margin: 11% auto;
-            padding: 20px 20px;
+        @media (max-width: 1050px) {
+            .contato-principal {
+            height: 90vh;
         }
         }
         /*CONTATO END*/

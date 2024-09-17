@@ -2,85 +2,157 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-
-     <!-- Bootstrap CSS -->
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
     <title>Alternar Contato Consulta</title>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <style>
+/*ALTERNARCONTATOCONSULTA START*/
+.alternarcontatoconsulta-principal {
+    display: flex;
+    justify-content: center; /* Horizontal alignment */
+    align-items: center;     /* Vertical alignment */
+    background-color: var(--branco-principal);
+    background-position: center;
+    background-size: cover;
+}
+.alternarcontatoconsulta {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    background-color: var(--cinza-fonte-claro);
+    border: 2px solid var(--tema-secundario); /* Largura, estilo e cor da borda */
+    border-radius: 25px; 
+    padding: 5% 0%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+.alternarcontatoconsulta h1 {
+    font-size: var(--fonte-grande);
+    margin: 0% 0% 2% 0%;
+    color: var(--preto-fonte);
+    font-weight: 800;
+    text-align: center;
+}
+.alternarcontatoconsulta p {
+    font-size: var(--fonte-padrao);
+    color: var(--preto-fonte);
+    text-align: center;
+}
+.alternarcontatoconsulta a {
+    font-size: var(--fonte-padrao);
+    color: var(--tema-terciario);
+    text-align: center;
+}
+.alternar {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+.textfield {
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+.textfield label {
+    font-size: var(--fonte-padrao);
+    font-weight: 700;
+    margin-top: 2%;
+}
+.textfield input::placeholder {
+    font-size: var(--fonte-padrao);
+    color: var(--preto-fonte);
+    padding-left: 4%;
+}
+.textfield>input:focus {
+    outline: none;
+    color: var(--preto-fonte);
+    background-color: rgba(0, 0, 0, 0);
+    transition: 0.5s;
+}
+.textfield>input {
+    width: 100%;
+    margin-top: 2%;
+    border: none;
+    border-bottom: 2px solid var(--tema-secundario);
+    background-color: rgba(0, 0, 0, 0.0); /* Define a cor de fundo com transparência */
+    color: var(--tema-terciario);
+    font-size: var(--fonte-padrao);
+    box-shadow: none;
+    outline: none;
+}
+.alternarcontatoconsulta input[type="submit"] {
+    background-color: var(--tema-terciario);
+    color: var(--branco-principal);
+    font-size: var(--fonte-padrao);
+    border-radius: 5px;
+    padding: 1% 0%;
+    width: 100%;
+    margin: 6% 0%;
+}
+input[type="submit"]:hover {
+    background-color: var(--branco-principal);
+    color: var(--tema-terciario);
+    cursor: pointer;
+    transition: 0.5s;
+}
+.alternarcontatoconsulta input[type="file"] {
+    background-color: var(--tema-terciario);
+    color: var(--branco-principal);
+    font-size: var(--fonte-pequena);
+    border-radius: 5px;
+    padding: 1% 0%;
+    width: 100%;
+    margin: 6% 0%;
+}
+input[type="file"]:hover {
+    background-color: var(--branco-principal);
+    color: var(--tema-terciario);
+    cursor: pointer;
+    transition: 0.5s;
+}
+@media (max-width: 1050px) {
+            .alternarcontatoconsulta-principal {
+            height: 95vh;
+        }
+        }
+/*ALTERNARCONTATOCONSULTA END*/
+    </style>
 </head>
 <body>
-
-    <section>
-        <form action="alterarcontato.php" method="post">      
-            <div>
+<?php include './navbar.php' ?>
+<div class="alternarcontatoconsulta-principal">
+    <div class="alternarcontatoconsulta">
+        <form action="alterarcontato.php" method="post" enctype="multipart/form-data">      
+            <h1>Contato</h1>
+            <div class="textfield">
                 <input type="hidden" name="txIdContato" value="<?php echo @$_GET['id']; ?>" />
             </div>		
 
-            <div>
+            <div class="textfield">
                 <input type="text" name="txnomeContato" value="<?php echo @$_GET['nome']; ?>" placeholder="Nome" />
             </div>
 
-            <div>
+            <div class="textfield">
                 <input type="text" name="txEmailContato" value="<?php echo @$_GET['email']; ?>" placeholder="E-mail" />
             </div>
 
-            <div>
+            <div class="textfield">
                 <input type="text" name="txAssuntoContato" value="<?php echo @$_GET['assunto']; ?>" placeholder="Assunto" />
             </div>
 
-            <div>
+            <div class="textfield">
                 <input type="text" name="txMensagemContato" value="<?php echo @$_GET['mensagem']; ?>" placeholder="Mensagem" />
             </div>
 
-            <div>
+            <div class="textfield">
                 <input type="submit" value="Salvar" />
             </div>
         </form>
+    </div>
+</div> 
 
-    </section>
+    <?php include './footer.php'?>
 
-    <section>
-
-        <table class="table">
-            <thead>
-                <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome</th>
-                <th scope="col">E-mail</th>
-                <th scope="col">Assunto</th>
-                <th scope="col">Mensagem </th>
-                </tr>
-            </thead>
-            <tbody>
-                
-            <?php
-                $stmt = $pdo->prepare("select * from tbContato");	
-                $stmt ->execute();
-
-                while($row = $stmt->fetch(PDO::FETCH_BOTH)){
-                    
-                ?>
-                <tr>
-                    <th scope="row"> <?php echo $row[0] ?> </th>
-                    <td> <?php echo $row[1] ?> </td>
-                    <td> <?php echo $row[2] ?> </td>
-                    <td> <?php echo $row[3] ?> </td>
-                    <td> <?php echo $row[4] ?> </td>
-                    <td>
-                        <a href="excluircontato.php?id=<?php echo $row[0]; ?>"> Excluir </a> 
-                    </td>
-                    <td>
-                            <a href='<?php echo "?id=$row[0]&nome=$row[1]&email=$row[2]&assunto=$row[3]&mensagem=$row[4]"; ?>'>
-                            Editar 
-                            </a>
-                    </td>
-                </tr>
-
-                <?php } ?>  
-            </tbody>
-            </table>
-
-    </section>
-    
+<script src="./js/java.js"></script>
 </body>
 </html>

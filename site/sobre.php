@@ -1,6 +1,6 @@
 <div class="sobre">
     <div class="container-sobre">
-        <h1>NOTÍCIAS E EVENTOS DA ETEC</h1>
+        <h1>NOTÍCIAS E EVENTOS DA ETEC DE GUAIANASES</h1>
         <h2>Rua Feliciano de Mendonça, 290 - Guaianazes - CEP: 08460-365 - SP</h2>
         <div class="text-sobre">
             <div class="img-sobre">

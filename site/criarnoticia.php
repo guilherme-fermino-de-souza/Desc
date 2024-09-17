@@ -6,66 +6,184 @@
     <title>Criar Noticia</title>
     <link rel="stylesheet" href="css/estilo.css">
     <style>
-        .container-enviarnoticia{
-            text-align: center;
-            display: block;
-            align-items: center;
-            margin-top: 50px;
-            margin-left: 300px;
-            margin-right: 300px;
-            border: 2px solid;
-        }
-        .formulario-enviarnoticia{
-        display:inline-block ;
-        margin-left: auto;
-         margin-right: auto;
-        text-align: left;
-        } 
-        div{
-            margin-top: 3%;
-        }
-        .botao-enviarnoticia{
-            text-align: center;
-        }
-        #voltar{
-            float: inline-start;
-        }
+/*CRIARNOTICIA START*/
+.criarnoticia-principal {
+    display: flex;
+    justify-content: center; /* Horizontal alignment */
+    align-items: center;     /* Vertical alignment */
+    background-color: var(--branco-principal);
+    background-position: center;
+    background-size: cover;
+}
+.criarnoticia {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    background-color: var(--cinza-fonte-claro);
+    border: 2px solid var(--tema-secundario); /* Largura, estilo e cor da borda */
+    border-radius: 25px; 
+    padding: 5% 0%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+.criarnoticia h1 {
+    font-size: var(--fonte-grande);
+    margin: 0% 0% 2% 0%;
+    color: var(--preto-fonte);
+    font-weight: 800;
+    text-align: center;
+}
+.criarnoticia p {
+    font-size: var(--fonte-padrao);
+    color: var(--preto-fonte);
+    text-align: center;
+}
+.criarnoticia a {
+    font-size: var(--fonte-padrao);
+    color: var(--tema-terciario);
+    text-align: center;
+}
+.form-criarnoticia {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+.textfield {
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+.textfield label {
+    font-size: var(--fonte-padrao);
+    font-weight: 700;
+    margin-top: 2%;
+}
+.textfield input::placeholder {
+    font-size: var(--fonte-padrao);
+    color: var(--preto-fonte);
+    padding-left: 4%;
+}
+.textfield>input:focus {
+    outline: none;
+    color: var(--preto-fonte);
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 10%;
+    transition: 0.5s;
+}
+.textfield>input {
+    width: 100%;
+    margin-top: 2%;
+    border: none;
+    border-bottom: 2px solid var(--tema-secundario);
+    background-color: rgba(0, 0, 0, 0.0); /* Define a cor de fundo com transparência */
+    color: var(--tema-terciario);
+    font-size: var(--fonte-padrao);
+    box-shadow: none;
+    outline: none;
+}
+.criarnoticia input[type="submit"] {
+    background-color: var(--tema-terciario);
+    color: var(--branco-principal);
+    font-size: var(--fonte-padrao);
+    border-radius: 5px;
+    padding: 1% 0%;
+    width: 100%;
+    margin: 6% 0%;
+}
+input[type="submit"]:hover {
+    background-color: var(--branco-principal);
+    color: var(--tema-terciario);
+    cursor: pointer;
+    transition: 0.5s;
+}
+.textfield-img {
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+.textfield-img label {
+    font-size: var(--fonte-padrao);
+    font-weight: 700;
+    margin-top: 2%;
+}
+.textfield-img input::placeholder {
+    font-size: var(--fonte-padrao);
+    color: var(--preto-fonte);
+    padding-left: 4%;
+}
+.textfield-img>input:focus {
+    outline: none;
+    color: var(--preto-fonte);
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 10%;
+    transition: 0.5s;
+}
+.textfield-img>input {
+    width: 100%;
+    margin-top: 2%;
+    border: none;
+    border-bottom: 2px solid var(--tema-secundario);
+    background-color: rgba(0, 0, 0, 0.0); /* Define a cor de fundo com transparência */
+    color: var(--tema-terciario);
+    font-size: var(--fonte-pequena);
+    box-shadow: none;
+    outline: none;
+}
+.criarnoticia input[type="file"] {
+    background-color: var(--tema-terciario);
+    color: var(--branco-principal);
+    font-size: var(--fonte-pequena);
+    border-radius: 5px;
+    padding: 1% 0%;
+    width: 100%;
+    margin: 6% 0%;
+}
+input[type="file"]:hover {
+    background-color: var(--branco-principal);
+    color: var(--tema-terciario);
+    cursor: pointer;
+    transition: 0.5s;
+}
+/*CRIARNOTICIA END*/
     </style>
 
 </head>
 
 <body>
 <?php include './navbar.php' ?>
-    <a href="index.php"><img src="images/seta.png" width="35px" id=voltar></a>
-    <section class="container-enviarnoticia">
-        <h1> Criar Noticia</h1>
-    <form class="formulario-enviarnoticia" action="inserirnoticia.php" method="post" enctype="multipart/form-data">
-    <div>
-            <label>Título</label>
-            <input type="text" id="txTitulo" name="txTitulo" />
-        </div>
 
-        <div>
-            <label class="HORSE">Subtítulo</label>
-            <input class="TEXTAO" type="text" id='txSubtitulo' name="txSubtitulo" />
-        </div>
+      <!--criarnotícia start--> <!--INÍCIO--> 
+      <div class="criarnoticia-principal">
+        <div class="criarnoticia">  
+            <form class="form-criarnoticia" action="inserirnoticia.php" method="post" enctype="multipart/form-data">
+            <h1> Criar Notícia</h1>
+            <div class="textfield">
+                <label class="HORSE">Título</label>
+                <input type="text" id="txTitulo" name="txTitulo" />
+            </div>
 
-        <div>
-            <label class="HORSE">Conteudo</label> <br>
-            <textarea id="Descricao" name="txDescricao" rows="8" cols="60"> </textarea>
-        </div>
+            <div class="textfield">
+                <label class="HORSE">Subtítulo</label>
+                <input class="TEXTAO" type="text" id='txSubtitulo' name="txSubtitulo" />
+            </div>
 
-        <div>
-            <label class="HORSE">Imagem</label> <br>
-            <input type="file" name="inpImg" accept=".png" placeholder="Insira a Imagem em .png"/>
-        </div>
+            <div class="textfield">
+                <label class="HORSE">Conteúdo</label> <br>
+                <textarea id="Descricao" name="txDescricao" rows="8" cols="60"> </textarea>
+            </div>
 
-        <div class="botao-enviarnoticia">
-            <input type="submit" class="butao" value="Enviar" />
-        </div>
-    </form>
-</section>
+            <div class="textfield-img">
+                <label class="HORSE">Imagem(.png)</label> <br>
+                <input type="file" name="inpImg" accept=".png" placeholder="Insira a Imagem em .png"/>
+            </div>
 
+            <div class="enviar">
+                <input type="submit" value="Enviar">
+            </div>
+            </form>
+        </div>
+    </div>
 <?php include './footer.php' ?>
 
 </body>

@@ -6,7 +6,7 @@
 
             <div class="footer-part">
                 <div class="left-logo">
-                    <h1>NEWSWALL ETEC GUAINASES</h1>
+                    <h1>NEWSWALL ETEC GUAIANASES</h1>
                 </div>
             </div>
 

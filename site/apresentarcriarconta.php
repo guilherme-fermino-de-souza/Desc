@@ -5,40 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../site/css/estilo.css">
     <style>
-        .conteiner-apresentarcriarconta {
+        .conteiner-apresentarcriarconta { /* PRINCIPAL */
             display: grid;
             width: 80%;
-            margin: 10% auto;
-            padding: 3%;
-            grid-template-rows: 50% 50% 50% ;
-            grid-template-columns: 33.3% 33.3% 33.3%;
+            margin: auto;
+            grid-template-columns: 50%  50%;
         }
-        .card-apresentarcriarconta {   
-            background-color: var(--branco-principal); 
-            margin: 1.5vw 1vw 0vw 0vw; 
-            border-radius: 20px;
-            border: 2px solid var(--preto-fonte) 
+        .card-apresentarcriarconta {  /* CARD */ 
+            background-color: var(--branco-principal);
+            margin: 5% ;
+            border-radius: 5px;
+            border: 5px solid var(--tema-terciario);
+            height: fit-content;
         }
-        .card-apresentarcriarconta h3{
-            font-size: var(--font-sm-link);
-            background-color: var(--preto-fonte);
+        .titulo-card-conta { /* TÍTULO */
+            background-color: var(--tema-terciario);
+            display: flex;
+        }
+        .titulo-card-conta h1{
+            font-size: var(--fonte-media);
             color: var(--branco-principal);
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
             padding: 1%;
         }
-        .card-apresentarcriarconta h2{
-            font-size: var(--font-sm-link);
-            padding-left: 1%;   
-            background-color: var(--branco-principal); 
-            color: var(--preto-fonte);
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
+        .titulo-card-conta a { /* EXCLUIR */
+            font-weight: 800;
+            font-size: var(--fonte-media);
+            color:  var(--tema-secundario);
+            margin-left: auto;
+            padding: 1%;
+            text-decoration: none;
         }
-        .card-apresentarcriarconta a {
+        .titulo-card-conta a:hover {
+            color:  red;
+        }
+        .subtitulo-card-conta { /* SUBTÍTULO */
+            background-color: var(--tema-secundario);
+        }
+        .subtitulo-card-conta h2{
+            font-weight: 800;
+            font-size: var(--fonte-padrao);
+            color: var(--branco-principal);
+            padding: 1%;
+        }
+        .texto-card-conta { /* TEXTO */
+            background-color: var(--tema-terciario);
+            padding: 3%;
+        }
+        .texto-card-conta h3 {
+            font-size: var(--fonte-padrao);
+            color: var(--branco-principal);
+            text-indent: 3%;
+        }
+        .alterar-card-conta { /* ALTERAR */
+            display: flex;
+            justify-content: center;
+            background-color: var(--tema-terciario);
+        }
+        .alterar-card-conta a {
             font-weight: 600;
-            margin: 45%;
-            font-size: var(--font-sm-link);
+            font-size: var(--fonte-padrao);
+            color:  var(--tema-secundario);
+            text-decoration: none;
+        }
+        .alterar-card-conta a:hover {
+            color:  var(--branco-principal);
         }
     </style>
     <title>Apresentar Conta</title>
@@ -54,11 +84,19 @@
     $stmt -> execute();
     while($row = $stmt->fetch(PDO::FETCH_BOTH)){?>
         <div class="card-apresentarcriarconta">
-            <h3>Nome: <?php echo $row["nomeConta"]; ?></h3>
-            <h2>Email: <?php echo $row["emailConta"]; ?></h2>
-            <h2>Senha: <?php echo $row["senhaConta"]; ?></h2> 
-            <a href="excluirconta.php?id=<?php echo $row[0]; ?>"> Excluir </a>
-            <a href="alterarconta.php"> Alterar </a>
+            <div class="titulo-card-conta">
+                <h1>Nome: <?php echo $row["nomeConta"]; ?></h1>
+                <a href="excluirconta.php?id=<?php echo $row[0]; ?>"> X </a>
+            </div>
+            <div class="subtitulo-card-conta">
+                <h2>Email: <?php echo $row["emailConta"]; ?></h2>
+            </div>
+            <div class="texto-card-conta">
+                <h3>Senha: <?php echo $row["senhaConta"]; ?></h3> 
+            </div>
+            <div class="alterar-card-conta">
+                <a href="alternarcontaconsulta.php?id=<?php echo $row[0]?>&nome=<?php echo $row[1]?>&email=<?php echo $row[2]?>&senha=<?php echo $row[3]?>"> Alterar </a>
+            </div>
         </div>
     <?php } ?>    
 </div>

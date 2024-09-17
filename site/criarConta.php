@@ -7,168 +7,130 @@
     <title>Nova Conta</title>
     <link rel="stylesheet" href="./css/estilo.css">
     <style>
-        /*CREATEACCOUNT START*/
-.container-account-principal {
+        /*CONTA START*/
+.conta-principal {
     display: flex;
-    flex-direction: row;
-    background-image: url(../site/images/Etec-Butbunito-1.jpg);
+    justify-content: center; /* Horizontal alignment */
+    align-items: center;     /* Vertical alignment */
+    background-color: var(--branco-principal);
     background-position: center;
     background-size: cover;
-    height: 85vh;
 }
-.account-principal {
+.conta {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    width: 25%;
+    background-color: var(--cinza-fonte-claro);
+    border: 2px solid var(--tema-secundario); /* Largura, estilo e cor da borda */
+    border-radius: 25px; 
+    padding: 5% 0%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+.conta h1 {
+    font-size: var(--fonte-grande);
+    margin: 0% 0% 2% 0%;
+    color: var(--preto-fonte);
+    font-weight: 800;
+    text-align: center;
+}
+.conta p {
+    font-size: var(--fonte-padrao);
+    color: var(--preto-fonte);
+    text-align: center;
+}
+.conta a {
+    font-size: var(--fonte-padrao);
+    color: var(--tema-terciario);
+    text-align: center;
+}
+.criar-conta {
+    display: flex;
+    flex-direction: column;
     width: 80%;
     margin: auto;
 }
-.container-account {
-    background-color: rgba(0, 0, 0, 0.75); /* Define a cor de fundo com transparência */
-    width: 37.5%;
-    height: 80%;
-    border-radius: 20px; 
-    margin: auto ;
-    margin-top: 10%;
-    margin-bottom: 11%;
-}
-.account {
-    color: var(--branco-principal);
-    width: 50%;
-    height: auto;
-    padding: 5% 4.5%;
-    margin: auto;
-}
-.account h1 {
-    font-size: var(--font-xs-link);
-    margin-top: 10%;
-}
-.account p {
-    font-size: var(--font-sm-link);
-    color: var(--branco-principal);
-}
-.account a {
-    font-size: var(--font-sm-link);
-    color: var(--link-fonte);
-}
-.card-account {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 6px 5px;
-}
-.card-account>h1 {
-    color: var(--branco-principal);
-    font-weight: 800;
-    margin: 0;
-}
 .textfield {
-    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
 }
 .textfield label {
-    font-size: var(--font-ms-link);
+    font-size: var(--fonte-padrao);
     font-weight: 700;
-    margin-top: 10%;
-}
-.textfield select {
-    width: 100%;
     margin-top: 2%;
-    margin-left: 2%;
-    border: none;
-    border-bottom: 2px solid var(--vermelho-principal);
-    padding: 2%;
-    background-color: rgba(0, 0, 0, 0.0);
-    color: var(--branco-principal);
-    font-size: var(--font-sm-link);
-    box-shadow: none;
-    outline: none;
 }
 .textfield input::placeholder {
-    font-size: var(--font-sm-link);
-}
-
-.textfield select:focus{
-    outline: none;
-    color: #ffffff;
-    background-color: #000;
-    border-radius: 10%;
-    transition: 0.5s;
+    font-size: var(--fonte-padrao);
+    color: var(--preto-fonte);
+    padding-left: 4%;
 }
 .textfield>input:focus {
     outline: none;
-    color: var(--branco-principal);
+    color: var(--preto-fonte);
     background-color: rgba(0, 0, 0, 0);
     border-radius: 10%;
     transition: 0.5s;
 }
 .textfield>input {
     width: 100%;
-    margin-left: 2%;
+    margin-top: 2%;
     border: none;
-    border-bottom: 2px solid var(--vermelho-principal);
-    padding: 5%;
+    border-bottom: 2px solid var(--tema-secundario);
     background-color: rgba(0, 0, 0, 0.0); /* Define a cor de fundo com transparência */
-    color: var(--branco-principal);
-    font-size: var(--font-sm-link);
+    color: var(--tema-terciario);
+    font-size: var(--fonte-padrao);
     box-shadow: none;
     outline: none;
 }
-.container-account input[type="submit"] {
-    background-color: var(--branco-principal);
-    color: var(--preto-fonte);
-    font-size: var(--font-md-link);
-    border-radius: 35px;
-    padding: 3% 9%;
-    margin-left: 70%;
-    margin-top: 5%;
+.conta input[type="submit"] {
+    background-color: var(--tema-terciario);
+    color: var(--branco-principal);
+    font-size: var(--fonte-padrao);
+    border-radius: 5px;
+    padding: 1% 0%;
+    width: 100%;
+    margin: 6% 0%;
 }
 input[type="submit"]:hover {
-    background-color: rgba(255, 0, 0, 0.7); 
-    color: var(--branco-principal);
+    background-color: var(--branco-principal);
+    color: var(--tema-terciario);
+    cursor: pointer;
+    transition: 0.5s;
 }
-/*CREATEACCOUNT END*/
+/*CREATEconta END*/
     </style>
 </head>
 <body>
 <?php include './navbar.php' ?>
 
 <!--account start--> <!--INÍCIO-->
-<section class="container-account-principal">
-    <div class="account-principal">
+    <div class="conta-principal">
+            <div class="conta">
+                <form class="criar-conta" name="Conta" action="../site/criarContaEnviar.php" method="post">
+                    <h1>Nova Conta</h1>
+                    <div class="textfield">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" name="nome" required placeholder="Usuário">
+                    </div>
 
-        <div class="container-account">
-            <div class="account">
-                <div class="card-account">
-                        <form class="create-account" name="create-account" action="../site/criarContaEnviar.php" method="post">
-                            <h1>Nova Conta</h1>
-                            <p>Já tem uma conta? <a href="./login.php">Acesse-a aqui</a></p>
+                    <div class="textfield">
+                        <label for="email">Seu E-mail</label>
+                        <input type="email" name="email" required placeholder="E-mail">
+                    </div>
 
-                            <div class="textfield">
-                                <label for="nome">Nome Completo</label>
-                                <input type="text" name="nome" required placeholder="Usuário">
-                            </div>
+                    <div class="textfield">
+                        <label for="senha">Crie Uma Senha</label>
+                        <input type="password" name="senha" required placeholder="Senha">
+                    </div>
 
-                            <div class="textfield">
-                                <label for="email">Seu E-mail</label>
-                                <input type="email" name="email" required placeholder="E-mail">
-                            </div>
-
-                            
-
-                            <div class="textfield">
-                                <label for="senha">Crie Uma Senha</label>
-                                <input type="password" name="senha" required placeholder="Senha">
-                            </div>
-
-                            <div class="criar">
-                                <input type="submit" value="Criar">
-                            </div>
-                        </form>
-                </div>
+                    <div class="criar">
+                        <input type="submit" value="Criar">
+                    </div>
+                    <p>Já tem uma conta? <a href="./login.php">Acesse-a aqui</a></p>
+                </form>
             </div>
-        </div>
     </div>
-</section>
-
     <?php include './footer.php' ?>
 
     <script src="./js/java.js"></script>  

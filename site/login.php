@@ -15,6 +15,7 @@
     background-color: var(--branco-principal);
     background-position: center;
     background-size: cover;
+    height: 70vh;
 }
 .login {
     display: flex;
@@ -78,24 +79,31 @@
     border: none;
     border-bottom: 2px solid var(--tema-secundario);
     background-color: rgba(0, 0, 0, 0.0); /* Define a cor de fundo com transparência */
-    color: var(--branco-principal);
+    color: var(--tema-terciario);
     font-size: var(--fonte-padrao);
     box-shadow: none;
     outline: none;
 }
 .login input[type="submit"] {
-    background-color: var(--branco-principal);
-    color: var(--preto-fonte);
+    background-color: var(--tema-terciario);
+    color: var(--branco-principal);
     font-size: var(--fonte-padrao);
     border-radius: 5px;
     padding: 1% 0%;
     width: 100%;
-    margin: 6% 0% ;
+    margin: 6% 0%;
 }
 input[type="submit"]:hover {
-    background-color: var(--tema-terciario);
-    color: var(--branco-principal);
+    background-color: var(--branco-principal);
+    color: var(--tema-terciario);
+    cursor: pointer;
+    transition: 0.5s;
 }
+@media (max-width: 1050px) {
+            .login-principal {
+            height: 85vh;
+        }
+        }
 /*LOGIN END*/
     </style>
 </head>
