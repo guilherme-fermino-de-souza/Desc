@@ -27,3 +27,11 @@ CREATE TABLE tbContato (
     ,assuntoContato VARCHAR (40)
     ,mensagemContato VARCHAR (250)
 );
+
+/* Tabela dos comentários da notícia */
+CREATE TABLE tbComentarioNoticia (
+    idComentarioNoticia INT PRIMARY KEY AUTO_INCREMENT
+    ,mensagemComentarioNoticia VARCHAR (400)
+    /*,dataComentarioNoticia DATETIME */
+    , FOREIGN KEY (idConta) REFERENCES tbConta(idConta)
+);

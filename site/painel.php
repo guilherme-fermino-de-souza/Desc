@@ -132,6 +132,7 @@
                   </div>
             <div class="alterar-card-painel">
                 <a href="alternarnoticiaconsulta.php?id=<?php echo $row[0]?>&titulo=<?php echo $row["tituloAviso"]?>&subtitulo=<?php echo $row["subtituloAviso"]?>&descricao=<?php echo $row["descAviso"]?>&idImgAviso=<?php echo $row["imgAviso"]?>"> Alterar </a>
+                <a href="comentario.php">Comentar</a>
             </div>
         </div>
     <?php } ?>
