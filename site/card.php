@@ -75,8 +75,7 @@
 .container-admin {
     display: grid;
     background-color: var(--preto-fonte);
-    grid-template-rows: 10vw;
-    grid-template-columns: 47.5% 5% 47.5%;
+    grid-template-columns: 50%;
 }
 .container-admin a{
     text-decoration: none;
@@ -167,6 +166,7 @@
             <a href="../site/apresentarcontato.php" class="admin-button-1">Apresentar contatos</a>
             <div class="admin-button-3"></div>
             <a href="../site/apresentarcriarconta.php" class="admin-button-2">Apresentar contas</a>
+            <a href="../site/apresentarcometario.php" class="admin-button-1">Apresentar comentario</a>
         </div>
     </div>
     <!--admin end-->
