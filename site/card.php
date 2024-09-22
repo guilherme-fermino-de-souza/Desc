@@ -6,9 +6,27 @@
     <link rel="stylesheet" href="./css/estilo.css">
     <title>Desenvolvedores</title>
     <style>
+:root {
+    --branco-principal: #ffffff;
+    /*SCARLET:FF2400;CANDY APPLE:FF0800; BLUE:035ca1*/
+    --tema-primario:#035ca1;
+    --tema-secundario:#A16203;
+    --tema-terciario:#1A4261;
+    --preto-fonte: #000000;
+    --cinza-fonte-claro: #e8f0fe;
+    --cinza-fonte: #404040;
+    --link-fonte: #77b0f2;
+    --fonte-principal: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    --fonte-grande: 3vw;
+    --fonte-media: 2vw;
+    --fonte-padrao: 1vw;
+    --fonte-pequena: 0.61vw;
+}
         /*CARD START*/
-.conteudo-card {
+body{
     height: auto;
+    flex-grow: 1;
 }
 .cards {
     width: 80%;
@@ -16,21 +34,33 @@
 }
 .container-cards {
     display: grid;
-    background-color: var(--preto-fonte);
+    background-color: var(--tema-terciario);
     padding: 5%;
     width: 80%;
     margin: auto;
     margin-top: 5%;
     grid-template-rows: 20% ;
-    grid-template-columns: 27.5% 27.5% 27.5% 27.5%;
+    grid-template-columns: 25% 25% 25% 25%;
+    border-radius: 10px;
+    gap: 15px;
+    
 }
-.card img {
+
+.card{
+    background-color: var(--tema-secundario);
+    justify-content: center;
+}
+
+.img-card {
+    display: flex;
+    justify-content: center;
+}
+img {
     width: 10vw;
     height: 10vw;
+    border-radius: 50%;
 }
-.img-card {
-    margin: auto;
-}
+
 .card h2 {
     margin: auto;
     margin-top: 2%;
@@ -74,7 +104,7 @@
 }
 .container-admin {
     display: grid;
-    background-color: var(--preto-fonte);
+    background-color: var(--tema-terciario);
     grid-template-columns: 50%;
 }
 .container-admin a{
@@ -92,9 +122,11 @@
     padding-right: 2.5%;
     color: var(--branco-principal);
 }
+
+/*
 .admin-button-3 {
     background-color: white;
-}
+}*/
 /*ADMIN END*/
     </style>
 </head>
@@ -107,7 +139,7 @@
         <div class="container-cards">
                 <div class="card">
                     <div class="img-card">
-                    <img src="images/gui.jpeg">
+                        <img class="dev" img src="images/gui.jpeg" alt="guilherme.jpeg">
                     </div>
                     <div class="text-card">
                         <h2>Guilherme Fermino de Souza</h2>
@@ -120,7 +152,7 @@
 
                 <div class="card">
                     <div class="img-card">
-                        <img src="images/gus.jpeg">
+                        <img class="dev" img src="images/gus.jpeg" alt="gusta.jpeg" >
                     </div>
                     <div class="text-card">
                         <h2>Gustavo Fermino de Souza</h2> 
@@ -133,7 +165,7 @@
 
                 <div class="card">
                     <div class="img-card">
-                    <img src="images/leo.jpeg">
+                        <img class="dev" img src="images/leo.jpeg" alt="leonardo.jpeg">
                     </div>
                     <div class="text-card">
                         <h2>Leonardo Lima de Souza Lopes</h2>
@@ -146,14 +178,14 @@
 
                 <div class="card">
                     <div class="img-card">
-                    <img src="images/tia.jpeg">
+                        <img class="dev" img src="images/tia.jpeg" alt="thiago.jpeg">
                     </div>
                     <div class="text-card">
                         <h2>Tiago Soares Magalhães</h2>
                         <p><a href="https://github.com/TriaguinDev">github</a></p>
                     </div>
                     <div class="button-card">
-                        <button type="button" class="bnt">Contate-me</button>
+                        <button type="button" class="btn">Contate-me</button>
                     </div>
                 </div>
         </div>
@@ -164,7 +196,7 @@
     <div class="admin">
         <div class="container-admin">
             <a href="../site/apresentarcontato.php" class="admin-button-1">Apresentar contatos</a>
-            <div class="admin-button-3"></div>
+           <!-- <div class="admin-button-3">Batata</div> -->
             <a href="../site/apresentarcriarconta.php" class="admin-button-2">Apresentar contas</a>
             <a href="../site/apresentarcometario.php" class="admin-button-1">Apresentar comentario</a>
         </div>
