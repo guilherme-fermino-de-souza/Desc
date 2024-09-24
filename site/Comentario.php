@@ -106,7 +106,7 @@
     <section class="contato-principal">
         <div class="contato">
 
-            <form class="comente" name="comente" action="../site/inserirCometario.php" method="post">
+            <form class="comente" name="comente" action="./inserirComentario.php" method="post">
                 <h1>COMENTE</h1>
                 <?php $aviso_id = $_GET['id']; // Captura o ID da notícia?>
                 <input type="hidden" name="idAviso" value="<?php echo htmlspecialchars($aviso_id); ?>">

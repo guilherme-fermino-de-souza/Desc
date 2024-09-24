@@ -62,22 +62,22 @@
             color:  var(--branco-principal);
         }
     </style>
-    <title>Apresentar comentario</title>
+    <title>Apresentar Comentários</title>
 </head>
 <body>
 <?php include('navbar.php');?>
 
 <?php include("conexao.php");?> 
 
-<div class="conteiner-apresentarcomentario">
+<div class="conteiner-apresentarcomentarios">
     <?php
-        $stmt = $pdo->prepare("SELECT * FROM tbComentarioNoticia WHERE aviso_id = ?");
-        $idAviso = $_GET['id'];
-        $stmt -> execute([$idAviso]);
+        $stmt = $pdo->prepare("select * from tbcomentarionoticia");
+        $stmt -> execute();
         while($row = $stmt->fetch(PDO::FETCH_BOTH)){?>
             <div class="card-apresentarcomentario">
                 <div class="titulo-card-comentario">
-                    <h1><?php echo $row["nomeComentarioNoticia"]; ?></h1>
+                    <h1>Notícia: <?php echo $row["aviso_id"]; ?>
+                        Nome: <?php echo $row["nomeComentarioNoticia"]; ?></h1>
                     <a href="excluircomentario.php?id=<?php echo $row[0]; ?>"> X </a> 
                 </div>
                 <div class="comentario">

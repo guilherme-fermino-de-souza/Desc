@@ -30,8 +30,9 @@ CREATE TABLE tbContato (
 
 /* Tabela dos comentários da notícia */
 CREATE TABLE tbComentarioNoticia (
-    idComentarioNoticia INT PRIMARY KEY AUTO_INCREMENT
-    ,mensagemComentarioNoticia VARCHAR (400)
-    /*,dataComentarioNoticia DATETIME */
-    , FOREIGN KEY (idConta) REFERENCES tbConta(idConta)
+    idComentarioNoticia INT PRIMARY KEY AUTO_INCREMENT,
+    nomeComentarioNoticia VARCHAR(40),
+    mensagemComentarioNoticia VARCHAR(400),
+    aviso_id INT,
+    FOREIGN KEY (aviso_id) REFERENCES tbAviso(idAviso)
 );

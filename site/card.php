@@ -183,8 +183,8 @@ body{
         <div class="container-admin">
             <a href="../site/apresentarcontato.php" class="admin-button-1">Apresentar contatos</a>
            <!-- <div class="admin-button-3">Batata</div> -->
-            <a href="../site/apresentarcriarconta.php" class="admin-button-2">Apresentar contas</a>
-            <a href="../site/apresentarcometario.php" class="admin-button-1">Apresentar comentario</a>
+            <a href="./apresentarcriarconta.php" class="admin-button-2">Apresentar contas</a>
+            <a href="./apresentarcomentarios.php" class="admin-button-1">Apresentar comentario</a>
         </div>
     </div>
     <!--admin end-->
