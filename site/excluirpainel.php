@@ -17,6 +17,8 @@
     }
 
 
+    $stmt = $pdo->prepare("delete from tbComentarioNoticia where aviso_id='$id'");
+    $stmt ->execute();
     $stmt = $pdo->prepare("delete from tbAviso where idAviso='$id'");
     $stmt ->execute();
 

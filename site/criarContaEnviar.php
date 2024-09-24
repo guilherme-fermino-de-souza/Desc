@@ -5,7 +5,7 @@
     $email = $_POST["email"];
     $senha = $_POST['senha'];
 
-    $stmt = $pdo->prepare("INSERT INTO tbConta(nomeConta, emailConta, senhaConta) VALUES (?, ?, ?)");
+    $stmt = $pdo->prepare("INSERT INTO tbConta(nomeCompletoConta, emailConta, senhaConta) VALUES (?, ?, ?)");
     $stmt->execute([$nome, $email, $senha]);
 
     header("Location: criarConta.php");

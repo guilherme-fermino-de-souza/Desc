@@ -140,6 +140,10 @@
     <?php } ?>
 </div>
 
+<div class="criarnoticia-painel">
+  <a class="link" href="./criarnoticia.php"> <button class="butao butaonoticia" type="button" value="">Inserir Noticia</button> </a> 
+</div>
+
 <?php include ('footer.php')?>
 </body>
 </html>

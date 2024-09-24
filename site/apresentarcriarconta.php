@@ -85,7 +85,7 @@
     while($row = $stmt->fetch(PDO::FETCH_BOTH)){?>
         <div class="card-apresentarcriarconta">
             <div class="titulo-card-conta">
-                <h1>Nome: <?php echo $row["nomeConta"]; ?></h1>
+                <h1>Nome: <?php echo $row["nomeCompletoConta"]; ?></h1>
                 <a href="excluirconta.php?id=<?php echo $row[0]; ?>"> X </a>
             </div>
             <div class="subtitulo-card-conta">

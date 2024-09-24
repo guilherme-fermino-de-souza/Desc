@@ -8,7 +8,7 @@
 
     $stmt = $pdo->prepare("
         update tbConta set
-            nomeConta='$nome',
+            nomeCompletoConta='$nome',
             emailConta='$email',
             senhaConta='$senha'
             where idConta ='$id';

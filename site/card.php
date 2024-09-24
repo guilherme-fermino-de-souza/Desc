@@ -31,10 +31,13 @@ body{
 }
 
 .card{
-    width: 105%;
+    width: 100%;
     height: 110%;
     display: flexbox;
-    background-color: var(--tema-quartenario);
+    background-color: goldenrod;
+    border: 10px;
+    border-radius: 20px;
+    border-color: var(--tema-quartenario);
     justify-content: space-around;
 }
 
@@ -50,35 +53,41 @@ body{
 }
 
 .card h2 {
-    margin: 5%;
+    display: flex;
+    justify-content: center;
     margin-top: 2%;
     color: var(--branco-principal);
     font-size: var(--font-sm-link);
 }
 .text-card a {
+    display: flex;
     font-size: font-sm-link;
     color: var(--branco-principal);
-    margin: 27.5%;
+    justify-content: center;
 }
 .text-card a:hover {
     color: var(--vermelho-principal);
 }
 .card p {
-    margin: 5%;
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
     color: var(--preto-fonte);
 }
 .card button {
+    display: flex;
+    justify-content: center;
     background-color: var(--branco-principal);
     border-radius: 20px;
     border: 10px;
     border-color: var(--preto-fonte);
-    font-size: 15px;
-    margin-top: 2%;
-    margin: 17.5%;
+    font-size: 17px;
+    margin-top: 10%;
+    margin-inline: auto;
 }
 .card button:hover {
-    margin: 5%; 
+    display: flex;
+    justify-content: center;
     background-color: var(--vermelho-principal); /* Define a cor de fundo com transparência */
     color: var(--branco-principal);
     transition: 0.5s;

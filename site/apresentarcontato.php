@@ -95,7 +95,7 @@
                     <h3><?php echo $row["mensagemContato"];?></h3>
                 </div>
                 <div class="alterar-card-contato">
-                    <a href="alternarcontatoconsulta.php?id=<?php echo $row[0]?>&nome=<?php echo $row[1]?>&email=<?php echo $row[2]?>&assunto=<?php echo $row[3]?>&mensagem=<?php echo $row[4]?>"> Alterar </a> 
+                    <a href="alternarcontatoconsulta.php?id=<?php echo $row[0]?>&nome=<?php echo $row[1]?>&email=<?php echo $row[2]?>&assunto=<?php echo $row[4]?>&mensagem=<?php echo $row[5]?>"> Alterar </a> 
                 </div>
             </div>
     <?php } ?>  
