@@ -134,14 +134,10 @@
             <div class="alterar-card-painel">
                 <a href="alternarnoticiaconsulta.php?id=<?php echo $row[0]?>&titulo=<?php echo $row["tituloAviso"]?>&subtitulo=<?php echo $row["subtituloAviso"]?>&descricao=<?php echo $row["descAviso"]?>&idImgAviso=<?php echo $row["imgAviso"]?>"> Alterar </a>
                 <a href="comentario.php?id=<?php echo $row[0]; ?>">Comentar</a>
-                <a href="apresentarcomentario.php">Ver comentários</a>
+                <a href="apresentarcomentario.php?id=<?php echo $row[0]?>">Ver Comentários</a>
             </div>
         </div>
     <?php } ?>
-</div>
-
-<div class="criarnoticia-painel">
-  <a class="link" href="./criarnoticia.php"> <button class="butao butaonoticia" type="button" value="">Inserir Noticia</button> </a> 
 </div>
 
 <?php include ('footer.php')?>
