@@ -1,15 +1,13 @@
 <?php
 include("conexao.php");
 
-$comentario = $_POST['txComentario'];
+$idAviso = $_POST['idAviso']; // captura o id da noticia
+$nome = $_POST["nome"];
+$comentario = $_POST["comentario"];
 
-$stmt = $pdo->prepare("
-    
-insert into tbComentarioNoticia values(
-        '$comentario')
-");
+$stmt = $pdo->prepare("INSERT INTO tbComentarioNoticia (nomeComentarioNoticia, mensagemComentarioNoticia, aviso_id) VALUES (?, ?, ?)");
+$stmt->execute([$nome, $comentario, $idAviso]);
 
-$stmt -> execute();
 
-header("location:comentario.php");
+header("location: apresentarcomentario.php?id=$idAviso");
 ?>

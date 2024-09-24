@@ -5,6 +5,6 @@
     
     include("conexao.php");
 
-    $stmt = $pdo->prepare("delete from tbContato where idContato='$x'");
+    $stmt = $pdo->prepare("delete from tbcomentarionoticia where idComentarioNoticia='$x'");
     $stmt ->execute();
 ?>

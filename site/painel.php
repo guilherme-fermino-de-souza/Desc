@@ -40,7 +40,7 @@
             color:  red;
         }
         .subtitulo-card-painel { /* SUBTÍTULO */
-            background-color: var(--tema-secundario);
+            background-color: var(--tema-quartenario);
         }
         .subtitulo-card-painel h2{
             font-weight: 800;
@@ -73,6 +73,7 @@
         }
         .alterar-card-painel a {
             font-weight: 600;
+            margin: 1%;
             font-size: var(--fonte-padrao);
             color:  var(--tema-secundario);
             text-decoration: none;
@@ -132,7 +133,8 @@
                   </div>
             <div class="alterar-card-painel">
                 <a href="alternarnoticiaconsulta.php?id=<?php echo $row[0]?>&titulo=<?php echo $row["tituloAviso"]?>&subtitulo=<?php echo $row["subtituloAviso"]?>&descricao=<?php echo $row["descAviso"]?>&idImgAviso=<?php echo $row["imgAviso"]?>"> Alterar </a>
-                <a href="comentario.php">Comentar</a>
+                <a href="comentario.php?id=<?php echo $row[0]; ?>">Comentar</a>
+                <a href="apresentarcomentario.php">Ver comentários</a>
             </div>
         </div>
     <?php } ?>

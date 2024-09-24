@@ -6,29 +6,14 @@
     <link rel="stylesheet" href="./css/estilo.css">
     <title>Desenvolvedores</title>
     <style>
-:root {
-    --branco-principal: #ffffff;
-    /*SCARLET:FF2400;CANDY APPLE:FF0800; BLUE:035ca1*/
-    --tema-primario:#035ca1;
-    --tema-secundario:#A16203;
-    --tema-terciario:#1A4261;
-    --preto-fonte: #000000;
-    --cinza-fonte-claro: #e8f0fe;
-    --cinza-fonte: #404040;
-    --link-fonte: #77b0f2;
-    --fonte-principal: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-    --fonte-grande: 3vw;
-    --fonte-media: 2vw;
-    --fonte-padrao: 1vw;
-    --fonte-pequena: 0.61vw;
-}
         /*CARD START*/
 body{
     height: auto;
     flex-grow: 1;
 }
 .cards {
+    display: flex;
+    justify-content: center;
     width: 80%;
     padding-bottom: 5%;
 }
@@ -38,31 +23,34 @@ body{
     padding: 5%;
     width: 80%;
     margin: auto;
+    grid-template-columns: 20% 20% 20% 20%;
     margin-top: 5%;
-    grid-template-rows: 20% ;
-    grid-template-columns: 25% 25% 25% 25%;
     border-radius: 10px;
-    gap: 15px;
+    justify-content: space-around;
     
 }
 
 .card{
-    background-color: var(--tema-secundario);
-    justify-content: center;
+    width: 105%;
+    height: 110%;
+    display: flexbox;
+    background-color: var(--tema-quartenario);
+    justify-content: space-around;
 }
 
 .img-card {
     display: flex;
     justify-content: center;
+    padding: 5%;
 }
-img {
+.img-card img {
     width: 10vw;
     height: 10vw;
     border-radius: 50%;
 }
 
 .card h2 {
-    margin: auto;
+    margin: 5%;
     margin-top: 2%;
     color: var(--branco-principal);
     font-size: var(--font-sm-link);
@@ -70,12 +58,13 @@ img {
 .text-card a {
     font-size: font-sm-link;
     color: var(--branco-principal);
+    margin: 27.5%;
 }
 .text-card a:hover {
     color: var(--vermelho-principal);
 }
 .card p {
-    margin: auto;
+    margin: 5%;
     margin-top: 20px;
     color: var(--preto-fonte);
 }
@@ -86,12 +75,14 @@ img {
     border-color: var(--preto-fonte);
     font-size: 15px;
     margin-top: 2%;
-    margin: auto;
+    margin: 17.5%;
 }
 .card button:hover {
+    margin: 5%; 
     background-color: var(--vermelho-principal); /* Define a cor de fundo com transparência */
     color: var(--branco-principal);
     transition: 0.5s;
+    
 }
 /*CARD END*/
 
@@ -122,11 +113,6 @@ img {
     padding-right: 2.5%;
     color: var(--branco-principal);
 }
-
-/*
-.admin-button-3 {
-    background-color: white;
-}*/
 /*ADMIN END*/
     </style>
 </head>
@@ -139,7 +125,7 @@ img {
         <div class="container-cards">
                 <div class="card">
                     <div class="img-card">
-                        <img class="dev" img src="images/gui.jpeg" alt="guilherme.jpeg">
+                        <img class="dev" img src="images/guil.enc" alt="guilherme.enc">
                     </div>
                     <div class="text-card">
                         <h2>Guilherme Fermino de Souza</h2>
@@ -149,10 +135,9 @@ img {
                         <button type="button" class="bnt">Contate-me</button>
                     </div>
                 </div>
-
                 <div class="card">
                     <div class="img-card">
-                        <img class="dev" img src="images/gus.jpeg" alt="gusta.jpeg" >
+                        <img class="dev" img src="images/gust.jpeg" alt="gusta.jpeg" >
                     </div>
                     <div class="text-card">
                         <h2>Gustavo Fermino de Souza</h2> 
@@ -188,6 +173,7 @@ img {
                         <button type="button" class="btn">Contate-me</button>
                     </div>
                 </div>
+                
         </div>
     </section>
     <!--card end-->
