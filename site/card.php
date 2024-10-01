@@ -44,7 +44,8 @@ body{
 .img-card {
     display: flex;
     justify-content: center;
-    padding: 5%;
+    padding: 10%;
+    height: 50%;
 }
 .img-card img {
     width: 10vw;
@@ -58,6 +59,7 @@ body{
     margin-top: 2%;
     color: var(--branco-principal);
     font-size: var(--font-sm-link);
+    height: 25px;
 }
 .text-card a {
     display: flex;
@@ -73,17 +75,21 @@ body{
     justify-content: center;
     margin-top: 20px;
     color: var(--preto-fonte);
+    height: 15px;
+    padding: 10%;
+    margin-bottom: 2.5px;
 }
 .card button {
     display: flex;
     justify-content: center;
     background-color: var(--branco-principal);
-    border-radius: 20px;
+    border-radius: 15px;
     border: 10px;
     border-color: var(--preto-fonte);
     font-size: 17px;
     margin-top: 10%;
     margin-inline: auto;
+    height: 25px;
 }
 .card button:hover {
     display: flex;
@@ -108,10 +114,10 @@ body{
     grid-template-columns: 50%;
 }
 .container-admin a{
-    text-decoration: none;
+    text-decoration:underline goldenrod;
     color: var(--branco-principal);
-    font-size: var(--font-xs-link);
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 6px;
     padding: 2% 0 0 2%;
 }
 .container-admin a:hover{
@@ -191,7 +197,6 @@ body{
     <div class="admin">
         <div class="container-admin">
             <a href="../site/apresentarcontato.php" class="admin-button-1">Apresentar contatos</a>
-           <!-- <div class="admin-button-3">Batata</div> -->
             <a href="./apresentarcriarconta.php" class="admin-button-2">Apresentar contas</a>
             <a href="./apresentarcomentarios.php" class="admin-button-1">Apresentar comentario</a>
         </div>
