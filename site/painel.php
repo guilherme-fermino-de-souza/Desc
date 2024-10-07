@@ -6,7 +6,7 @@
     <title>Painel</title>
     <link rel="stylesheet" href="./css/estilo.css">
     <style>
-        .container-painel { /* PRINCIPAL */
+        .container-painel { /* PRINCIPAL PAINEL*/
             display: grid;
             width: 80%;
             margin: auto;
@@ -133,7 +133,6 @@
                   </div>
             <div class="alterar-card-painel">
                 <a href="alternarnoticiaconsulta.php?id=<?php echo $row[0]?>&titulo=<?php echo $row["tituloAviso"]?>&subtitulo=<?php echo $row["subtituloAviso"]?>&descricao=<?php echo $row["descAviso"]?>&idImgAviso=<?php echo $row["imgAviso"]?>"> Alterar </a>
-                <a href="comentario.php?id=<?php echo $row[0]; ?>">Comentar</a>
                 <a href="apresentarcomentario.php?id=<?php echo $row[0]?>">Ver Comentários</a>
             </div>
         </div>
