@@ -1,7 +1,7 @@
 <?php  
-    $id = $_POST['txIdComentarioNoticia'];
-    $nome = $_POST['txNomeComentarioNoticia'];
-    $comentario = $_POST['txMensagemComentarioNoticia'];
+    $id = $_POST['idComentarioNoticia'];
+    $nome = $_POST['nomeComentarioNoticia'];
+    $comentario = $_POST['mensagemComentarioNoticia'];
     include("conexao.php");
 
     $stmt = $pdo->prepare("

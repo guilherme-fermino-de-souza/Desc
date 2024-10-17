@@ -1,3 +1,6 @@
+<?php include ('verificarLogin.php'); //Não permite que alguém deslogado acesse a página ?>
+<?php include ('./conexao.php');?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -7,7 +10,7 @@
     <title>Comentário</title>
     <link rel="stylesheet" href="./css/estilo.css">
     <style>
-        /*COMENTÁRIO START*/
+        /*EXCLUIR DEPOIS*/
         .comentario-principal {
             display: flex;
             justify-content: center; /* Horizontal alignment */
@@ -109,7 +112,7 @@
             <form class="comente" name="comente" action="./inserirComentario.php" method="post">
                 <h1>COMENTE</h1>
                 <?php $aviso_id = $_GET['id']; // Captura o ID da notícia?>
-                <input type="hidden" name="idAviso" value="<?php echo htmlspecialchars($aviso_id); ?>">
+                <input type="hidden" name="idAviso" value="<?php echo htmlspecialchars($noticia_id); ?>">
 
                        <div class="textfield">
                             <label for="nome" class="label">Nome:</label>

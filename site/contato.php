@@ -1,3 +1,6 @@
+<?php include ('verificarLogin.php'); //Não permite que alguém deslogado acesse a página ?>
+<?php include ('./conexao.php');?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -17,7 +20,7 @@
             background-size: cover;
             height: 85vh;
         } 
-        .contato {
+        .contato { /* Container Principal Contato*/
             display: flex;
             flex-direction: column;
             width: 25%;
@@ -28,53 +31,54 @@
             margin-top: 3%;
             margin-bottom: 3%;
         }
-        .fale-conosco {
+        .fale-conosco { /* Fale Conosco*/
             display: flex;
             flex-direction: column;
             width: 80%;
             margin: auto;
         }
-        .contato h1 {
+        .contato h1 { /* Título*/
             font-size: var(--fonte-grande);
             margin: 0% 0% 2% 0%;
             color: var(--preto-fonte);
             font-weight: 800;
             text-align: center;
         }
-        .textfield {
+        .textfield { /* Textfield Container Principal*/
             display: flex;
             flex-direction: column;
             padding: 1%;
         }
-        .textfield label {
+        .textfield label { /* Texto de Descrição*/
             font-size: var(--fonte-padrao);
             font-weight: 700;
             margin-top: 2%;
         }
-        .textfield input::placeholder {
+        .textfield input::placeholder { /* Local Onde se escreve*/
             font-size: var(--fonte-padrao);
             color: var(--preto-fonte);
             padding-left: 4%;
         }
-        .textfield>input:focus {
+        .textfield>input:focus { /* Texto no Placeholder*/
             outline: none;
             color: var(--preto-fonte);
             background-color: rgba(0, 0, 0, 0);
             border-radius: 10%;
             transition: 0.5s;
         }
-        .textfield>input {
+        .textfield>input { /*Quando você escreve o textfield*/
             width: 100%;
             margin-top: 2%;
             border: none;
             border-bottom: 2px solid var(--tema-secundario);
             background-color: rgba(0, 0, 0, 0.0); /* Define a cor de fundo com transparência */
-            color: var(--branco-principal);
+            color: var(--tema-primario);
             font-size: var(--fonte-padrao);
+            padding-left: 4%;
             box-shadow: none;
             outline: none;
         }
-        .fale-conosco input[type="submit"] {
+        .fale-conosco input[type="submit"] { /* Botão Enviar Azul*/
             background-color: var(--tema-terciario);
             color: var(--branco-principal);
             font-size: var(--fonte-padrao);
@@ -84,13 +88,13 @@
             margin: 6% 0% ;
         }
 
-        input[type="submit"]:hover {
+        input[type="submit"]:hover { /* Quando Clicar no Botão Enviar Azul*/
             background-color: var(--branco-principal);
             color: var(--tema-terciario);
             cursor: pointer;
             transition: 0.5s;
         }
-        @media (max-width: 1050px) {
+        @media (max-width: 1050px) { /* RESPONSIVO*/
             .contato-principal {
             height: 90vh;
         }
@@ -100,22 +104,28 @@
 </head>
 
 <body>
-
-    <?php include './navbar.php' ?>
+    <?php include ('./navbar.php');    ?>
+    
     <!--contato start--> <!--INÍCIO-->
     <section class="contato-principal">
         <div class="contato">
 
+        <?php 
+            $nome = $_SESSION['nome'];
+            $email = $_SESSION['email'];
+        ?>
+
             <form class="fale-conosco" name="fale-conosco" action="../site/contatoEnviar.php" method="post">
+                
                 <h1>FALE CONOSCO</h1>
                         <div class="textfield">
                             <label for="nome" class="label">Nome:</label>
-                            <input type="text" class="input" name="nome" required placeholder="Seu Nome" />
+                            <input type="text" class="input" name="nome"  value="<?php $nome ?>" required placeholder="Seu Nome" />
                         </div>
 
                         <div class="textfield">
                             <label for="email" class="label">Email:</label>
-                            <input type="email" class="input" name="email" required placeholder="E-mail" />
+                            <input type="email" class="input" name="email" value="<?php $email ?>" placeholder="E-mail" />
                         </div>
 
                         <div class="textfield">

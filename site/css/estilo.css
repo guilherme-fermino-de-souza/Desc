@@ -1,9 +1,9 @@
 :root {
     --branco-principal: #ffffff;
     /*SCARLET:FF2400;CANDY APPLE:FF0800; BLUE:035ca1*/
-    --tema-primario:#035ca1;
-    --tema-secundario:#F2B705;
-    --tema-terciario:#1A4261;
+    --tema-primario:#265df2;
+    --tema-secundario:#FFE305;
+    --tema-terciario:#4070f4;
     --tema-quartenario: #038C3E;
     --preto-fonte: #000000;
     --cinza-fonte-claro: #e8f0fe;
@@ -25,7 +25,42 @@
 html, body {
     min-height: 100vh;
 }
-/* NAVBAR START*/
+/* modal start*/
+.modal-login {
+    width: 80%;
+    margin: auto;
+}
+.modal-login dialog::backdrop { /* fundo do modal */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-login dialog{
+    border: none;
+    text-align: center;
+    border-radius: .5rem;
+    margin: auto;
+    box-shadow: 0 0 1em rgb(0 0 0 .3);
+}
+.modal-login h1 {
+    margin: .1rem;
+    font-size: var(--fonte-grande);
+}
+.modal-login p {
+    margin: .05rem;
+    font-size: var(--fonte-media);
+}
+.modal-login button {
+    border-radius: .5rem;
+    background-color: var(--cinza-fonte-claro);
+    font-size: var(--fonte-padrao);
+    margin: .5rem;
+    padding: 1% 2%;
+}
+.modal-login button:hover {
+    background-color: var(--tema-primario);
+    cursor: pointer;
+}
+/* modal end*/
+/* navbar start*/
 a:hover {
     opacity: 0.7;
 }
@@ -97,7 +132,7 @@ nav {
     background-color: var(--branco-principal);
     margin: 8px;
 }
-/* - - - RESPONSIVE - - - */
+/* - - - responsive - - - */
 @media (max-width: 1050px) {
     body {
         overflow-x: hidden;
@@ -163,9 +198,9 @@ nav {
     }
 }
 /* - - - RESPONSIVE - - - */
-/*NAVBAR END*/
+/* navbar end */
 
-/*INÍCIO START*/
+/*inicio start*/
 .container-inicio {
     background-image: url('https://www.pexels.com/photo/people-wearing-backpacks-1454360/');    
     background-size: cover;
@@ -221,9 +256,9 @@ nav {
     background-color: var(--tema-terciario);
     color: var(--branco-principal);
 }
-/*INÍCIO END*/
+/* inicio end*/
 
-/*COMETARIO START*/
+/* comentario start */
 .comentarios-conteiner-principal {
     background-color: #404040;  
 }
@@ -310,9 +345,9 @@ input[type="submit"]:hover {
     cursor: pointer;
     transition: 0.5s;
 }
-/*COMETARIO END*/
+/* comentario end */
 
-/*SOBRE START*/
+/* sobre start*/
 .sobre {
     background-color: #ffffff;
 }
@@ -351,9 +386,99 @@ input[type="submit"]:hover {
 .img-sobre img{
     height: 25vw;
 }
-/*SOBRE END*/
+/*Card dos Cursos em Sobre, início*/
+.contSlideCursos{
+    max-width: 1100px;
+    width: 80%;
+    margin: auto;
+    background-color: grey;
+    padding: 40px 0;
+}
+.contEudoCursos{
+    margin: 0 40px;
+}
+.cardSobre{
+    width: 320px;
+    border-radius: 25px;
+    background-color: #e8f0fe;
+}
+.conteudImgCardSobre, .conteuCardSobre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+}
+.conteudImgCardSobre{
+    position: relative;
+    row-gap: 8px;
+    padding: 25px 0;
+}
+.sobrepos{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #4070f4;
+    border-radius: 25px 25px 0 25px;
+}
+.sobrepos::before, .sobrepos::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    height: 40px;
+    width: 40px;
+    background-color: #4070f4;
+}
+.sobrepos::after{
+    border-radius: 0 25px 0 0;
+    background-color: #e8f0fe;
+}
+.imgCardSobre{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background: #e8f0fe;
+    padding: 3px;
+}
+.imgCardSobre .Sobreimg{
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /*redimensiona o objeto a manter proporção e ocupar todo espaço de seu container*/
+    border-radius: 50%;
+    border: 4px solid #1A4261;
+}
+.nome{
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+}
+.descricao{
+    font-size: 14px;
+    color: #443f3f;
+    text-align: center;
+}
+.botao{
+    border: none;
+    font-size: 16px;
+    color: #e8f0fe;
+    padding: 10px 20px;
+    background-color: #4070f4;
+    border-radius: 6px;
+    margin: 14px;
+    cursor: pointer;
+/*All: todas as propried. css alteradas terão uma transição para si.*/
+    transition: all 0.3s ease;/*ease é uma função
+predefinida que cria uma aceleração suave no início e no final da transição,com uma velocidade constante no meio.*/
+}
+.botao:hover{
+    background: #265df2;
+}
+/* sobre end */
 
-/*FOOTER START*/
+/* footer start*/
 .footer {
     display: flex;
     flex-direction: column;
@@ -441,7 +566,7 @@ input[type="submit"]:hover {
 .right-icons img {
     height: 1.25vw;
 }
-/* - - - RESPONSIVE - - - */
+/* - - - responsive - - - */
 @media (max-width: 1050px) {
     .footer-02 {
         flex-direction: row;
@@ -453,4 +578,4 @@ input[type="submit"]:hover {
         font-size: var(--fonte-media);
     }
 }
-/*FOOTER END*/
+/* footer end */

@@ -1,17 +1,17 @@
 <?php  
-    $id = $_POST['txIdConta'];
-    $nome = $_POST['txNomeConta'];
-    $email = $_POST['txEmailConta'];
-    $senha = $_POST['txSenhaConta'];
+    $id = $_POST['idConta'];
+    $nome = $_POST['nomeConta'];
+    $email = $_POST['emailConta'];
+    $senha = $_POST['senhaConta'];
     
     include("conexao.php");
 
     $stmt = $pdo->prepare("
-        update tbConta set
-            nomeCompletoConta='$nome',
+        UPDATE tbConta SET
+            nomeConta='$nome',
             emailConta='$email',
             senhaConta='$senha'
-            where idConta ='$id';
+            WHERE idConta ='$id';
     ");	    
 	$stmt ->execute();    
 

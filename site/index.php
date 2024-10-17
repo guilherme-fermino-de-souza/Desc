@@ -1,9 +1,13 @@
+<?php include ('verificarLogin.php'); //Não permite que alguém deslogado acesse a página ?>
+<?php include ('./conexao.php');?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
+            <!-- Swiper CSS-->
+    <link rel="stylesheet" href="./css/swiper.css">
     <link rel="stylesheet" href="./css/estilo.css">
     <title>NewsEtec®</title>
     <style>
@@ -20,15 +24,30 @@
 </head>
 
 <body>
-<?php include './navbar.php' ?>
+    <?php 
+    $aviso = ''; // Inicializa a mensagem de erro para caso acesso negado
 
-<div class='container-index-principal'>
+    if (isset($_GET['negado'])) { // Caso User tente entrar em Págs para Devs
+        $aviso = "Você não possui acesso a essa página!";
+    }
+    ?>
+    <!-- Aviso ativado quando o $aviso receber um valor true -->
+    <div style="background-color:coral; margin:10px">
+        <?php echo $aviso ?? ''; ?>
+    </div>
+    <?php include './navbar.php' ?>
+
+    <div class='container-index-principal'>
         <?php include './inicio.php' ?>
         <?php include './sobre.php' ?>
-</div>
+    </div>
 
-<?php include './footer.php' ?>
+    <?php include './footer.php' ?>
+        </body>
+<!-- JavaScript - swiper (deslizador) do card, parte 100% bootstrap-->
+<script src="/swiper.js"></script><!-- ... Parte "Codada" abaixo-->
+<script src="/swip.js"></script>
+<!-- JavaScript - navbar responsiva-->
 <script src="./java.js"></script>
-</body>
 
 </html>

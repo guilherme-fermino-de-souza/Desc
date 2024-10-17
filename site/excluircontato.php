@@ -1,10 +1,9 @@
 <?php
     $x = $_GET['id'];
-
-    echo $x;
     
     include("conexao.php");
 
-    $stmt = $pdo->prepare("delete from tbContato where idContato='$x'");
+    $stmt = $pdo->prepare("DELETE FROM tbContato WHERE idContato='$x'");
     $stmt ->execute();
+    header("Location: apresentarcontato.php");
 ?>

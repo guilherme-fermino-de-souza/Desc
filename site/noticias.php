@@ -1,3 +1,5 @@
+<?php include ('verificarLogin.php'); //Não permite que alguém deslogado acesse a página ?>
+<?php include ('./conexao.php');?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -109,31 +111,30 @@
 
 <div class="container-painel">
   <?php
-    $stmt = $pdo->prepare("select * from tbaviso");
+    $stmt = $pdo->prepare("SELECT * FROM tbNoticias");
     $stmt -> execute();
-    while($row = $stmt->fetch()){?>
+    while($row = $stmt->fetch(PDO::FETCH_BOTH)){?>
         <div class="card-painel">
             <div class="titulo-card-painel">
-                  <h1><?php echo $row["tituloAviso"]; ?></h1> 
-                  <a href="excluirpainel.php?id=<?php echo $row[0]; ?>"> X </a>
+                  <h1><?php echo $row["tituloNoticias"]; ?></h1> 
+                  <a href="excluirnoticias.php?id=<?php echo $row[0]; ?>"> X </a>
             </div>
             <div class="subtitulo-card-painel">
-                <h2><?php echo $row["subtituloAviso"]; ?></h2> 
+                <h2><?php echo $row["subtituloNoticias"]; ?></h2> 
             </div>
             <div class="texto-card-painel">
-                <h3><?php echo $row["descAviso"]; ?></h3> 
+                <h3><?php echo $row["descNoticias"]; ?></h3> 
             </div>
                   <div class="imagem-painel">
                   <?php 
-                        $numImg = $row["imgAviso"];
+                        $numImg = $row["imgNoticias"];
                         if ($numImg != 0) {    
                             echo "<img src='images/imagensArquivos/noticias/$numImg.png'>";
                         }
                     ?>
                   </div>
             <div class="alterar-card-painel">
-                <a href="alternarnoticiaconsulta.php?id=<?php echo $row[0]?>&titulo=<?php echo $row["tituloAviso"]?>&subtitulo=<?php echo $row["subtituloAviso"]?>&descricao=<?php echo $row["descAviso"]?>&idImgAviso=<?php echo $row["imgAviso"]?>"> Alterar </a>
-                <a href="comentario.php?id=<?php echo $row[0]; ?>">Comentar</a>
+                <a href="alternarnoticiaconsulta.php?id=<?php echo $row[0]?>&titulo=<?php echo $row[1]?>&subtitulo=<?php echo $row[2]?>&descricao=<?php echo $row[3]?>&idImgNoticias=<?php echo $row[4]?>"> Alterar </a>
                 <a href="apresentarcomentario.php?id=<?php echo $row[0]?>">Ver Comentários</a>
             </div>
         </div>

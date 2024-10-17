@@ -2,11 +2,10 @@
     include("conexao.php");
     include("imagemLocalNoticias.php");
 
-    $titulo = $_POST['txTitulo'];
-    $subtitulo = $_POST['txSubtitulo'];
-    $descricao = $_POST['txDescricao'];
-
-    $img = $_FILES['inpImg'];
+    $titulo = $_POST['tituloNoticias'];
+    $subtitulo = $_POST['subtituloNoticias'];
+    $descricao = $_POST['descricaoNoticias'];
+    $img = $_FILES['imgNoticias'];
 
     $numImagem = (int) file_get_contents($contadorImagens);
 
@@ -39,7 +38,7 @@
 
     $stmt = $pdo->prepare("
     
-            insert into tbaviso values(
+            insert into tbNoticias values(
 
                     null,
                     '$titulo',
@@ -51,7 +50,5 @@
 
     $stmt -> execute();
 
-
-
-    header("location:painel.php");
+    header("location:noticias.php");
 ?>

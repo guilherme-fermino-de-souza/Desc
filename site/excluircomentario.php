@@ -5,7 +5,7 @@
     
     include("conexao.php");
 
-    $stmt = $pdo->prepare("delete from tbcomentarionoticia where idComentarioNoticia='$x'");
+    $stmt = $pdo->prepare("DELETE FROM tbcomentarionoticia WHERE idComentarioNoticia='$x'");
     $stmt ->execute();
 
     header("location:apresentarcomentarios.php?id=<?php echo $x?>");

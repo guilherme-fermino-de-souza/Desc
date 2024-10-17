@@ -1,13 +1,14 @@
 <?php
+    include("./verificarLogin.php");
     include("conexao.php");
     include("imagemLocalNoticias.php");
 
-    $id = $_POST['txIdAviso'];
-    $titulo = $_POST['txTituloAviso'];
-    $subtitulo = $_POST['txSubtituloAviso'];
-    $descricao = $_POST['txDescAviso'];
-    $numImg = $_POST['txIdImgAviso'];
-    $img = $_FILES['inpImgAviso'];
+    $id = $_POST['idNoticias'];
+    $titulo = $_POST['tituloNoticias'];
+    $subtitulo = $_POST['subtituloNoticias'];
+    $descricao = $_POST['descNoticias'];
+    $numImg = $_POST['idImgNoticias'];
+    $img = $_FILES['imgNoticias'];
 
     if ($img['error'] != UPLOAD_ERR_NO_FILE) {
 
@@ -39,15 +40,15 @@
     }
 
     $stmt = $pdo->prepare("
-        update tbAviso set
-            tituloAviso='$titulo',
-            subtituloAviso='$subtitulo',
-            descAviso='$descricao',
-            imgAviso='$numImg'
-            where idAviso ='$id';
+        UPDATE tbNoticias SET
+            tituloNoticias='$titulo',
+            subtituloNoticias='$subtitulo',
+            descNoticias='$descricao',
+            imgNoticias='$numImg'
+        WHERE idNoticias ='$id';
     ");
     $stmt->execute();
 
-    header("location:painel.php");
-
+    header("location:alternarnoticiaconsulta.php");
+    exit;
 ?>

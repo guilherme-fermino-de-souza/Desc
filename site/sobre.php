@@ -23,6 +23,31 @@
                      gestão mais eficiente do tempo e dos recursos.</p>
             </div>
         </div>
-      
+        <!-- Comentando comentário-->
+         <h1>Apresentação dos cursos, ou notícias ordenadas por esses... não decidi ainda</h1>
+        <div class="contSlideCursos">
+            <div class="contEudoCursos">
+                <div class="contInvolucroCard">
+                    <div class="cardSobre">
+                        <div class="conteudImgCardSobre">
+                            <span class="sobrepos"></span>
+                        
+                            <div class="imgCardSobre">
+                                <img src="images/imagensArquivos/cursos/ds.avif" alt="Curso de DS" class="Sobreimg">
+                            </div>
+                        </div>
+                        <div class="conteuCardSobre">
+                            <h2 class="nome">Desenvolvimeto de Sistemas</h2>
+                            <p class="descricao">O curso técnico em Desenvolvimento de Sistemas da Etec de Guaianazes prepara você para desenvolver soluções sociais e empresariais para problemas diversos através da tecnologia. Você aprenderá a construir softwares, aplicativos e sistemas, desde o planejamento até a implementação. As aulas te ensinarão a dominar linguagens de programação, a trabalhar com bancos de dados e a utilizar ferramentas de desenvolvimento. Ao final do curso, você estará pronto para ingressar no mercado de trabalho e participar da criação de soluções tecnológicas que transformam o mundo!</p>
+                        
+                            <button class="botao">Ver mais...</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+
+        </div>
     </div>
 </div>

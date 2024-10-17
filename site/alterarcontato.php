@@ -1,19 +1,19 @@
 <?php  
-    $id = $_POST['txIdContato'];
-    $nome = $_POST['txnomeContato'];
-    $email = $_POST['txEmailContato'];
-    $assunto = $_POST['txAssuntoContato'];
-    $mensagem = $_POST['txMensagemContato'];
+    $id = $_POST['idContato'];
+    $nome = $_POST['nomeContato'];
+    $email = $_POST['emailContato'];
+    $assunto = $_POST['assuntoContato'];
+    $mensagem = $_POST['mensagemContato'];
     
     include("conexao.php");
 
     $stmt = $pdo->prepare("
-        update tbContato set
+        UPDATE tbContato SET
             nomeContato='$nome',
             emailContato='$email',
             assuntoContato='$assunto',
             mensagemContato='$mensagem'
-            where idContato ='$id';
+            WHERE idContato ='$id';
     ");	    
 	$stmt ->execute();    
 

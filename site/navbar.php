@@ -12,11 +12,33 @@
            <ul class="nav-list">
                <li><a href="./index.php">Início</a></li>
                <li><a href="./contato.php">Contato</a></li>
-               <li><a href="./painel.php">Notícias</a></li>
+               <li><a href="./noticias.php">Notícias</a></li>
                <li><a href="./card.php">Desenvolvedores</a></li> 
-               <li><a class="nav-button" href="./login.php"><button>Login</button></a></li>
+               <li><button name="modal-login">Login</button></li>
            </ul>         
        </nav>
    </header>
    <!--navbar end--> <!--FINAL-->
+   <?php 
+   include("conexao.php");
+   $nome = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
+    $mysqli = $pdo->prepare("SELECT * FROM tbConta WHERE nomeConta = :nome");
+    $mysqli->bindParam(':nome', $nome);
+    $mysqli -> execute();
+    while($row = $mysqli->fetch(PDO::FETCH_BOTH)) { ?>
+   <div class="modal-login">
+            <dialog>
+                <div class="modal-login-img">
+                    <img src="https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png">
+                </div>
+                <h1><?php echo $row["nomeConta"]; ?></h1>
+                <p><?php echo $row["emailConta"]; ?></p>
+                <p><?php echo $row["tipoConta"]; ?></p>
+                <a href="logout.php">Sair</a> <!-- Sai da SESSION-->
+                <button name="close-modal">ok</button>
+            </dialog>
+    </div>
+    <?php } ?>
+
+   <script src="./login.js"></script>
    <script src="./java.js"></script>
