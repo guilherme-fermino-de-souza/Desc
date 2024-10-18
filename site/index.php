@@ -6,8 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
-            <!-- Swiper CSS-->
-    <link rel="stylesheet" href="./css/swiper.css">
+    <link rel="stylesheet" href="./css/swiper.css"><!-- Swiper CSS-->
     <link rel="stylesheet" href="./css/estilo.css">
     <title>NewsEtec®</title>
     <style>
@@ -27,10 +26,20 @@
     <?php 
     $aviso = ''; // Inicializa a mensagem de erro para caso acesso negado
 
-    if (isset($_GET['negado'])) { // Caso User tente entrar em Págs para Devs
-        $aviso = "Você não possui acesso a essa página!";
-    }
-    ?>
+    if (isset($_GET['negado'])) { 
+        $aviso = "Você não possui acesso a essa página!"; ?> <!-- Caso User tente entrar em Págs para Devs -->
+        <html>
+            <div class="aviso-dialog" > <!-- dialog-overlay-->
+                <div class="aviso-card">  <!-- dialog-card-->        
+                    <dialog>
+                            <h1>Acesso negado</h1>
+                            <h2>Você não possui acesso a essa página!</h2>
+                            <button name="close-modal">ok</button>
+                        <dialog>
+                    </div>
+            </div>
+        </html>
+    <?php } ?>
     <!-- Aviso ativado quando o $aviso receber um valor true -->
     <div style="background-color:coral; margin:10px">
         <?php echo $aviso ?? ''; ?>

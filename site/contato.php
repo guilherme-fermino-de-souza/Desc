@@ -110,22 +110,18 @@
     <section class="contato-principal">
         <div class="contato">
 
-        <?php 
-            $nome = $_SESSION['nome'];
-            $email = $_SESSION['email'];
-        ?>
 
             <form class="fale-conosco" name="fale-conosco" action="../site/contatoEnviar.php" method="post">
                 
                 <h1>FALE CONOSCO</h1>
                         <div class="textfield">
                             <label for="nome" class="label">Nome:</label>
-                            <input type="text" class="input" name="nome"  value="<?php $nome ?>" required placeholder="Seu Nome" />
+                            <input type="hidden" class="input" name="nome"  value="<?php echo ($_SESSION['nome']);?>" required placeholder="Seu Nome" />
                         </div>
 
                         <div class="textfield">
                             <label for="email" class="label">Email:</label>
-                            <input type="email" class="input" name="email" value="<?php $email ?>" placeholder="E-mail" />
+                            <input type="hidden" class="input" name="email" value="<?php echo ($_SESSION['email']);?>" placeholder="E-mail" />
                         </div>
 
                         <div class="textfield">
