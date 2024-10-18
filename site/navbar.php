@@ -27,7 +27,7 @@
     $mysqli -> execute();
     while($row = $mysqli->fetch(PDO::FETCH_BOTH)) { ?>
    <div class="modal-login">
-            <dialog>
+            <dialog> <!--Ver Usuário -->
                 <div class="modal-login-img">
                     <img src="https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png">
                 </div>

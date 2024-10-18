@@ -25,7 +25,7 @@
 html, body {
     min-height: 100vh;
 }
-/* modal start*/
+/* modal navbar start*/
 .modal-login {
     width: 80%;
     margin: auto;
@@ -59,7 +59,7 @@ html, body {
     background-color: var(--tema-primario);
     cursor: pointer;
 }
-/* modal end*/
+/* modal navbar end*/
 /* navbar start*/
 a:hover {
     opacity: 0.7;
@@ -199,6 +199,36 @@ nav {
 }
 /* - - - RESPONSIVE - - - */
 /* navbar end */
+
+/* aviso start */
+.aviso-dialog { /* O fundo da mensagem*/
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+
+    z-index: 10;
+}
+.aviso-card {
+    box-sizing: border-box;
+    width: 570px;
+    position: absolute;
+    left: 50%;
+    margin-left: -285px;
+    top: 50%;
+
+    font: bold 14px sans-serif;
+
+    border-radius: 3px;
+    background-color:  #ffffff;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.12);
+    padding: 45px 50px;
+}
+/* aviso end */
 
 /*inicio start*/
 .container-inicio {
@@ -450,7 +480,10 @@ input[type="submit"]:hover {
     border-radius: 50%;
     border: 4px solid #1A4261;
 }
-.nome{
+.nome{ /*Não é bom ter nomes de classes tão vagos no css princial
+    pois, caso haja uma repetição do nome, pode acabar afetando 
+    outras classes além dessa. Além de dificultar o entendimento
+    geral do que ela faz*/
     font-size: 18px;
     font-weight: 500;
     color: #333;
@@ -477,6 +510,117 @@ predefinida que cria uma aceleração suave no início e no final da transição
     background: #265df2;
 }
 /* sobre end */
+
+/* contato start */
+.contato-principal {
+    background-color: var(--cinza-fonte-claro);
+    width: 100%;
+} 
+.container-contato {
+    margin: 2.5% auto;
+    width: 75%;
+    background-color: var(--cinza-fonte-claro);
+}
+.text-contato {
+    display: flex;
+    flex-direction: row;
+}
+.contato {  /* Container Principal Contato*/
+    width: 60%;
+    background-color: var(--cinza-fonte-claro);
+    border: 2px solid var(--tema-secundario);
+    border-radius: 25px;
+    padding: 5% 0%;
+    margin: 0.5% 5%;
+}
+.fale-conosco { /* Fale Conosco*/
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+.container-contato h1 { /* Título*/
+    font-size: var(--fonte-media);
+    color: var(--tema-primario);
+    text-align: center;
+}
+.container-contato h2 { /* Subtítulo */
+    font-size: var(--fonte-padrao);
+    color: var(--tema-terciario);
+    font-weight: 600; 
+    margin-bottom: 2.5% ;
+    text-align: center;
+}
+.container-contato p{
+    font-size: var(--fonte-padrao);
+    color: var(--tema-terciario);
+    font-weight: 600;
+    text-indent: 2.5%; /* Recuo do pragrafo */
+    margin: 2.5%;
+}
+.paragrafo-contato {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-right: 10%;
+}
+/* Formulário*/
+.textfield { /* Textfield Container Principal*/
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+.textfield label { /* Texto de Descrição*/
+    font-size: var(--fonte-padrao);
+    font-weight: 700;
+    margin-top: 2%;
+}
+.textfield input::placeholder { /* Local Onde se escreve*/
+    font-size: var(--fonte-padrao);
+    color: var(--preto-fonte);
+    padding-left: 4%;
+}
+.textfield>input:focus { /* Texto no Placeholder*/
+    outline: none;
+    color: var(--preto-fonte);
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 10%;
+    transition: 0.5s;
+}
+.textfield>input { /*Quando você escreve o textfield*/
+    width: 100%;
+    margin-top: 2%;
+    border: none;
+    border-bottom: 2px solid var(--tema-secundario);
+    background-color: rgba(0, 0, 0, 0.0); /* Define a cor de fundo com transparência */
+    color: var(--tema-primario);
+    font-size: var(--fonte-padrao);
+    padding-left: 4%;
+    box-shadow: none;
+    outline: none;
+}
+.fale-conosco input[type="submit"] { /* Botão Enviar Azul*/
+    background-color: var(--tema-terciario);
+    color: var(--branco-principal);
+    font-size: var(--fonte-padrao);
+    border-radius: 5px;
+    padding: 1% 0%;
+    width: 100%;
+    margin: 6% 0% ;
+}
+
+input[type="submit"]:hover { /* Quando Clicar no Botão Enviar Azul*/
+    background-color: var(--branco-principal);
+    color: var(--tema-terciario);
+    cursor: pointer;
+    transition: 0.5s;
+}
+@media (max-width: 1050px) { /* RESPONSIVO*/
+    .contato-principal {
+    height: 90vh;
+}
+}
+/* contato end*/
 
 /* footer start*/
 .footer {

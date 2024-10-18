@@ -108,9 +108,9 @@ input[type="submit"]:hover { /* Quando Clicar no Botão Enviar Azul*/
 </head>
 <body>
     <?php 
-        session_start();
         include("conexao.php");
         include ('./navbar.php');
+        
     ?>
 
     <!--Criar Conta--> <!--INÍCIO-->
@@ -120,12 +120,14 @@ input[type="submit"]:hover { /* Quando Clicar no Botão Enviar Azul*/
                         <h1>Nova Conta</h1>
                         <div class="textfield"> <!-- Nome -->
                             <label for="nome">Nome</label>
-                            <input type="text" name="nome" id="nome" required placeholder="Usuário">
+                            <input type="text" name="nome" id="nome" placeholder="Usuário"
+                            autocomplete="off">
                         </div>
 
                         <div class="textfield"> <!-- E-mail -->
+                            
                             <label for="email">E-mail</label>
-                            <input type="email" name="email" id="email" required placeholder="E-mail"
+                            <input type="email" name="email" id="email" placeholder="E-mail"
                             autocomplete="off">
                         </div>
 
@@ -143,7 +145,7 @@ input[type="submit"]:hover { /* Quando Clicar no Botão Enviar Azul*/
 
                         <div class="textfield" id="codigoContainer" style="display: none;"> <!-- Código(somente visível caso o tipo seja Dev)-->
                             <label for="codigo">Código</label>
-                            <input type="password" name="codigo" id="Codigo" placeholder="Código" required>
+                            <input type="password" name="codigo" id="Codigo" placeholder="Código">
                         </div>
 
                         <div class="criar"> <!-- Criar Conta -->

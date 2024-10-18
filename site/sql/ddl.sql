@@ -23,7 +23,6 @@ CREATE TABLE tbContato (
     idContato INT PRIMARY KEY AUTO_INCREMENT
     ,nomeContato VARCHAR (90)
     ,emailContato VARCHAR (30)
-    ,salaContato INT
     ,assuntoContato VARCHAR (40)
     ,mensagemContato VARCHAR (250)
 );
