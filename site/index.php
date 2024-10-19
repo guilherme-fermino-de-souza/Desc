@@ -28,36 +28,34 @@
 
     if (isset($_GET['negado'])) { 
         $aviso = "Você não possui acesso a essa página!"; ?> <!-- Caso User tente entrar em Págs para Devs -->
-    <?php } ?>
+    
     <!-- Aviso ativado quando o $aviso receber um valor true -->
-    <div style="background-color:coral; margin:10px">
-    <div class="dialog-aviso" > <!-- dialog-overlay-->
-                <div class="card-aviso">  <!-- dialog-card-->
-                    <button name="teste">teste</button>       
-                    <dialog>
-                        <h1>Acesso negado</h1>
-                        <h2>Você não possui acesso a essa página!</h2>
-                        <button name="close-aviso">ok</button>
-                    <dialog>
-                </div>
+        <div id="modal-aviso" style="display: block;">
+            <div class="card-aviso">  
+                <button name="teste">teste</button>  
+                    <h1>Acesso negado</h1>
+                    <h2><?php echo $aviso; ?></h2>
+                    <button name="close-aviso">ok</button>
             </div>
-        <?php echo $aviso ?? ''; ?>
-    </div>
+        </div>
+    <?php } ?>
+    <!-- Site -->
     <?php include './navbar.php' ?>
 
-    <div class='container-index-principal'>
-        <?php include './inicio.php' ?>
-        <?php include './sobre.php' ?>
-        <?php include './contato.php' ?>
-    </div>
+        <div class='container-index-principal'>
+            <?php include './inicio.php' ?>
+            <?php include './sobre.php' ?>
+            <?php include './contato.php' ?>
+        </div>
 
     <?php include './footer.php' ?>
-        </body>
-<!-- JavaScript - swiper (deslizador) do card, parte 100% bootstrap-->
-<script src="/swiper.js"></script>
-<script src="/swip.js"></script>
-<!-- JavaScript - navbar responsiva-->
-<script src="./java.js"></script>
-<script src="./aviso.js"></script>
 
+
+
+    <!-- JavaScript --> 
+    <script src="/swiper.js"></script> <!-- swiper (deslizador) do card, parte 100% bootstrap-->
+    <script src="/swip.js"></script>
+    <script src="./java.js"></script> <!-- JavaScript - navbar responsiva-->
+    <script src="./aviso.js"></script>
+</body>
 </html>

@@ -25,7 +25,6 @@
 html, body {
     min-height: 100vh;
 }
-/* modal navbar start*/
 .modal-login {
     width: 80%;
     margin: auto;
@@ -60,6 +59,7 @@ html, body {
     cursor: pointer;
 }
 /* modal navbar end*/
+
 /* navbar start*/
 a:hover {
     opacity: 0.7;
@@ -201,8 +201,7 @@ nav {
 /* navbar end */
 
 /* aviso start */
-.aviso-dialog { /* O fundo da mensagem*/
-    display: none;
+.modal-aviso { /* O fundo da mensagem*/
     position: fixed;
     top: 0;
     left: 0;
@@ -213,7 +212,7 @@ nav {
 
     z-index: 10;
 }
-.aviso-card {
+.card-aviso {
     box-sizing: border-box;
     width: 570px;
     position: absolute;
@@ -288,7 +287,7 @@ nav {
 }
 /* inicio end*/
 
-/* comentario start */
+/* comentario start 
 .comentarios-conteiner-principal {
     background-color: #404040;  
 }
@@ -303,7 +302,7 @@ nav {
     flex-direction: column;
     width: 25%;
     background-color: var(--cinza-fonte-claro);
-    border: 20px solid var(--tema-secundario); /* Largura, estilo e cor da borda */
+    border: 20px solid var(--tema-secundario); /* Largura, estilo e cor da borda 
     border-radius: 25px; 
     padding: 5% 0%;
     margin-top: 3%;
@@ -354,7 +353,7 @@ nav {
     margin-top: 2%;
     border: none;
     border-bottom: 2px solid var(--tema-secundario);
-    background-color: rgba(0, 0, 0, 0.0); /* Define a cor de fundo com transparência */
+    background-color: rgba(0, 0, 0, 0.0); /* Define a cor de fundo com transparência
     color: var(--tema-terciario);
     font-size: var(--fonte-padrao);
     box-shadow: none;
@@ -375,7 +374,7 @@ input[type="submit"]:hover {
     cursor: pointer;
     transition: 0.5s;
 }
-/* comentario end */
+ comentario end */
 
 /* sobre start*/
 .sobre {

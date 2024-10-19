@@ -10,7 +10,6 @@
                                 <input type="hidden" name="nome"  value="<?php echo ($_SESSION['nome']);?>" required placeholder="Seu Nome" />
                                 <input type="hidden" name="email" value="<?php echo ($_SESSION['email']);?>" placeholder="E-mail" />
 
-<<<<<<< Updated upstream
                                 <div class="textfield">
                                     <label for="assunto" class="label">Assunto:</label>
                                     <input type="text" class="input" name="assunto" required placeholder="Tema da mensagem" />
@@ -40,34 +39,5 @@
                         </p>
                 </div>
             </div>
-=======
-            <form class="fale-conosco" name="fale-conosco" action="../site/contatoEnviar.php" method="post">
-                
-                <h1>FALE CONOSCO</h1>
-                        <div class="textfield">
-                            <label for="nome" class="label">Nome:</label>
-                            <input type="hidden" class="input" name="nome"  value="<?php echo ($_SESSION['nome']);?>" required placeholder="Seu Nome" />
-                        </div>
-
-                        <div class="textfield">
-                            <label for="email" class="label">Email:</label>
-                            <input type="hidden" class="input" name="email" value="<?php echo ($_SESSION['email']);?>" placeholder="E-mail" />
-                        </div>
-
-                        <div class="textfield">
-                            <label for="assunto" class="label">Assunto:</label>
-                            <input type="text" class="input" name="assunto" required placeholder="Tema da mensagem" />
-                        </div>
-
-                        <div class="textfield">
-                            <label for="mensagem" class="label">Mensagem:</label>
-                            <input type="text" class="input" name="mensagem" required placeholder="Digite sua mensagem aqui" maxlength="250" />
-                        </div> <!--Deixe este placeholder maior-->
-                        <!--E se eu não quiser?-->
-                        <div class="contato-enviar">
-                            <input type="submit" class="botao-enviar" name="botao" required placeholder="Enviar" />
-                        </div>
-            </form>
->>>>>>> Stashed changes
         </div>  
     </section>

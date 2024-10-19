@@ -1,11 +1,6 @@
-const button = document.querySelector('button name="teste"');
-const modal = document.querySelector('dialog');
-const buttonClose = document.querySelector('button name="aviso-close"');
+const Aviso = document.getElementById("modal-aviso");
+const AvisoClose = document.querySelector('button[name="close-aviso"]');
 
-button = function ()  {
-    modal.showModal();
-}
-
-buttonClose = function () {
-    modal.close();
+AvisoClose.onclick = function () {
+    Aviso.style.display = "none";
 }
