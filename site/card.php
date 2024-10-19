@@ -36,7 +36,7 @@
                 width: 100%;
                 height: 110%;
                 display: flexbox;
-                background-color: goldenrod;
+                background-color: var(--tema-secundario);
                 border: 10px;
                 border-radius: 20px;
                 border-color: var(--tema-quartenario);
@@ -116,7 +116,7 @@
                 grid-template-columns: 50%;
             }
             .container-admin a{
-                text-decoration:underline goldenrod;
+                text-decoration:underline var(--tema-secundario);
                 color: var(--branco-principal);
                 font-size: 20px;
                 font-weight: 6px;
@@ -201,7 +201,7 @@
                 <div class="container-admin">
                     <a href="../site/apresentarcontato.php" class="admin-button-1">Apresentar contatos</a>
                     <a href="./apresentarcriarconta.php" class="admin-button-2">Apresentar contas</a>
-                    <a href="./apresentarcomentarios.php" class="admin-button-1">Apresentar comentario</a>
+                    <a href="./apresentarcomentarios.php" class="admin-button-1">Apresentar comentários</a>
                 </div>
             </div>
             <!--admin end-->

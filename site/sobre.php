@@ -25,29 +25,108 @@
                 </div>
             </div>
             <!-- Comentando comentário--> <!--INÍCIO-->
-             <!-- Depois muda o nome das classes para algo que faça mais sentido-->
+             <!-- Depois muda o nome das classes para algo que faça mais sentido
             <h1>Apresentação dos cursos, ou notícias ordenadas por esses... não decidi ainda</h1>
-            <div class="contSlideCursos">
-                <div class="contEudoCursos">
-                    <div class="contInvolucroCard">
-                        <div class="cardSobre">
-                            <div class="conteudImgCardSobre">
+            <div class="contSlideCursos swiper">
+                <div class="slideCursos">
+                    <div class="contInvolucroCard swiper-wrapper">
+                        <div class="involucroCard swiper-slide">
+                            <div class="contImgCardSobre">
                                 <span class="sobrepos"></span>
                             
                                 <div class="imgCardSobre">
                                     <img src="images/imagensArquivos/cursos/ds.avif" alt="Curso de DS" class="Sobreimg">
                                 </div>
                             </div>
-                            <div class="conteuCardSobre">
-                                <h2 class="nome">Desenvolvimeto de Sistemas</h2>
-                                <p class="descricao">O curso técnico em Desenvolvimento de Sistemas da Etec de Guaianazes prepara você para desenvolver soluções sociais e empresariais para problemas diversos através da tecnologia. Você aprenderá a construir softwares, aplicativos e sistemas, desde o planejamento até a implementação. As aulas te ensinarão a dominar linguagens de programação, a trabalhar com bancos de dados e a utilizar ferramentas de desenvolvimento. Ao final do curso, você estará pronto para ingressar no mercado de trabalho e participar da criação de soluções tecnológicas que transformam o mundo!</p>
+                            <div class="cursoCardSobre">
+                                <h5 class="nomeCursoCard">Desenvolvimento de Sistemas</h5>
+                                <p class="descricaoCursoCard">O curso técnico em Desenvolvimento de Sistemas da Etec de Guaianazes prepara você para desenvolver soluções sociais e empresariais para problemas diversos através da tecnologia. Você aprenderá a construir softwares, aplicativos e sistemas, desde o planejamento até a implementação. As aulas te ensinarão a dominar linguagens de programação, a trabalhar com bancos de dados e a utilizar ferramentas de desenvolvimento. Ao final do curso, você estará pronto para ingressar no mercado de trabalho e participar da criação de soluções tecnológicas que transformam o mundo!</p>
                             
-                                <button class="botao">Ver mais...</button>
+                                <button class="botaoCursoCard">Ver mais...</button>
+                            </div>
+                        </div>
+                        <div class="involucroCard swiper-slide">
+                            <div class="contImgCardSobre">
+                                <span class="sobrepos"></span>
+                            
+                                <div class="imgCardSobre">
+                                    <img src="images/imagensArquivos/cursos/ds.avif" alt="Curso de DS" class="Sobreimg">
+                                </div>
+                            </div>
+                            <div class="cursoCardSobre">
+                                <h5 class="nomeCursoCard">Desenvolvimento de Sistemas</h5>
+                                <p class="descricaoCursoCard">O curso técnico em Desenvolvimento de Sistemas da Etec de Guaianazes prepara você para desenvolver soluções sociais e empresariais para problemas diversos através da tecnologia. Você aprenderá a construir softwares, aplicativos e sistemas, desde o planejamento até a implementação. As aulas te ensinarão a dominar linguagens de programação, a trabalhar com bancos de dados e a utilizar ferramentas de desenvolvimento. Ao final do curso, você estará pronto para ingressar no mercado de trabalho e participar da criação de soluções tecnológicas que transformam o mundo!</p>
+                            
+                                <button class="botaoCursoCard">Ver mais...</button>
+                            </div>
+                        </div>
+                        <div class="involucroCard swiper-slide">
+                            <div class="contImgCardSobre">
+                                <span class="sobrepos"></span>
+                            
+                                <div class="imgCardSobre">
+                                    <img src="images/imagensArquivos/cursos/ds.avif" alt="Curso de DS" class="Sobreimg">
+                                </div>
+                            </div>
+                            <div class="cursoCardSobre">
+                                <h5 class="nomeCursoCard">Desenvolvimento de Sistemas</h5>
+                                <p class="descricaoCursoCard">O curso técnico em Desenvolvimento de Sistemas da Etec de Guaianazes prepara você para desenvolver soluções sociais e empresariais para problemas diversos através da tecnologia. Você aprenderá a construir softwares, aplicativos e sistemas, desde o planejamento até a implementação. As aulas te ensinarão a dominar linguagens de programação, a trabalhar com bancos de dados e a utilizar ferramentas de desenvolvimento. Ao final do curso, você estará pronto para ingressar no mercado de trabalho e participar da criação de soluções tecnológicas que transformam o mundo!</p>
+                            
+                                <button class="botaoCursoCard">Ver mais...</button>
+                            </div>
+                        </div>
+                        <div class="involucroCard swiper-slide">
+                            <div class="contImgCardSobre">
+                                <span class="sobrepos"></span>
+                            
+                                <div class="imgCardSobre">
+                                    <img src="images/imagensArquivos/cursos/ds.avif" alt="Curso de DS" class="Sobreimg">
+                                </div>
+                            </div>
+                            <div class="cursoCardSobre">
+                                <h5 class="nomeCursoCard">Desenvolvimento de Sistemas</h5>
+                                <p class="descricaoCursoCard">O curso técnico em Desenvolvimento de Sistemas da Etec de Guaianazes prepara você para desenvolver soluções sociais e empresariais para problemas diversos através da tecnologia. Você aprenderá a construir softwares, aplicativos e sistemas, desde o planejamento até a implementação. As aulas te ensinarão a dominar linguagens de programação, a trabalhar com bancos de dados e a utilizar ferramentas de desenvolvimento. Ao final do curso, você estará pronto para ingressar no mercado de trabalho e participar da criação de soluções tecnológicas que transformam o mundo!</p>
+                            
+                                <button class="botaoCursoCard">Ver mais...</button>
+                            </div>
+                        </div>
+                        <div class="involucroCard swiper-slide">
+                            <div class="contImgCardSobre">
+                                <span class="sobrepos"></span>
+                            
+                                <div class="imgCardSobre">
+                                    <img src="images/imagensArquivos/cursos/ds.avif" alt="Curso de DS" class="Sobreimg">
+                                </div>
+                            </div>
+                            <div class="cursoCardSobre">
+                                <h5 class="nomeCursoCard">Desenvolvimento de Sistemas</h5>
+                                <p class="descricaoCursoCard">O curso técnico em Desenvolvimento de Sistemas da Etec de Guaianazes prepara você para desenvolver soluções sociais e empresariais para problemas diversos através da tecnologia. Você aprenderá a construir softwares, aplicativos e sistemas, desde o planejamento até a implementação. As aulas te ensinarão a dominar linguagens de programação, a trabalhar com bancos de dados e a utilizar ferramentas de desenvolvimento. Ao final do curso, você estará pronto para ingressar no mercado de trabalho e participar da criação de soluções tecnológicas que transformam o mundo!</p>
+                            
+                                <button class="botaoCursoCard">Ver mais...</button>
+                            </div>
+                        </div>
+                        <div class="involucroCard swiper-slide">
+                            <div class="contImgCardSobre">
+                                <span class="sobrepos"></span>
+                            
+                                <div class="imgCardSobre">
+                                    <img src="images/imagensArquivos/cursos/ds.avif" alt="Curso de DS" class="Sobreimg">
+                                </div>
+                            </div>
+                            <div class="cursoCardSobre">
+                                <h5 class="nomeCursoCard">Desenvolvimento de Sistemas</h5>
+                                <p class="descricaoCursoCard">O curso técnico em Desenvolvimento de Sistemas da Etec de Guaianazes prepara você para desenvolver soluções sociais e empresariais para problemas diversos através da tecnologia. Você aprenderá a construir softwares, aplicativos e sistemas, desde o planejamento até a implementação. As aulas te ensinarão a dominar linguagens de programação, a trabalhar com bancos de dados e a utilizar ferramentas de desenvolvimento. Ao final do curso, você estará pronto para ingressar no mercado de trabalho e participar da criação de soluções tecnológicas que transformam o mundo!</p>
+                            
+                                <button class="botaoCursoCard">Ver mais...</button>
                             </div>
                         </div>
                     </div>
+
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
-            <!-- Comentando comentário--> <!--INÍCIO-->
+             Comentando comentário-- !--INÍCIO-->
         </div>
     </div>

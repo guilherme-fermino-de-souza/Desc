@@ -54,7 +54,7 @@
     <?php include './footer.php' ?>
         </body>
 <!-- JavaScript - swiper (deslizador) do card, parte 100% bootstrap-->
-<script src="/swiper.js"></script><!-- ... Parte "Codada" abaixo-->
+<script src="/swiper.js"></script>
 <script src="/swip.js"></script>
 <!-- JavaScript - navbar responsiva-->
 <script src="./java.js"></script>
