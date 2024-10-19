@@ -1,16 +1,10 @@
 :root {
     --branco-principal: #ffffff;
     /*SCARLET:FF2400;CANDY APPLE:FF0800; BLUE:035ca1*/
-<<<<<<< Updated upstream
     --tema-primario:#265df2;
     --tema-secundario:#FFE305;
     --tema-terciario:#4070f4;
     --tema-quartenario: #038C3E;
-=======
-    --tema-primario:#035ca1;
-    --tema-secundario:#A16203;
-    --tema-terciario:#1A4261;
->>>>>>> Stashed changes
     --preto-fonte: #000000;
     --cinza-fonte-claro: #e8f0fe;
     --cinza-fonte: #404040;
@@ -31,7 +25,6 @@
 html, body {
     min-height: 100vh;
 }
-<<<<<<< Updated upstream
 .modal-login {
     width: 80%;
     margin: auto;
@@ -68,9 +61,6 @@ html, body {
 /* modal navbar end*/
 
 /* navbar start*/
-=======
-/* NAVBAR START*/
->>>>>>> Stashed changes
 a:hover {
     opacity: 0.7;
 }
@@ -210,7 +200,6 @@ nav {
 /* - - - RESPONSIVE - - - */
 /* navbar end */
 
-<<<<<<< Updated upstream
 /* aviso start */
 .modal-aviso { /* O fundo da mensagem*/
     position: fixed;
@@ -241,9 +230,6 @@ nav {
 /* aviso end */
 
 /*inicio start*/
-=======
-/*INÍCIO START*/
->>>>>>> Stashed changes
 .container-inicio {
     background-image: url('https://www.pexels.com/photo/people-wearing-backpacks-1454360/');    
     background-size: cover;
@@ -299,7 +285,6 @@ nav {
     background-color: var(--tema-terciario);
     color: var(--branco-principal);
 }
-<<<<<<< Updated upstream
 /* inicio end*/
 
 /* comentario start 
@@ -392,11 +377,6 @@ input[type="submit"]:hover {
  comentario end */
 
 /* sobre start*/
-=======
-/*INÍCIO END*/
-
-/*SOBRE START*/
->>>>>>> Stashed changes
 .sobre {
     background-color: #ffffff;
 }
@@ -421,29 +401,21 @@ input[type="submit"]:hover {
     display: flex;
     justify-content: center; /* Horizontal alignment */
     align-items: center;     /* Vertical alignment */
-<<<<<<< Updated upstream
-=======
-    flex-direction: row; 
->>>>>>> Stashed changes
 }
 .text-sobre p{
     font-size: var(--fonte-padrao);
     color: var(--tema-terciario);
     font-weight: 600;
     text-indent: 2.5%; /* Recuo do pragrafo */
-<<<<<<< Updated upstream
 }
 .paragrafos-sobre {
     display: flex;
     flex-direction: column;
-=======
->>>>>>> Stashed changes
 }
 
 .img-sobre img{
     height: 25vw;
 }
-<<<<<<< Updated upstream
 /*Card dos Cursos em Sobre, início*/
 .contSlideCursos{
     max-width: 1120px;
@@ -649,11 +621,6 @@ input[type="submit"]:hover { /* Quando Clicar no Botão Enviar Azul*/
 /* contato end*/
 
 /* footer start*/
-=======
-/*SOBRE END*/
-
-/*FOOTER START*/
->>>>>>> Stashed changes
 .footer {
     display: flex;
     flex-direction: column;

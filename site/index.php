@@ -26,7 +26,6 @@
     <?php 
     $aviso = ''; // Inicializa a mensagem de erro para caso acesso negado
 
-<<<<<<< Updated upstream
     if (isset($_GET['negado'])) { 
         $aviso = "Você não possui acesso a essa página!"; ?> <!-- Caso User tente entrar em Págs para Devs -->
     
@@ -42,12 +41,6 @@
     <?php } ?>
     <!-- Site -->
     <?php include './navbar.php' ?>
-=======
-<div class='container-index-principal'>
-        <?php include './inicio.php' ?>
-        <?php include './sobre.php' ?>
-</div>
->>>>>>> Stashed changes
 
         <div class='container-index-principal'>
             <?php include './inicio.php' ?>

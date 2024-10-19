@@ -21,7 +21,6 @@
        </nav>
    </header>
    <!--navbar end--> <!--FINAL-->
-<<<<<<< Updated upstream
    <?php 
    include("conexao.php");
     $nome = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
@@ -45,6 +44,3 @@
 
    <script src="./login.js"></script>
    <script src="./java.js"></script>
-=======
-   <script src="./java.js"></script>
->>>>>>> Stashed changes
