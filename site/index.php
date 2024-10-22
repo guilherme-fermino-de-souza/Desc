@@ -31,8 +31,7 @@
     
     <!-- Aviso ativado quando o $aviso receber um valor true -->
         <div id="modal-aviso" style="display: block;">
-            <div class="card-aviso">  
-                <button name="teste">teste</button>  
+            <div class="card-aviso">    
                     <h1>Acesso negado</h1>
                     <h2><?php echo $aviso; ?></h2>
                     <button name="close-aviso">ok</button>

@@ -4,12 +4,12 @@ CREATE DATABASE bdNewsWallEtec;
 
 USE bdNewsWallEtec;
 /* Tabela das notícias inseridas pelos admins*/
-CREATE TABLE tbAviso (
-    idAviso INT PRIMARY KEY AUTO_INCREMENT
-    ,tituloAviso VARCHAR (30)
-    ,subtituloAviso VARCHAR (50)
-    ,descAviso VARCHAR (200)
-    ,imgAviso INT
+CREATE TABLE tbNoticias (
+    idNoticias INT PRIMARY KEY AUTO_INCREMENT
+    ,tituloNoticias VARCHAR (30)
+    ,subtituloNoticias VARCHAR (50)
+    ,descNoticias VARCHAR (200)
+    ,imgNoticias INT
 );
 /* Tabela das contas registradas em 'nova conta'*/
 CREATE TABLE tbConta (
@@ -32,6 +32,6 @@ CREATE TABLE tbComentarioNoticia (
     idComentarioNoticia INT PRIMARY KEY AUTO_INCREMENT,
     nomeComentarioNoticia VARCHAR(40),
     mensagemComentarioNoticia VARCHAR(400),
-    aviso_id INT,
-    FOREIGN KEY (aviso_id) REFERENCES tbAviso(idAviso)
+    noticia_id INT,
+    FOREIGN KEY (noticia_id) REFERENCES tbNoticias(idNoticias)
 );

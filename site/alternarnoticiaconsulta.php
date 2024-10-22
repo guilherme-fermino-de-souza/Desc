@@ -135,7 +135,7 @@
                         <h1>Notícia</h1>     
                         <div class="textfield">
                             <input type="hidden" name="idNoticias" value="<?php echo @$_GET['id']; ?>" />
-                            <input type="hidden" name="idImgNoticias" value="<?php echo @$_GET['idImgNoticia']; ?>" />
+                            <input type="hidden" name="idImgNoticias" value="<?php echo @$_GET['idImgNoticias']; ?>" />
                         </div>		
 
                         <div class="textfield">

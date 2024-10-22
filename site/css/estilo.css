@@ -102,23 +102,20 @@ nav {
     margin: 2.5% 0.3vw;
     transition: 0.3s;
 }
-.nav-button {
-    color: var(--branco-principal);
+.modal-login-button {
+    color: var(--tema-primario);
+    background-color: var(--cinza-fonte-claro);
     margin: auto;
-}
-.nav-button button {
-    background-color: var(--branco-principal);
-    color: var(--preto-fonte);
     font-size: var(--fonte-padrao);
     border-radius: 15px;
-    padding: 4% 9%;
+    padding: 5% 15%;
     margin: 0% 15%;
 }
 
-.nav-button button:hover {
+.nav-list button:hover {
     cursor: pointer;
-    background-color: var(--tema-terciario);
-    color: var(--branco-principal);
+    background-color: var(--tema-primario);
+    color: var(--cinza-fonte-claro);
 }
 .mobile-menu {
     display: none;
@@ -378,7 +375,7 @@ input[type="submit"]:hover {
 
 /* sobre start*/
 .sobre {
-    background-color: #ffffff;
+    background-color: var(--cinza-fonte-claro);
 }
 .container-sobre {
     display: flex;
