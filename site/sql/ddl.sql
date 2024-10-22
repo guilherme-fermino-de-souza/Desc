@@ -14,7 +14,7 @@ CREATE TABLE tbNoticias (
 /* Tabela das contas registradas em 'nova conta'*/
 CREATE TABLE tbConta (
     idConta INT PRIMARY KEY AUTO_INCREMENT
-    ,nomeCompletoConta VARCHAR (60)
+    ,nomeConta VARCHAR (60)
     ,emailConta VARCHAR (50)
     ,senhaConta VARCHAR (30)
 );
