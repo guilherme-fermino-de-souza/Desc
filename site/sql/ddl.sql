@@ -17,6 +17,7 @@ CREATE TABLE tbConta (
     ,nomeConta VARCHAR (60)
     ,emailConta VARCHAR (50)
     ,senhaConta VARCHAR (30)
+    ,tipoConta VARCHAR(4)
 );
 /* Tabela das mensagens recebidas pelo contato*/
 CREATE TABLE tbContato (
