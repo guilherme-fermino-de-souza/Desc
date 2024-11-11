@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/swiper.css"><!-- Swiper CSS-->
+    <link rel="stylesheet" href="./css/swiper.css"> <!-- Swiper CSS-->
     <link rel="stylesheet" href="./css/estilo.css">
     <title>NewsEtec®</title>
     <style>
@@ -53,8 +53,8 @@
 
 
     <!-- JavaScript --> 
-    <script src="/swiper.js"></script> <!-- swiper (deslizador) do card, parte 100% bootstrap-->
-    <script src="/swip.js"></script>
+    <script src="./swiper-bundle.min.js"></script> <!-- swiper (deslizador) do card, parte 100% bootstrap-->
+    <script src="./swip.js"></script>
     <script src="./java.js"></script> <!-- JavaScript - navbar responsiva-->
     <script src="./aviso.js"></script>
 </body>

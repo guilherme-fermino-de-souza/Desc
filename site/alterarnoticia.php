@@ -49,6 +49,6 @@
     ");
     $stmt->execute();
 
-    header("location:alternarnoticiaconsulta.php");
+    header("location:noticias.php");
     exit;
 ?>

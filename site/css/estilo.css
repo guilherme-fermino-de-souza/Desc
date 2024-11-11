@@ -25,8 +25,10 @@
 html, body {
     min-height: 100vh;
 }
+/* modal navbar start*/
 .modal-login {
     width: 80%;
+    height: 80%;
     margin: auto;
 }
 .modal-login dialog::backdrop { /* fundo do modal */
@@ -39,6 +41,10 @@ html, body {
     margin: auto;
     box-shadow: 0 0 1em rgb(0 0 0 .3);
 }
+.modal-login img {
+    width: 60%;
+    border-radius: 100%;
+}
 .modal-login h1 {
     margin: .1rem;
     font-size: var(--fonte-grande);
@@ -46,6 +52,13 @@ html, body {
 .modal-login p {
     margin: .05rem;
     font-size: var(--fonte-media);
+}
+.modal-login a {
+    border-radius: .5rem;
+    background-color: var(--cinza-fonte-claro);
+    font-size: var(--fonte-padrao);
+    margin: .5rem;
+    padding: 1% 2%;
 }
 .modal-login button {
     border-radius: .5rem;
@@ -67,18 +80,15 @@ a:hover {
 header {
     background: var(--tema-primario);
     width: 100%;
-    justify-content: center;
     height: 7.5vh;
 }
 nav {
     display: flex;
-    width: 80%;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    width: 80%;
+    margin: auto;
+    padding: .5rem 0.5rem;
 }
 .logo {
     font-size: 1.50vw;
@@ -89,7 +99,7 @@ nav {
 .nav-list {
     list-style: none;
     display: flex;
-    margin: 1% 1% 1% 15%;
+    margin: 0;
 }
 .nav-list li {
     padding: 3.5% 1%;
@@ -102,20 +112,18 @@ nav {
     margin: 2.5% 0.3vw;
     transition: 0.3s;
 }
-.nav-button {
+.nav-list { /* LINKS NAV */
     color: var(--branco-principal);
-    margin: auto;
 }
-.nav-button button {
+.nav-list button { /* BOTÃO LOGIN */
     background-color: var(--branco-principal);
     color: var(--preto-fonte);
     font-size: var(--fonte-padrao);
     border-radius: 15px;
     padding: 4% 9%;
-    margin: 0% 15%;
 }
 
-.nav-button button:hover {
+.nav-list button:hover {
     cursor: pointer;
     background-color: var(--tema-terciario);
     color: var(--branco-principal);
@@ -124,7 +132,6 @@ nav {
     display: none;
     cursor: pointer;
 }
-
 .mobile-menu div {
     color: var(--tema-terciario);
     width: 100%;
@@ -378,7 +385,7 @@ input[type="submit"]:hover {
 
 /* sobre start*/
 .sobre {
-    background-color: #ffffff;
+    background-color: var(--cinza-fonte-claro);
 }
 .container-sobre {
     display: flex;
@@ -418,30 +425,36 @@ input[type="submit"]:hover {
 }
 /*Card dos Cursos em Sobre, início*/
 .contSlideCursos{
-    max-width: 1120px;
+    height: auto;
+    max-height: 480px;
+    min-width: 15%;
     width: 100%;
     margin: auto;
-    background-color: grey;
     padding: 40px 0;
 }
 .slideCursos{
+    height: auto;
+    max-height: 460px;
+    min-width: 15%;
     margin: 0 40px;
+    overflow: hidden;
+    border-radius: 25px;
 }
 .involucroCard{
-    width: 320px;
     border-radius: 25px;
     background-color: #e8f0fe;
-}
-.contImgCardSobre, .conteuCardSobre{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 14px;
 }
 .contImgCardSobre{
     position: relative;
     row-gap: 8px;
     padding: 25px 0;
+}
+.contImgCardSobre, 
+.conteuCardSobre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
 }
 .sobrepos{
     position: absolute;
@@ -467,8 +480,8 @@ input[type="submit"]:hover {
 }
 .imgCardSobre{
     position: relative;
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
     border-radius: 50%;
     background: #e8f0fe;
     padding: 3px;
@@ -506,6 +519,37 @@ predefinida que cria uma aceleração suave no início e no final da transição
 }
 .botaoCurso:hover{
     background: #265df2;
+}
+.swiper-navBtn{
+    color: #6E93f7;
+    transition: color 0.3 ease;
+}
+.swiper-navBtn:hover{
+    color: #4070f4;
+}
+.swiper-navBtn::before, .swiper-navBtn::after{
+    font-size: 40px;
+}
+.swiper-button-next{
+    right: 0;
+}
+.swiper-button-prev{
+    left: 0;
+}
+.swiper-pagination-bullet{
+    background-color: #6E93f7;
+    opacity: 1;
+}
+.swiper-pagination-bullet-active{
+    background-color: #4070f4;
+}
+@media screen and (max-width: 780px){
+    .slideCursos{
+        margin: 0 40px;
+    }
+    .swiper-navBtn{
+        display: none;
+    }
 }
 /* sobre end */
 

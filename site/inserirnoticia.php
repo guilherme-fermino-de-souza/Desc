@@ -6,7 +6,10 @@
     $subtitulo = $_POST['subtituloNoticias'];
     $descricao = $_POST['descricaoNoticias'];
     $img = $_FILES['imgNoticias'];
-
+    $paragrafos = $_POST['paragrafosNoticias']; //Array
+    if (empty($paragrafos)) {
+        $paragrafos = ["Essa notícia não possui parágrafos a serem mostrados"];
+    }
     $numImagem = (int) file_get_contents($contadorImagens);
 
     switch ($img['error']) {
@@ -49,6 +52,16 @@
             ");
 
     $stmt -> execute();
+
+        // Obter o ID da notícia inserida
+        $id_noticia = $pdo->lastInsertId();
+        // Loop para inserir cada parágrafo na tabela tbParagrafo
+        foreach ($paragrafos as $ordem => $paragrafo) {
+            $stmt = $pdo->prepare("
+            INSERT INTO tbParagrafoNoticias (textoParagrafoNoticias, noticia_id) VALUES (?, ?)
+        ");
+        $stmt->execute([$paragrafo, $id_noticia]); // Inserindo o parágrafo e o ID da notícia
+    }
 
     header("location:noticias.php");
 ?>

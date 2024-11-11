@@ -12,7 +12,7 @@
                <li><a href="./index.php">Início</a></li>
                <li><a href="./noticias.php">Notícias</a></li>
                <li><a href="./card.php">Desenvolvedores</a></li> 
-               <li><button name="modal-login">Login</button></li>
+               <li><button class="button-modal-login" name="modal-login">Login</button></li>
            </ul>         
        </nav>
    </header>

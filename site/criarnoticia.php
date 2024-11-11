@@ -37,7 +37,7 @@
             margin-bottom: 3%;
         }
         .criarnoticia h1 {
-            font-size: var(--fonte-grande);
+            font-size: var(--fonte-media);
             margin: 0% 0% 2% 0%;
             color: var(--preto-fonte);
             font-weight: 800;
@@ -166,35 +166,41 @@
                 <!--criarnotícia start--> <!--INÍCIO--> 
                 <div class="criarnoticia-principal">
                     <div class="criarnoticia">  
-                        <form class="form-criarnoticia" action="inserirnoticia.php" method="post" enctype="multipart/form-data">
-                        <h1> Criar Notícia</h1>
-                        <div class="textfield">
-                            <label class="label">Título</label>
-                            <input type="text" id="tituloNoticias" name="tituloNoticias" />
-                        </div>
+                        <form class="form-criarnoticia" action="./inserirnoticia.php" method="post" enctype="multipart/form-data">
+                            <h1> Criar Notícia</h1>
+                            <div class="textfield">
+                                <label class="label">Título</label>
+                                <input type="text" id="tituloNoticias" name="tituloNoticias" />
+                            </div>
 
-                        <div class="textfield">
-                            <label class="label">Subtítulo</label>
-                            <input type="text" id='subtituloNoticias' name="subtituloNoticias" />
-                        </div>
+                            <div class="textfield">
+                                <label class="label">Subtítulo</label>
+                                <input type="text" id="subtituloNoticias" name="subtituloNoticias" />
+                            </div>
 
-                        <div class="textfield">
-                            <label class="label">Conteúdo</label> <br>
-                            <textarea id="descricaoNoticias" name="descricaoNoticias" rows="8" cols="60"> </textarea>
-                        </div>
+                            <div class="textfield">
+                                <label class="label">Conteúdo</label> <br>
+                                <textarea id="descricaoNoticias" name="descricaoNoticias" rows="8" cols="60"> </textarea>
+                            </div>
 
-                        <div class="textfield-img">
-                            <label class="label">Imagem(.png)</label> <br>
-                            <input type="file" name="imgNoticias" accept=".png" placeholder="Insira a Imagem em .png"/>
-                        </div>
-
-                        <div class="enviar">
-                            <input type="submit" value="Enviar">
-                        </div>
+                            <div class="textfield-img">
+                                <label class="label">Imagem(.png)</label> <br>
+                                <input type="file" name="imgNoticias" accept=".png" placeholder="Insira a Imagem em .png"/>
+                            </div>
+                            
+                            <div id="paragrafosContainer">
+                                
+                            </div>
+                            <button type="button" onclick="adicionarParagrafo()">Adicionar Parágrafo</button>
+ 
+                            <div class="enviar">               
+                                <input type="submit" value="Enviar">
+                            </div>
                         </form>
                     </div>
                 </div>
             <?php include './footer.php' ?>
         </body>
+        <script src="./inserirParagrafo.js"></script>
         </html>
 <?php } ?>
