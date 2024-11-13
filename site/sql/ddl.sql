@@ -6,9 +6,9 @@ USE bdNewsWallEtec;
 /* Tabela das notícias inseridas pelos admins*/
 CREATE TABLE tbNoticias (
     idNoticias INT PRIMARY KEY AUTO_INCREMENT
-    ,tituloNoticias VARCHAR (100)
-    ,subtituloNoticias VARCHAR (150)
-    ,descNoticias VARCHAR (200)
+    ,tituloNoticias VARCHAR (150)
+    ,subtituloNoticias VARCHAR (200)
+    ,descNoticias VARCHAR (500)
     ,imgNoticias INT
 );
 /* Tabela das contas registradas em 'nova conta'*/
@@ -38,15 +38,6 @@ CREATE TABLE tbComentarioNoticia (
 );
 
 /* PARTE NOTÍCIAS */
-
-/* Tabela das notícias inseridas pelos admins*/
-CREATE TABLE tbNoticias (
-    idNoticias INT PRIMARY KEY AUTO_INCREMENT
-    ,tituloNoticias VARCHAR (150)
-    ,subtituloNoticias VARCHAR (200)
-    ,descNoticias VARCHAR (500)
-    ,imgNoticias INT
-);
 
 /* Paragrafo ligado a tbNoticias */
 CREATE TABLE tbParagrafoNoticias (
