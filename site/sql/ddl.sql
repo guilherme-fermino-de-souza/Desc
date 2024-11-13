@@ -14,9 +14,10 @@ CREATE TABLE tbNoticias (
 /* Tabela das contas registradas em 'nova conta'*/
 CREATE TABLE tbConta (
     idConta INT PRIMARY KEY AUTO_INCREMENT
-    ,nomeCompletoConta VARCHAR (60)
-    ,emailConta VARCHAR (50)
-    ,senhaConta VARCHAR (30)
+    ,nomeConta VARCHAR (150)
+    ,emailConta VARCHAR (60)
+    ,senhaConta VARCHAR (255)
+    ,tipoConta VARCHAR (4)
 );
 /* Tabela das mensagens recebidas pelo contato*/
 CREATE TABLE tbContato (
