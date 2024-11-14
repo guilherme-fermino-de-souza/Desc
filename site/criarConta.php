@@ -116,7 +116,7 @@ input[type="submit"]:hover { /* Quando Clicar no Botão Enviar Azul*/
     <!--Criar Conta--> <!--INÍCIO-->
         <div class="conta-principal">
                 <div class="conta">
-                    <form class="criar-conta" name="Conta" id="Conta"action="../site/criarContaEnviar.php" method="post">
+                    <form class="criar-conta" name="Conta" id="Conta"action="../site/criarContaEnviar.php" method="post" enctype="multipart/form-data">
                         <h1>Nova Conta</h1>
                         <div class="textfield"> <!-- Nome -->
                             <label for="nome">Nome</label>
@@ -138,6 +138,11 @@ input[type="submit"]:hover { /* Quando Clicar no Botão Enviar Azul*/
                             </select>
                         </div>
 
+                        <div class="textfield-img">
+                                <label class="label">Imagem(.png)</label> <br>
+                                <input type="file" name="imgConta" accept=".png, .jpg, .jpeg, .gif, .webp, .tiff" placeholder="Insira a Imagem"/>
+                        </div>
+                        
                         <div class="textfield"> <!-- Senha -->
                             <label for="senha">Senha</label>
                             <input type="password" name="senha" id="senha" required placeholder="Senha">

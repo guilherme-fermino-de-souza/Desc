@@ -1,4 +1,26 @@
-   <!--navbar start--> <!--INÍCIO-->
+ 
+   <?php 
+   include("conexao.php");
+   include("imagemLocalConta.php");
+    $nome = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
+        $mysqli = $pdo->prepare("SELECT * FROM tbConta WHERE nomeConta = :nome");
+        $mysqli->bindParam(':nome', $nome);
+        $mysqli -> execute();
+        while($row = $mysqli->fetch(PDO::FETCH_BOTH)) { ?> <!--Acessa os dados do user conectado no momento -->
+        <div class="modal-login">
+                <dialog> <!--Ver Usuário -->
+                    <div class="modal-login-img">
+                        <img src="<?php echo $row["imgConta"] == 0 ? "https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png" : "images/imagensArquivos/conta/" . $row["imgConta"] . ".png"?>">
+                    </div>
+                    <h1><?php echo $row["nomeConta"]; ?></h1>
+                    <p><?php echo $row["emailConta"]; ?></p>
+                    <p><?php echo $row["tipoConta"]; ?></p>
+                    <a href="logout.php">Sair</a> <!-- Sai da SESSION-->
+                    <button name="close-modal">ok</button>
+                </dialog>
+        </div>
+        
+    <!--navbar start--> <!--INÍCIO-->
    <header>
        <nav>
         <a class="logo" href="./index.php">NEWS WALL ETEC</a>
@@ -13,34 +35,13 @@
                <li><a href="./noticias.php">Notícias</a></li>
                <li><a href="./card.php">Desenvolvedores</a></li> 
                <li><button class="button-modal-login" name="modal-login">Login</button></li>
+               <li><a><img src="<?php echo $row["imgConta"] == 0 ? "https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png" : "images/imagensArquivos/conta/" . $row["imgConta"] . ".png"?>" width="100"></a></li>
            </ul>         
        </nav>
    </header>
    <!--navbar end--> <!--FINAL-->
-   <?php 
-   include("conexao.php");
-    $nome = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
-        $mysqli = $pdo->prepare("SELECT * FROM tbConta WHERE nomeConta = :nome");
-        $mysqli->bindParam(':nome', $nome);
-        $mysqli -> execute();
-        while($row = $mysqli->fetch(PDO::FETCH_BOTH)) { ?> <!--Acessa os dados do user conectado no momento -->
-        <div class="modal-login">
-                <dialog> <!--Ver Usuário -->
-                    <div class="container-close-modal">
-                        <button name="close-modal" >
-                            <img src="./images/imagensArquivos/noticias/icons/marca-x.png">
-                        </button>
-                    </div>
-                    <div class="modal-login-img">
-                        <img src="https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png">
-                    </div>
-                    <h1><?php echo $row["nomeConta"]; ?></h1>
-                    <p><?php echo $row["emailConta"]; ?></p>
-                    <p><?php echo $row["tipoConta"]; ?></p>
-                    <a href="logout.php">Sair</a> <!-- Sai da SESSION-->
-                </dialog>
-        </div>
-    <?php } ?>
+
+   <?php } ?>
 
    <script src="./login.js"></script>
    <script src="./java.js"></script>

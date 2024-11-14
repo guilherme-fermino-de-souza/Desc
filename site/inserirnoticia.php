@@ -1,45 +1,45 @@
-<?php 
-    include("conexao.php");
-    include("imagemLocalNoticias.php");
+<?php
+include("conexao.php");
+include("imagemLocalNoticias.php");
 
-    $titulo = $_POST['tituloNoticias'];
-    $subtitulo = $_POST['subtituloNoticias'];
-    $descricao = $_POST['descricaoNoticias'];
-    $img = $_FILES['imgNoticias'];
-    $paragrafos = $_POST['paragrafosNoticias']; //Array
-    if (empty($paragrafos)) {
-        $paragrafos = ["Essa notícia não possui parágrafos a serem mostrados"];
-    }
-    $numImagem = (int) file_get_contents($contadorImagens);
+$titulo = $_POST['tituloNoticias'];
+$subtitulo = $_POST['subtituloNoticias'];
+$descricao = $_POST['descricaoNoticias'];
+$img = $_FILES['imgNoticias'];
+$paragrafos = $_POST['paragrafosNoticias']; //Array
+if (empty($paragrafos)) {
+    $paragrafos = ["Essa notícia não possui parágrafos a serem mostrados"];
+}
+$numImagem = (int) file_get_contents($contadorImagens); // Pega o ultimo numero de imagem
 
-    switch ($img['error']) {
+switch ($img['error']) { // Verifica se deu erro na imagem
 
-        case UPLOAD_ERR_OK:
+    case UPLOAD_ERR_OK: // Nao deu erro
 
-            $numImagem++;
-    
-            $nomeImagem = $localImagens . '/' . $numImagem . '.png';
-    
-            move_uploaded_file($img['tmp_name'], $nomeImagem);
-            
-            file_put_contents($contadorImagens, $numImagem);
+        $numImagem++; // Aumenta o numero de imagem
 
-            break;
+        $nomeImagem = $localImagens . '/' . $numImagem . '.png'; // Cria o nome da imagem
 
-        case UPLOAD_ERR_NO_FILE:
+        move_uploaded_file($img['tmp_name'], $nomeImagem); // Salva aimagem
 
-            $numImagem = 0;
+        file_put_contents($contadorImagens, $numImagem); // Atualiza o ultimo numero de imagem
 
-            break;
+        break;
 
-        default:
+    case UPLOAD_ERR_NO_FILE: // Nao tem imagem
 
-            throw new ErrorException("Erro no upload da imagem");
+        $numImagem = 0;
 
-            break;
-    }
+        break;
 
-    $stmt = $pdo->prepare("
+    default: // Deu algum erro diferente
+
+        throw new ErrorException("Erro no upload da imagem"); //Lanca uma excecao (pra nao lasca o site)
+
+        break;
+}
+
+$stmt = $pdo->prepare("
     
             insert into tbNoticias values(
 
@@ -51,17 +51,16 @@
                 )
             ");
 
-    $stmt -> execute();
+$stmt->execute();
 
-        // Obter o ID da notícia inserida
-        $id_noticia = $pdo->lastInsertId();
-        // Loop para inserir cada parágrafo na tabela tbParagrafo
-        foreach ($paragrafos as $ordem => $paragrafo) {
-            $stmt = $pdo->prepare("
+// Obter o ID da notícia inserida
+$id_noticia = $pdo->lastInsertId();
+// Loop para inserir cada parágrafo na tabela tbParagrafo
+foreach ($paragrafos as $ordem => $paragrafo) {
+    $stmt = $pdo->prepare("
             INSERT INTO tbParagrafoNoticias (textoParagrafoNoticias, noticia_id) VALUES (?, ?)
         ");
-        $stmt->execute([$paragrafo, $id_noticia]); // Inserindo o parágrafo e o ID da notícia
-    }
+    $stmt->execute([$paragrafo, $id_noticia]); // Inserindo o parágrafo e o ID da notícia
+}
 
-    header("location:noticias.php");
-?>
+header("location:noticias.php");
