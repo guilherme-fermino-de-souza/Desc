@@ -7,7 +7,7 @@
     $titulo = $_POST['tituloNoticias'];
     $subtitulo = $_POST['subtituloNoticias'];
     $descricao = $_POST['descNoticias'];
-    $numImg = $_POST['idImgNoticias'];
+    $numImg = $_POST['imgNoticias'];
     $img = $_FILES['imgNoticias'];
 
     if ($img['error'] != UPLOAD_ERR_NO_FILE) {

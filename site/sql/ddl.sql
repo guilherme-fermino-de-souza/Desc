@@ -6,17 +6,18 @@ USE bdNewsWallEtec;
 /* Tabela das notícias inseridas pelos admins*/
 CREATE TABLE tbNoticias (
     idNoticias INT PRIMARY KEY AUTO_INCREMENT
-    ,tituloNoticias VARCHAR (100)
-    ,subtituloNoticias VARCHAR (150)
-    ,descNoticias VARCHAR (200)
+    ,tituloNoticias VARCHAR (150)
+    ,subtituloNoticias VARCHAR (200)
+    ,descNoticias VARCHAR (500)
     ,imgNoticias INT
 );
 /* Tabela das contas registradas em 'nova conta'*/
 CREATE TABLE tbConta (
     idConta INT PRIMARY KEY AUTO_INCREMENT
-    ,nomeCompletoConta VARCHAR (60)
-    ,emailConta VARCHAR (50)
-    ,senhaConta VARCHAR (30)
+    ,nomeConta VARCHAR (150)
+    ,emailConta VARCHAR (60)
+    ,senhaConta VARCHAR (255)
+    ,tipoConta VARCHAR (4)
 );
 /* Tabela das mensagens recebidas pelo contato*/
 CREATE TABLE tbContato (
@@ -38,15 +39,6 @@ CREATE TABLE tbComentarioNoticia (
 
 /* PARTE NOTÍCIAS */
 
-/* Tabela das notícias inseridas pelos admins*/
-CREATE TABLE tbNoticias (
-    idNoticias INT PRIMARY KEY AUTO_INCREMENT
-    ,tituloNoticias VARCHAR (150)
-    ,subtituloNoticias VARCHAR (200)
-    ,descNoticias VARCHAR (500)
-    ,imgNoticias INT
-);
-
 /* Paragrafo ligado a tbNoticias */
 CREATE TABLE tbParagrafoNoticias (
     idParagrafoNoticias INT PRIMARY KEY AUTO_INCREMENT
@@ -55,10 +47,10 @@ CREATE TABLE tbParagrafoNoticias (
     ,FOREIGN KEY (Noticia_id) REFERENCES tbNoticias(idNoticias)
 );
 
-/* imagens ligado a tbNoticias Rascunho
+/* imagens ligado a tbNoticias*/
 CREATE TABLE tbImagenNoticia (
     idImagenNoticia INT PRIMARY KEY AUTO_INCREMENT
     ,imgImagenNoticia INT
     ,noticia_id INT
     ,FOREIGN KEY (Noticia_id) REFERENCES tbNoticias(idNoticias)
-);*/
+);

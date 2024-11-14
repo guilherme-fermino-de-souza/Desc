@@ -26,6 +26,11 @@
         while($row = $mysqli->fetch(PDO::FETCH_BOTH)) { ?> <!--Acessa os dados do user conectado no momento -->
         <div class="modal-login">
                 <dialog> <!--Ver Usuário -->
+                    <div class="container-close-modal">
+                        <button name="close-modal" >
+                            <img src="./images/imagensArquivos/noticias/icons/marca-x.png">
+                        </button>
+                    </div>
                     <div class="modal-login-img">
                         <img src="https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png">
                     </div>
@@ -33,7 +38,6 @@
                     <p><?php echo $row["emailConta"]; ?></p>
                     <p><?php echo $row["tipoConta"]; ?></p>
                     <a href="logout.php">Sair</a> <!-- Sai da SESSION-->
-                    <button name="close-modal">ok</button>
                 </dialog>
         </div>
     <?php } ?>

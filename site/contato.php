@@ -2,7 +2,7 @@
     <section class="contato-principal">
         <div class="container-contato">
         <h1>FALE CONOSCO</h1>
-        <h2>Rua Feliciano de Mendonça, 290 - Guaianazes - CEP: 08460-365 - SP</h2>
+        <h2>Entre em contato conosco, estamos aqui para ajudar!</h2>
         <div class="text-contato">
                 <div class="contato">
                     <form class="fale-conosco" name="fale-conosco" action="../site/contatoEnviar.php" method="post">                   
