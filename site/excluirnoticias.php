@@ -20,7 +20,7 @@
 
     $stmt = $pdo->prepare("DELETE FROM tbComentarioNoticia WHERE noticia_id='$id'");
     $stmt ->execute();
-    $stmt = $pdo->prepare("DELETE FROM tbParagrafo WHERE noticia_id='$id'");
+    $stmt = $pdo->prepare("DELETE FROM tbParagrafoNoticias WHERE noticia_id='$id'");
     $stmt ->execute();
     $stmt = $pdo->prepare("DELETE FROM tbNoticias WHERE idNoticias='$id'");
     $stmt ->execute();

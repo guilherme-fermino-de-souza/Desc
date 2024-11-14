@@ -45,7 +45,6 @@
             .titulo-card-painel a {
                 background-color: var(--cinza-fonte-claro);
         	    border-radius: 30%;
-                margin-right: 0;
                 width: 20%;
                 display: flex;
                 justify-content: center;
@@ -160,7 +159,7 @@
                 display: flex;
                 flex-direction: row;
                 width: 80%;
-                margin: auto;
+                margin: 4% auto;
             }
             .img-modal-painel { /* container Img modal */
                 width: 80%;
@@ -176,11 +175,37 @@
                 width: 80%;
                 margin: auto;
             }
-            .texto-modal-painel h1 { /* título modal */
-                font-size: var(--fonte-media);
+            .titulo-modal-painel {
+                display: flex;
+                flex-direction: row;
             }
-            .texto-modal-painel h2 { /* subtítulo do modal */
-                font-size: var(--fonte-padrao);
+            .texto-titulo-modal-painel {
+                width: 80%;
+                margin: auto;
+            }
+            .texto-titulo-modal-painel h1 { /* título modal */
+                font-size: var(--fonte-media);
+                texta-lign: center;
+            }
+            .close-painel { /* botão fechar modal */
+                border: none;
+                background-color: var(--cinza-fonte-claro);
+                width: 2%;
+            }
+            .close-painel img {
+                width: 100%;
+                border-radius: 40px;
+            }
+            .close-painel img:hover{
+                background-color:  red;
+                transition: .75s;
+                cursor: pointer;
+            }
+            .desc-modal-painel h2 { /* subtítulo do modal */
+                font-size: var(--fonte-1p5VW);
+            }
+            .texto-modal-painel h3 { /* texto do modal */
+                margin: 2.5% 0;
             }
             /* modal painel start */
 
@@ -219,7 +244,7 @@
                     </div>
                         
                     <div class="alterar-card-painel">
-                        <a href="alternarnoticiaconsulta.php?id=<?php echo $row[0]?>&titulo=<?php echo $row[1]?>&subtitulo=<?php echo $row[2]?>&descricao=<?php echo $row[3]?>&idImgNoticias=<?php echo $row[4]?>"> Alterar </a>
+                        <a href="alternarnoticiaconsulta.php?id=<?php echo $row[0]?>&titulo=<?php echo $row[1]?>&subtitulo=<?php echo $row[2]?>&descricao=<?php echo $row[3]?>&imgNoticias=<?php echo $row[4]?>"> Alterar </a>
                         <a href="apresentarcomentario.php?id=<?php echo $row[0]?>">Comentários</a>
                         <button type="button" class="abrir-painel" data-id="<?php echo $row[0]?>">Ver Mais</button>
                     </div>
@@ -231,12 +256,17 @@
             <dialog id="modal-painel-<?php echo $row[0]; ?>">
                 <div class="container-modal-painel">
 
-                    <div class="titulo-modal=painel"> <!-- Título modal -->
-                        <?php 
-                            $stmtTitulo = $pdo->prepare("SELECT * FROM tbNoticias WHERE idNoticias = :noticia_id");
-                            $stmtTitulo -> execute(['noticia_id' => $row['idNoticias']]);
-                        ?>
-                        <h3> <?php echo $row["tituloNoticias"]?></h3>
+                    <div class="titulo-modal-painel"> <!-- Título modal -->
+                        <div class="texto-titulo-modal-painel">
+                            <?php 
+                                $stmtTitulo = $pdo->prepare("SELECT * FROM tbNoticias WHERE idNoticias = :noticia_id");
+                                $stmtTitulo -> execute(['noticia_id' => $row['idNoticias']]);
+                            ?>
+                            <h1> <?php echo $row["tituloNoticias"]?></h1>
+                        </div>
+                        <button class="close-painel">
+                            <img src="./images/imagensArquivos/noticias/icons/marca-x.png">
+                        </button>
                     </div>
 
                     <div class="inicio-modal-painel">
@@ -249,7 +279,7 @@
                             ?>
                         </div>
                         <div class="desc-modal-painel">
-                            <p> <?php echo $row["descNoticias"]?></p>
+                            <h2> <?php echo $row["descNoticias"]?></h2>
                         </div>
                     </div>
 
@@ -261,7 +291,6 @@
                             echo "<h3>" . htmlspecialchars($paragrafo["textoParagrafoNoticias"]) . "</h3>";
                         }
                         ?>                        
-                        <button class="close-painel">ok</button>
                     </div>
                 </div>
             </dialog>
