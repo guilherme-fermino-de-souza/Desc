@@ -185,7 +185,7 @@
 
                             <div class="textfield-img">
                                 <label class="label">Imagem(.png)</label> <br>
-                                <input type="file" name="imgNoticias" accept=".png" placeholder="Insira a Imagem em .png"/>
+                                <input type="file" name="imgNoticias" accept=".png, .jpg, .jpeg, .gif, .webp, .tiff" placeholder="Insira a Imagem"/>
                             </div>
                             
                             <div id="paragrafosContainer">
