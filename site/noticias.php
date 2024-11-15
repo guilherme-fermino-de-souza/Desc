@@ -104,16 +104,17 @@
                 color:  var(--tema-primario);
                 transition: .5s;
             }
-            .alterar-card-painel button{ /* VER MAIS */
+            .alterar-card-painel button{ /* BOTÃO VER MAIS */
                 background-color: var(--tema-terciario);
                 color: var(--cinza-fonte-claro);
                 font-size: var(--fonte-padrao);
                 border-radius: 5px;
                 padding: 1% 0;
             }
-            .alterar-card-painel button:hover{ /* VER MAIS */
+            .alterar-card-painel button:hover{ 
                 background-color: var(--branco-principal);
                 color: var(--tema-primario);
+                cursor: pointer;
                 transition: .5s;
             }
             /* criar noticia start */
@@ -230,10 +231,13 @@
                 </div>
                 <div class="conteudo-painel"> 
                     <div class="titulo-card-painel">
-                        <h1><?php echo $row["tituloNoticias"]; ?></h1> 
-                        <a href="excluirnoticias.php?id=<?php echo $row[0]; ?>"> 
-                            <img src="./images/imagensArquivos/noticias/icons/trash.png"> <!-- botão excluir -->
-                        </a>
+                        <h1><?php echo $row["tituloNoticias"]; ?></h1>
+
+                        <?php if ($_SESSION['tipo'] === 'dev'): ?> <!-- somente Devs veem-->
+                            <a href="excluirnoticias.php?id=<?php echo $row[0]; ?>"> 
+                                <img src="./images/imagensArquivos/noticias/icons/trash.png"> <!-- botão excluir -->
+                            </a>
+                        <?php endif; ?>
                     </div>
                     <div class="subtitulo-card-painel">
                         <h2><?php echo $row["subtituloNoticias"]; ?></h2> 
@@ -244,7 +248,10 @@
                     </div>
                         
                     <div class="alterar-card-painel">
-                        <a href="alternarnoticiaconsulta.php?id=<?php echo $row[0]?>&titulo=<?php echo $row[1]?>&subtitulo=<?php echo $row[2]?>&descricao=<?php echo $row[3]?>&imgNoticias=<?php echo $row[4]?>"> Alterar </a>
+                        <?php if ($_SESSION['tipo'] === 'dev'): ?> <!-- somente Devs veem-->
+                            <a href="alternarnoticiaconsulta.php?id=<?php echo $row[0]?>&titulo=<?php echo $row[1]?>&subtitulo=<?php echo $row[2]?>&descricao=<?php echo $row[3]?>&imgNoticias=<?php echo $row[4]?>"> Alterar </a>
+                        <?php endif;?>
+
                         <a href="apresentarcomentario.php?id=<?php echo $row[0]?>">Comentários</a>
                         <button type="button" class="abrir-painel" data-id="<?php echo $row[0]?>">Ver Mais</button>
                     </div>
@@ -256,42 +263,45 @@
             <dialog id="modal-painel-<?php echo $row[0]; ?>">
                 <div class="container-modal-painel">
 
-                    <div class="titulo-modal-painel"> <!-- Título modal -->
-                        <div class="texto-titulo-modal-painel">
-                            <?php 
-                                $stmtTitulo = $pdo->prepare("SELECT * FROM tbNoticias WHERE idNoticias = :noticia_id");
-                                $stmtTitulo -> execute(['noticia_id' => $row['idNoticias']]);
-                            ?>
-                            <h1> <?php echo $row["tituloNoticias"]?></h1>
+                    <div class="conteudo-modal-painel">
+                        <div class="titulo-modal-painel"> <!-- Título modal -->
+                            <div class="texto-titulo-modal-painel">
+                                <?php 
+                                    $stmtTitulo = $pdo->prepare("SELECT * FROM tbNoticias WHERE idNoticias = :noticia_id");
+                                    $stmtTitulo -> execute(['noticia_id' => $row['idNoticias']]);
+                                ?>
+                                <h1> <?php echo $row["tituloNoticias"]?></h1>
+                            </div>
+                            <button class="close-painel">
+                                <img src="./images/imagensArquivos/noticias/icons/marca-x.png">
+                            </button>
                         </div>
-                        <button class="close-painel">
-                            <img src="./images/imagensArquivos/noticias/icons/marca-x.png">
-                        </button>
-                    </div>
 
-                    <div class="inicio-modal-painel">
-                        <div class="img-modal-painel"> <!-- Imagem modal -->
-                            <?php 
-                                $numImg = $row["imgNoticias"];
-                                if ($numImg != 0) {    
-                                    echo "<img src='images/imagensArquivos/noticias/$numImg.png'>";
-                                }
-                            ?>
+                        <div class="inicio-modal-painel">
+                            <div class="img-modal-painel"> <!-- Imagem modal -->
+                                <?php 
+                                    $numImg = $row["imgNoticias"];
+                                    if ($numImg != 0) {    
+                                        echo "<img src='images/imagensArquivos/noticias/$numImg.png'>";
+                                    }
+                                ?>
+                            </div>
+                            <div class="desc-modal-painel">
+                                <h2> <?php echo $row["descNoticias"]?></h2>
+                            </div>
                         </div>
-                        <div class="desc-modal-painel">
-                            <h2> <?php echo $row["descNoticias"]?></h2>
-                        </div>
-                    </div>
 
-                    <div class="texto-modal-painel"> <!-- Texto modal --> 
-                            <?php
-                            $stmtParagrafos = $pdo->prepare("SELECT textoParagrafoNoticias FROM tbParagrafoNoticias WHERE noticia_id = :noticia_id");
-                            $stmtParagrafos -> execute(['noticia_id' => $row["idNoticias"]]);
-                            while ($paragrafo = $stmtParagrafos->fetch(PDO::FETCH_ASSOC)) {
-                            echo "<h3>" . htmlspecialchars($paragrafo["textoParagrafoNoticias"]) . "</h3>";
-                        }
-                        ?>                        
+                        <div class="texto-modal-painel"> <!-- Texto modal --> 
+                                <?php
+                                $stmtParagrafos = $pdo->prepare("SELECT textoParagrafoNoticias FROM tbParagrafoNoticias WHERE noticia_id = :noticia_id");
+                                $stmtParagrafos -> execute(['noticia_id' => $row["idNoticias"]]);
+                                while ($paragrafo = $stmtParagrafos->fetch(PDO::FETCH_ASSOC)) {
+                                echo "<h3>" . htmlspecialchars($paragrafo["textoParagrafoNoticias"]) . "</h3>";
+                            }
+                            ?>                        
+                        </div>
                     </div>
+                    
                 </div>
             </dialog>
         </div>

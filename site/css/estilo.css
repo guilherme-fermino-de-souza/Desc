@@ -27,11 +27,6 @@ html, body {
     min-height: 100vh;
 }
 /* modal navbar start*/
-.modal-login {
-    width: 80%;
-    height: 80%;
-    margin: auto;
-}
 .modal-login dialog::backdrop { /* fundo do modal */
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -40,7 +35,7 @@ html, body {
     text-align: center;
     border-radius: .5rem;
     margin: auto;
-    box-shadow: 0 0 1em rgb(0 0 0 .3);
+    height: 65%;
 }
 .container-close-modal { /* container botão*/
     display: flex;
@@ -48,36 +43,44 @@ html, body {
 }
 .container-close-modal button { /* botão*/
     border-radius: 35%;
-    background-color: var(--cinza-fonte-claro);
+    background-color: var(--branco-principal);
     font-size: var(--fonte-padrao);
-    width: 5%;
+    width: 10%;
+    margin: 2.5%;
+    border: none;
 }
 .container-close-modal button:hover {
     background-color: red;
-    transition: .75;
+    transition: .75s;
     cursor: pointer;
 }
-.container-close-modal img {
+.close-img img {
     width: 100%;
 }
-.modal-login img {
+.modal-login img { /* img login*/
     width: 60%;
     border-radius: 100%;
 }
-.modal-login h1 {
-    margin: .1rem;
-    font-size: var(--fonte-grande);
-}
-.modal-login p {
-    margin: .05rem;
+.modal-login h1 { /* nome/email login*/
+    margin: 1.5rem;
     font-size: var(--fonte-media);
 }
-.modal-login a {
-    border-radius: .5rem;
-    background-color: var(--cinza-fonte-claro);
+.modal-login p { /* tipo login*/
+    margin: .05rem;
     font-size: var(--fonte-padrao);
-    margin: .5rem;
+}
+.modal-login a { /* botão sair */
+    border-radius: .5rem;
+    text-decoration: none;
+    background-color: var(--cinza-fonte-claro);
+    color: var(--preto-fonte);
+    font-size: var(--fonte-padrao);
     padding: 1% 2%;
+}
+.modal-login a:hover { /* botão sair */
+    background-color: red;
+    color: var(--preto-fonte);
+    transition: .75s;
 }
 /* modal navbar end*/
 
@@ -104,10 +107,12 @@ nav {
     letter-spacing: 2px;
     text-decoration: none;
 }
-.nav-list {
+.nav-list { /* LINKS NAV */
     list-style: none;
     display: flex;
-    margin: 0;
+    color: var(--branco-principal);
+    align-items: center;
+    justify-content: flex-end;
 }
 .nav-list li {
     padding: 3.5% 1%;
@@ -120,22 +125,22 @@ nav {
     margin: 2.5% 0.3vw;
     transition: 0.3s;
 }
-.nav-list { /* LINKS NAV */
-    color: var(--branco-principal);
-}
 .nav-list button { /* BOTÃO LOGIN */
-    background-color: var(--branco-principal);
-    color: var(--preto-fonte);
-    font-size: var(--fonte-padrao);
-    border-radius: 15px;
-    padding: 4% 9%;
+    background-color: var(--tema-primario);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
 }
-
 .nav-list button:hover {
     cursor: pointer;
-    background-color: var(--tema-terciario);
-    color: var(--branco-principal);
+    background-color: var(--branco-principal);
+    transition: .75s;
 }
+.nav-list img { /* IMG USER LOGIN */
+    border-radius: 50%;
+    width: 100%;
+}
+
 .mobile-menu {
     display: none;
     cursor: pointer;

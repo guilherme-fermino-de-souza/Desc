@@ -9,15 +9,14 @@
                 <dialog> <!--Ver Usuário -->
                     <div class="container-close-modal">
                         <button name="close-modal" >
-                            <img src="./images/imagensArquivos/noticias/icons/marca-x.png">
+                            <img class="close-img" src="./images/imagensArquivos/noticias/icons/marca-x.png">
                         </button>
                     </div>
                     <div class="modal-login-img">
                         <img src="images/imagensArquivos/conta/<?php echo $row["imgConta"] == 0 ? "icons/semImagem.png" : $row["imgConta"] . ".png"?>" width="50">
                     </div>
                     <h1><?php echo $row["nomeConta"]; ?></h1>
-                    <p><?php echo $row["emailConta"]; ?></p>
-                    <p><?php echo $row["tipoConta"]; ?></p>
+                    <h1><?php echo $row["emailConta"]; ?></h1>
                     <a href="logout.php">Sair</a> <!-- Sai da SESSION-->
                 </dialog>
         </div>
@@ -36,8 +35,11 @@
                <li><a href="./index.php">Início</a></li>
                <li><a href="./noticias.php">Notícias</a></li>
                <li><a href="./card.php">Desenvolvedores</a></li> 
-               <li><button class="button-modal-login" name="modal-login">Login</button></li>
-               <li><a><img src="images/imagensArquivos/conta/<?php echo $row["imgConta"] == 0 ? "icons/semImagem.png" : $row["imgConta"] . ".png"?>" width="50"></a></li>
+               <li>
+                    <button class="button-modal-login" name="modal-login"> <!-- Img User -->
+                        <img src="images/imagensArquivos/conta/<?php echo $row["imgConta"] == 0 ? "icons/semImagem.png" : $row["imgConta"] . ".png"?>" width="50">
+                    </button>
+                </li>
            </ul>         
        </nav>
    </header>

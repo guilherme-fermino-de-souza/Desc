@@ -133,13 +133,10 @@
                 <div class="alternarcomentarioconsulta">
                     <form action="alterarcomentario.php" method="post" enctype="multipart/form-data">      
                         <h1>Comentário</h1>
-                        <div class="textfield">
+                        <?php $noticias_id = $_GET['id']; 
+                        <input type="hidden" name="idNoticia" value="<?php echo htmlspecialchars($noticia_id); ?>">
                             <input type="hidden" name="idComentarioNoticia" value="<?php echo @$_GET['id']; ?>" />
-                        </div>		
-
-                        <div class="textfield">
-                            <input type="text" name="nomeComentarioNoticia" value="<?php echo @$_GET['nome']; ?>" placeholder="Nome" />
-                        </div>
+                            <input type="hidden" name="nomeComentarioNoticia" value="<?php echo @$_GET['nome']; ?>" placeholder="Nome" />
 
                         <div class="textfield">
                             <input type="text" name="mensagemComentarioNoticia" value="<?php echo @$_GET['comentario']; ?>" placeholder="Comentário" />

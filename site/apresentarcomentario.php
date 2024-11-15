@@ -158,50 +158,47 @@
 <body>
 <?php include('navbar.php');?>
     <!--Fazer comentário-->
-<div class="contato">
+    <div class="comente">
 
             <form class="comente" name="comente" action="./inserirComentario.php" method="post">
                 <h1>COMENTE</h1>
                 <?php $noticia_id = $_GET['id']; // Captura o ID da notícia ?>
                 <input type="hidden" name="idNoticia" value="<?php echo htmlspecialchars($noticia_id); ?>">
-
-                       <div class="textfield">
-                            <label for="nome" class="label">Nome:</label>
-                            <input type="text" class="input" name="nome" required placeholder="Insira o Nome" />
-                        </div>
+                        <!-- Pega o nome do usuário -->
+                        <input type="hidden" name="nome" value="<?php echo ($_SESSION['nome']); ?>" />
 
                         <div class="textfield">
                             <label for="comentario" class="label">Comentario:</label>
                             <input type="text" class="input" name="comentario" required placeholder="Insira o Comentário" />
                         </div>
 
-                        <div class="comentario-enviar">
+                        <div class="comentario-enviar"> 
                             <input type="submit" class="botao-enviar" name="botao" required placeholder="Enviar" />
                         </div>
             </form>
-        </div>  
-<!--Apresentar comentário-->
-<div class="conteiner-apresentarcomentario">
+    </div>  
+    <!--Apresentar comentário-->
+    <div class="conteiner-apresentarcomentario">
 
-    <?php
-        $stmt = $pdo->prepare("SELECT * FROM tbComentarioNoticia WHERE noticia_id = ?");
-        $idNoticia = $_GET['id'];
-        $stmt -> execute([$idNoticia]);
-        while($row = $stmt->fetch(PDO::FETCH_BOTH)){?>
-            <div class="card-apresentarcomentario">
-                <div class="titulo-card-comentario">
-                    <h1><?php echo $row["nomeComentarioNoticia"]; ?></h1>
-                    <a href="excluircomentario.php?id=<?php echo $row[0]; ?>"> X </a> 
+        <?php
+            $stmt = $pdo->prepare("SELECT * FROM tbComentarioNoticia WHERE noticia_id = ?");
+            $idNoticia = $_GET['id'];
+            $stmt -> execute([$idNoticia]);
+            while($row = $stmt->fetch(PDO::FETCH_BOTH)){?>
+                <div class="card-apresentarcomentario">
+                    <div class="titulo-card-comentario">
+                        <h1><?php echo $row["nomeComentarioNoticia"]; ?></h1>
+                        <a href="excluircomentario.php?id=<?php echo $row[0]; ?>"> X </a> 
+                    </div>
+                    <div class="comentario">
+                        <h2><?php echo $row["mensagemComentarioNoticia"]; ?></h2>
+                    </div>
+                    <div class="alterar-card-comentario">
+                        <a href="alternarcomentarioconsulta.php?id=<?php echo $row[0]?>&nome=<?php echo $row[1]?>&comentario=<?php echo $row[2]?>"> Alterar </a> 
+                    </div>
                 </div>
-                <div class="comentario">
-                    <h2><?php echo $row["mensagemComentarioNoticia"]; ?></h2>
-                </div>
-                <div class="alterar-card-comentario">
-                    <a href="alternarcomentarioconsulta.php?id=<?php echo $row[0]?>&nome=<?php echo $row[1]?>&comentario=<?php echo $row[2]?>"> Alterar </a> 
-                </div>
-            </div>
-    <?php } ?>  
-</div>  
+        <?php } ?>  
+    </div>  
 
 <?php include ('footer.php')?>
 </body>

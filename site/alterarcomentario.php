@@ -2,6 +2,7 @@
     $id = $_POST['idComentarioNoticia'];
     $nome = $_POST['nomeComentarioNoticia'];
     $comentario = $_POST['mensagemComentarioNoticia'];
+    $x = $_POST['idNoticia'];
     include("conexao.php");
 
     $stmt = $pdo->prepare("
@@ -12,6 +13,6 @@
     ");	    
 	$stmt ->execute();    
 
-    header("location:alternarcomentarioconsulta.php");    
+    header("location:apresentarcomentario.php?id=$x");    
     
 ?>
