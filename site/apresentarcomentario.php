@@ -32,7 +32,7 @@
             display: flex;
             flex-direction: column;
             width: 80%;
-            margin: auto;
+            margin: 1.5% auto;
         }
         .comentario h1 { /* Título*/
             font-size: var(--fonte-grande);
@@ -103,54 +103,51 @@
             grid-template-columns: 100%;
         }
         .card-apresentarcomentario {   /* CARD */
-            background-color: var(--branco-principal);
+            background-color: var(--tema-primario);
             border-radius: 5px;
-            border: 5px solid var(--tema-terciario);
+            border: 5px solid var(--tema-primario);
             height: fit-content;
             margin: 1% 0%;
+            padding: .1%;
         }
         .titulo-card-comentario { /* TÍTULO */
             background-color: var(--tema-terciario);
             display: flex;
         }
         .titulo-card-comentario h1{
-            font-size: var(--fonte-padrao);
+            font-weight: 600;
+            font-size: var(--fonte-media);
             color: var(--branco-principal);
             padding: 1%;
         }
-        .titulo-card-comentario a { /* EXCLUIR */
-            font-weight: 800;
-            font-size: var(--fonte-media);
-            color:  var(--tema-secundario);
-            margin-left: auto;
+        .botao-card-apresentarcomentario {
+            display: flex;
+            flex-direction: row;
+            aling-itens: center;
+            justify-content: end;
+        }
+        .botao-card-apresentarcomentario a { /* EXCLUIR/ALTERNAR */
+            width: 5%;
+            margin: .5%;
+            border-radius: 35%;
             padding: 1%;
             text-decoration: none;
         }
-        .titulo-card-comentario a:hover {
-            color:  red;
+        .botao-card-apresentarcomentario a:hover {
+            background-color:  red;
+            transition: 0.75s;
+        }
+        .botao-card-apresentarcomentario img {
+            width: 100%;
         }
         .comentario { /* SUBTÍTULO */
-            background-color: var(--tema-secundario);
+            background-color: var(--tema-primario);
             width: 100%;
         }
         .comentario h2{
-            font-weight: 800;
             font-size: var(--fonte-padrao);
             color: var(--branco-principal);
-        }
-        .alterar-card-comentario { /* ALTERAR */
-            display: flex;
-            justify-content: center;
-            background-color: var(--tema-terciario);
-        }
-        .alterar-card-comentario a {
-            font-weight: 600;
-            font-size: var(--fonte-padrao);
-            color:  var(--tema-secundario);
-            text-decoration: none;
-        }
-        .alterar-card-comentario a:hover {
-            color:  var(--branco-principal);
+            margin: 0.5% 1%;
         }
     </style>
     <title>Apresentar comentario</title>
@@ -160,7 +157,7 @@
     <!--Fazer comentário-->
     <div class="comente">
 
-            <form class="comente" name="comente" action="./inserirComentario.php" method="post">
+            <form class="container-comente" name="comente" action="./inserirComentario.php" method="post">
                 <h1>COMENTE</h1>
                 <?php $noticia_id = $_GET['id']; // Captura o ID da notícia ?>
                 <input type="hidden" name="idNoticia" value="<?php echo htmlspecialchars($noticia_id); ?>">
@@ -188,13 +185,17 @@
                 <div class="card-apresentarcomentario">
                     <div class="titulo-card-comentario">
                         <h1><?php echo $row["nomeComentarioNoticia"]; ?></h1>
-                        <a href="excluircomentario.php?id=<?php echo $row[0]; ?>"> X </a> 
+                        <div class="botao-card-apresentarcomentario"> <!-- botões -->
+                            <a href="alternarcomentarioconsulta.php?id=<?php echo $row[0]?>&nome=<?php echo $row[1]?>&comentario=<?php echo $row[2]?>&idNoticia=<?php echo $row[3]; ?>">
+                                <img src="./images/imagensArquivos/noticias/icons/alternar.webp"> <!-- botão alternar -->
+                            </a>
+                            <a href="excluircomentario.php?id=<?php echo $row[0]?>&idNoticia=<?php echo $idNoticia; ?>"> 
+                                <img src="./images/imagensArquivos/noticias/icons/trash.png"> <!-- botão excluir -->
+                            </a> 
+                        </div> 
                     </div>
                     <div class="comentario">
                         <h2><?php echo $row["mensagemComentarioNoticia"]; ?></h2>
-                    </div>
-                    <div class="alterar-card-comentario">
-                        <a href="alternarcomentarioconsulta.php?id=<?php echo $row[0]?>&nome=<?php echo $row[1]?>&comentario=<?php echo $row[2]?>"> Alterar </a> 
                     </div>
                 </div>
         <?php } ?>  

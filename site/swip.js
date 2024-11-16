@@ -1,3 +1,18 @@
+ /* Botão "ler mais/menos" no card */
+ var button = document.getElementsByClassName('botaoCursoCard');
+
+ button.addEventListener('click', function() {
+   var card = document.querySelector('#involucroCard');
+   card.classList.toggle('active');
+ 
+   if(card.classList.contains(active)){
+     return button.textContent = 'Ler menos';
+   }
+ 
+   button.textContent = 'Ler mais';
+ })
+
+ /* swiper - card com navegação semelhante ao carrossel */
 var swiper = new Swiper(".slideCursos", {
     slidesPerView: 2,
     spaceBetween: 25,
@@ -22,7 +37,7 @@ var swiper = new Swiper(".slideCursos", {
         slidesPerView: 2,
       },
     },
-      // And if we need scrollbar
+      // Se for possível usar uma scrollbar
   scrollbar: {
     el: '.swiper-scrollbar',
   },

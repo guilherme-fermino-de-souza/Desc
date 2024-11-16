@@ -33,7 +33,7 @@ CREATE TABLE tbContato (
 CREATE TABLE tbComentarioNoticia (
     idComentarioNoticia INT PRIMARY KEY AUTO_INCREMENT,
     nomeComentarioNoticia VARCHAR(40),
-    mensagemComentarioNoticia VARCHAR(400),
+    mensagemComentarioNoticia VARCHAR(1200),
     noticia_id INT,
     FOREIGN KEY (Noticia_id) REFERENCES tbNoticias(idNoticias)
 );

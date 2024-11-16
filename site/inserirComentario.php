@@ -8,5 +8,5 @@ $comentario = $_POST["comentario"];
 $stmt = $pdo->prepare("INSERT INTO tbComentarioNoticia (nomeComentarioNoticia, mensagemComentarioNoticia, noticia_id) VALUES (?, ?, ?)");
 $stmt->execute([$nome, $comentario, $idNoticia]);
 
-header("location:apresentarcomentario.php?id=$idNoticia");
+header("location:apresentarcomentario.php?id=" . $idNoticia);
 ?>

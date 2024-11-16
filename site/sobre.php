@@ -29,7 +29,7 @@
             <div class="contSlideCursos swiper">
                 <div class="slideCursos">
                     <div class="contInvolucroCard swiper-wrapper">
-                        <div class="involucroCard swiper-slide">
+                        <div class="involucroCard swiper-slide">    <!-- Card Content -->
                             <div class="contImgCardSobre">
                                 <span class="sobrepos"></span>
 
@@ -37,7 +37,7 @@
                                     <img src="images/imagensArquivos/cursos/dS.jpg" alt="Curso de DS" class="Sobreimg">
                                 </div>
                             </div>
-                            <div class="cursoCardSobre">
+                            <div class="cursoCardSobre">    <!-- Content -->
                                 <h5 class="nomeCursoCard">Desenvolvimento de Sistemas (modular ou com EM)</h5>
                                 <p class="descricaoCursoCard">O curso técnico em Desenvolvimento de Sistemas da Etec de Guaianazes prepara você para desenvolver soluções sociais e empresariais para problemas diversos através da tecnologia. Você aprenderá a construir softwares, aplicativos e sistemas, desde o planejamento até a implementação. As aulas te ensinarão a dominar linguagens de programação, a trabalhar com bancos de dados e a utilizar ferramentas de desenvolvimento. Ao final do curso, você estará pronto para ingressar no mercado de trabalho e participar da criação de soluções tecnológicas que transformam o mundo!</p>
 

@@ -1,5 +1,6 @@
 <?php
     $x = $_GET['id'];
+    $idNoticia = $_GET['idNoticia'];
 
     echo $x;
     
@@ -8,5 +9,5 @@
     $stmt = $pdo->prepare("DELETE FROM tbcomentarionoticia WHERE idComentarioNoticia='$x'");
     $stmt ->execute();
 
-    header("location:apresentarcomentarios.php?id=<?php echo $x?>");
+    header("location:apresentarcomentario.php?id=" . $idNoticia);
 ?>

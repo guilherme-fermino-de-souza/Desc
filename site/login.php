@@ -7,15 +7,56 @@
     <title>LoginScreen</title>
     <link rel="stylesheet" href="./css/estilo.css">
     <style>
-        /*LOGIN START*/
-.login-principal {
+
+/* erro aviso start */
+.modal-erro-aviso { /* O fundo da mensagem*/
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+
+    z-index: 10;
+}
+.card-erro-aviso {
+    box-sizing: border-box;
+    width: 570px;
+    position: absolute;
+    left: 50%;
+    margin-left: -285px;
+    top: 50%;
+    font: bold 14px sans-serif;
+    border-radius: 3px;
+    background-color:  #ffffff;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.12);
+    padding: 45px 50px;
+}
+.card-erro-aviso button{
+    border-radius: 10%;
+    background-color: var(--branco-principal);
+    color: var(--tema-primario);
+    padding: .5%;
+    margin: .75%;
+}
+.card-erro-aviso button:hover{
+    cursor: pointer;
+    background-color: var(--tema-primario);
+    color: var(--branco-principal);
+    transition: .75s;
+}
+/* erro aviso end */
+
+/*LOGIN START*/
+.login-principal { /* Fundo */
     display: flex;
     justify-content: center; /* Horizontal alignment */
     align-items: center;     /* Vertical alignment */
-    background-color: var(--branco-principal);
+    background-image: url('./images/Etec-Butbunito-1.jpg');
     background-position: center;
     background-size: cover;
-    height: 70vh;
+    height: 100vh;
 }
 .login { /* Container Principal Login*/
     display: flex;
@@ -142,19 +183,24 @@ input[type="submit"]:hover { /* Quando Clicar no Botão Enviar Azul*/
 }
 
 if (isset($_GET['erro'])) { // Caso tente acessar sem logar
-    $erro = "É necessário logar para acessar o site!";
-}
-?>
+    $erro = "É necessário logar para acessar o site!"; ?> <!-- Aviso caso $erro = true-->
 
-<div style="background-color:coral; margin:10px">
-    <?php echo $erro ?? ''; ?>
-</div>
+    <div id="modal-erro-aviso" style="display: block;">
+        <div class="card-erro-aviso">
+            <h1>Acesso negado</h1>
+            <h2><?php echo $erro; ?></h2>
+            <button name="close-erro-aviso">Fechar Aviso</button>
+        </div>
+    </div>
+<?php } ?>
+
+
 
     <?php include './navbar.php' ?>
 
     <!--login start--> <!--INÍCIO-->
-        <div class="login-principal">
-                <div class="login">
+        <div class="login-principal"> <!--Fundo-->
+                <div class="login"> <!-- Formulário-->
                         <form class="faca-login" name="login" action="" method="post">
                             <h1>LOGIN</h1>
                             <div class="textfield">
@@ -175,9 +221,9 @@ if (isset($_GET['erro'])) { // Caso tente acessar sem logar
                         </form>
                 </div>
         </div>
-   <?php include './footer.php'?>
 
     <script src="./js/java.js"></script>  
+    <script src="./loginErro.js"></script> <!-- Aviso caso $erro = true-->
 </body>
 
 </html>

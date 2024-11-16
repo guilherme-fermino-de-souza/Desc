@@ -1,9 +1,10 @@
 <?php  
+
+    include("conexao.php");
     $id = $_POST['idComentarioNoticia'];
     $nome = $_POST['nomeComentarioNoticia'];
     $comentario = $_POST['mensagemComentarioNoticia'];
-    $x = $_POST['idNoticia'];
-    include("conexao.php");
+    $idNoticia = $_POST['idNoticia'];  
 
     $stmt = $pdo->prepare("
         update tbComentarioNoticia set
@@ -11,8 +12,7 @@
             mensagemComentarioNoticia='$comentario'
             where idComentarioNoticia ='$id';
     ");	    
-	$stmt ->execute();    
-
-    header("location:apresentarcomentario.php?id=$x");    
-    
-?>
+	$stmt ->execute(); 
+       
+    header("location:apresentarcomentario.php?id=" . $idNoticia);
+    ?>

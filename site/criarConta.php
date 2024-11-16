@@ -160,7 +160,6 @@ input[type="submit"]:hover { /* Quando Clicar no Botão Enviar Azul*/
                     </form>
                 </div>
         </div>
-        <?php include './footer.php' ?>
 
         <!-- Caso o Tipo seja Dev ele irá pedir o código -->
         <script>// Peguei no chatGPT

@@ -225,11 +225,9 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.3);
-
     z-index: 10;
 }
 .card-aviso {
@@ -239,13 +237,24 @@ nav {
     left: 50%;
     margin-left: -285px;
     top: 50%;
-
     font: bold 14px sans-serif;
-
     border-radius: 3px;
     background-color:  #ffffff;
     box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.12);
     padding: 45px 50px;
+}
+.card-aviso button{
+    border-radius: 10%;
+    background-color: var(--branco-principal);
+    color: var(--tema-primario);
+    padding: .5%;
+    margin: .75%;
+}
+.card-aviso button:hover{
+    cursor: pointer;
+    background-color: var(--tema-primario);
+    color: var(--branco-principal);
+    transition: .75s;
 }
 /* aviso end */
 
@@ -506,34 +515,75 @@ input[type="submit"]:hover {
     border-radius: 50%;
     border: 4px solid #1A4261;
 }
-.nomeCursoCard{ 
-    font-size: 15px;
+.cursoCardSobre{
+    font-family: var(--fonte-padrao);
+
+    height: 50%;
+    width: auto;
+    overflow: hidden;
+    position: relative;
+}
+.cursoCardSobre::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    height: 90%;
+    background: linear-gradient(transparent, #77b0f2);
+}
+.nomeCursoCard{
     color: #333;
     margin: 5px 50px ;
+    position: relative;
+    font-size: 15px;
+}
+.nomeCursoCard::before{
+    content: ''; 
+    position: absolute;
+    height: 2px;
+    width: 40px;
+    background-color: var(--tema-terciario);   
+    bottom: 4px;
+    border-radius: 3px;
 }
 .descricaoCursoCard{
-    font-size: 14px;
+    font-family: var(--fonte-padrao);
+    font-size: 18px;
     color: #443f3f;
     text-align: center;
-    margin: 25px;
+    margin-bottom: 20px;
+    position: relative;
 }
 .botaoCursoCard{
+    font-family: var(--fonte-padrao);
     border: none;
     font-size: 16px;
+    font-weight: bold;
     color: #e8f0fe;
     padding: 10px 20px;
     background-color: #4070f4;
     border-radius: 6px;
-    margin: auto;
+    padding-left: 70px;
+    margin-top: 15px;
     cursor: pointer;
 /*All: todas as propried. css alteradas terão uma transição para si.*/
-    transition: all 0.3s ease;/*ease é uma função
+    transition: all 0.3s ease-in-out;/*ease é uma função
 predefinida que cria uma aceleração suave no início e no final da transição,com uma velocidade constante no meio.*/
 }
-.botaoCurso:hover{
-    background: #265df2;
+.botaoCursoCard::after{
+    background-color: transparent;
+    color: #265df2;
+    transition: all 0.3s ease-in-out;
 }
-.swiper-navBtn{
+.involucroCard.active .cursoCardSobre {
+    height: auto;
+
+}
+.involucroCard.active .cursoCardSobre::before {
+    visibility: hidden;
+}
+
+/*.swiper-navBtn{
     color: #6E93f7;
     transition: color 0.3 ease;
 }
@@ -564,7 +614,7 @@ predefinida que cria uma aceleração suave no início e no final da transição
         display: none;
     }
 }
-/* sobre end */
+ sobre end */
 
 /* contato start */
 .contato-principal {
