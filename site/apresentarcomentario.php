@@ -116,7 +116,7 @@
         }
         .titulo-card-comentario h1{
             font-weight: 600;
-            font-size: var(--fonte-media);
+            font-size: var(--fonte-padrao);
             color: var(--branco-principal);
             padding: 1%;
         }
@@ -127,11 +127,13 @@
             justify-content: end;
         }
         .botao-card-apresentarcomentario a { /* EXCLUIR/ALTERNAR */
-            width: 5%;
-            margin: .5%;
+            width: 2%;
+            margin: 0.1% 2.5%;
             border-radius: 35%;
-            padding: 1%;
+            padding: .1%;
             text-decoration: none;
+            display: flex;
+            align-items: center;
         }
         .botao-card-apresentarcomentario a:hover {
             background-color:  red;

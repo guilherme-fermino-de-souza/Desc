@@ -16,6 +16,7 @@
     --fonte-1p5VW: 1.15vw;
     --fonte-padrao: 1vw; /* Padrão */
     --fonte-pequena: 0.61vw; /* Pequena */
+    --fonte-muitoPequena: 0.41vw;
 }
 * {
     margin: 0;
@@ -457,14 +458,12 @@ input[type="submit"]:hover {
     max-height: 460px;
     min-width: 15%;
     margin: 0 40px;
-    overflow: hidden;
     border-radius: 25px;
 }
 .involucroCard{
     border-radius: 25px;
     background-color: #e8f0fe;
-}
-.contImgCardSobre{
+}.contImgCardSobre{
     position: relative;
     row-gap: 8px;
     padding: 25px 0;
@@ -497,8 +496,7 @@ input[type="submit"]:hover {
 .sobrepos::after{
     border-radius: 0 25px 0 0;
     background-color: #e8f0fe;
-}
-.imgCardSobre{
+}.imgCardSobre{
     position: relative;
     height: 100px;
     width: 100px;
@@ -515,20 +513,11 @@ input[type="submit"]:hover {
 }
 .cursoCardSobre{
     font-family: var(--fonte-padrao);
-
     height: 50%;
     width: auto;
     overflow: hidden;
-    position: relative;
 }
-.cursoCardSobre::before{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 90%;
-    height: 90%;
-    background: linear-gradient(transparent, #77b0f2);
-}
+
 .nomeCursoCard{
     color: #333;
     margin: 5px 50px ;
@@ -552,7 +541,7 @@ input[type="submit"]:hover {
     margin-bottom: 20px;
     position: relative;
 }
-.botaoCursoCard{
+/*.botaoCursoCard{
     font-family: var(--fonte-padrao);
     border: none;
     font-size: 16px;
@@ -564,22 +553,16 @@ input[type="submit"]:hover {
     padding-left: 70px;
     margin-top: 15px;
     cursor: pointer;
-/*All: todas as propried. css alteradas terão uma transição para si.*/
+All: todas as propried. css alteradas terão uma transição para si.*
     transition: all 0.3s ease-in-out;/*ease é uma função
-predefinida que cria uma aceleração suave no início e no final da transição,com uma velocidade constante no meio.*/
+predefinida que cria uma aceleração suave no início e no final da transição,com uma velocidade constante no meio. *
 }
 .botaoCursoCard::after{
     background-color: transparent;
     color: #265df2;
     transition: all 0.3s ease-in-out;
 }
-.involucroCard.active .cursoCardSobre {
-    height: auto;
 
-}
-.involucroCard.active .cursoCardSobre::before {
-    visibility: hidden;
-}
 
 /*.swiper-navBtn{
     color: #6E93f7;
