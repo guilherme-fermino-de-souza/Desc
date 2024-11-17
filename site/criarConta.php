@@ -12,9 +12,10 @@
     display: flex;
     justify-content: center; /* Horizontal alignment */
     align-items: center;     /* Vertical alignment */
-    background-color: var(--branco-principal);
+    background-image: url('./images/Etec-Butbunito-1.jpg');
     background-position: center;
     background-size: cover;
+    height: 100vh;
 }
 .conta {
     display: flex;
@@ -60,6 +61,13 @@
     font-weight: 700;
     margin-top: 2%;
 }
+.textfield select { /* Opções*/
+    border: none;
+    border-bottom: 2px solid var(--tema-secundario);
+    background-color: var(--cinza-fonte-claro);
+    font-size: var(--fonte-padrao);
+    padding-left: 4%;
+}
 .textfield input::placeholder {  /* Local Onde se escreve*/
     font-size: var(--fonte-padrao);
     color: var(--preto-fonte);
@@ -98,6 +106,28 @@ input[type="submit"]:hover { /* Quando Clicar no Botão Enviar Azul*/
     cursor: pointer;
     transition: 0.5s;
 }
+/* textfield-img*/
+.textfield-img { /* Textfield Container Principal*/
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+.textfield-img label { /* Texto de Descrição*/
+    font-size: var(--fonte-padrao);
+    font-weight: 700;
+    margin-top: 2%;
+}
+/* Estilo básico para o input de arquivo */
+.textfield-img input[type="file"] {
+    display: inline-block;
+    padding: 10px;
+    font-size: 14px;
+    background-color: var(--branco-fonte);
+    color: var(--tema-primario);;
+    border: none;
+    cursor: pointer;
+    border-bottom: 2px solid var(--tema-secundario);
+}
 @media (max-width: 1050px) { /* RESPONSIVO*/
             .conta-principal {
             height: 85vh;
@@ -132,14 +162,15 @@ input[type="submit"]:hover { /* Quando Clicar no Botão Enviar Azul*/
                         </div>
 
                         <div class="textfield"> <!-- Tipo -->
+                            <label class="label">Tipo</label>
                             <select name="tipo" id="usertype" onchange="showCodeInput()">
                             <option value="user">Usuário</option>
                             <option value="dev">Administrador</option>
                             </select>
                         </div>
 
-                        <div class="textfield-img">
-                                <label class="label">Imagem</label> <br>
+                        <div class="textfield-img"> <!-- Img -->
+                                <label class="label">Imagem</label>
                                 <input type="file" name="imgConta" accept=".png, .jpg, .jpeg, .gif, .webp, .tiff" placeholder="Insira a Imagem"/>
                         </div>
 

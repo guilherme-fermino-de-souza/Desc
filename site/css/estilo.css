@@ -133,8 +133,6 @@ nav {
 }
 .nav-list button:hover {
     cursor: pointer;
-    background-color: var(--branco-principal);
-    transition: .75s;
 }
 .nav-list img { /* IMG USER LOGIN */
     border-radius: 50%;

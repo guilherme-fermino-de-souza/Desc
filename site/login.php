@@ -1,3 +1,32 @@
+<?php
+    session_start();
+    include("conexao.php");
+
+    $erro = ''; // Inicializa a mensagem de erro
+
+    if (isset($_POST['email'], $_POST['senha'])) {
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+
+        //Início da consulta (pega os dados do BD conforme o nome da conta)
+        $mysqli = $pdo->prepare('SELECT idconta, nomeConta, tipoConta, senhaConta FROM tbConta WHERE emailConta = :email');
+        $mysqli->execute(['email' => $email]);
+        $contaDados = $mysqli->fetch(PDO::FETCH_ASSOC); // Busca o resto das informações com base no nome
+
+    // Verifica se o usuário existe e a senha está correta
+
+    // Compara se o Hash da Senha inserida é igual ao Hash do Banco de Dados
+    if ($contaDados && password_verify($senha, $contaDados['senhaConta'])) { // Hash da senha(criptografa a senha no Banco de Dados)
+        $_SESSION['email'] = $email; // Armazena o usuário na sessão
+        $_SESSION['nome'] = $contaDados['nomeConta']; // Pega o tipo de Usuario no BD
+        $_SESSION['tipo'] = $contaDados['tipoConta']; // Pega o tipo de Usuario no BD
+        $_SESSION['id'] = $contaDados['idConta']; // Pega o id do Usuario no BD
+        header('Location: index.php');
+        exit();
+    } else {
+        $erro = "E-mail ou senha inválidos."; // Mensagem de erro
+    }
+}?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -149,54 +178,20 @@ input[type="submit"]:hover { /* Quando Clicar no Botão Enviar Azul*/
 /*LOGIN END*/
     </style>
 </head>
-
 <body>
+    <?php 
+    if (isset($_GET['erro'])) { // Caso tente acessar sem logar
+        $erro = "É necessário logar para acessar o site!"; ?> <!-- Aviso caso $erro = true-->
 
-<?php
-    session_start();
-    include("conexao.php");
-
-    $erro = ''; // Inicializa a mensagem de erro
-
-    if (isset($_POST['email'], $_POST['senha'])) {
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
-
-        //Início da consulta (pega os dados do BD conforme o nome da conta)
-        $mysqli = $pdo->prepare('SELECT idconta, nomeConta, tipoConta, senhaConta FROM tbConta WHERE emailConta = :email');
-        $mysqli->execute(['email' => $email]);
-        $contaDados = $mysqli->fetch(PDO::FETCH_ASSOC); // Busca o resto das informações com base no nome
-
-    // Verifica se o usuário existe e a senha está correta
-
-    // Compara se o Hash da Senha inserida é igual ao Hash do Banco de Dados
-    if ($contaDados && password_verify($senha, $contaDados['senhaConta'])) { // Hash da senha(criptografa a senha no Banco de Dados)
-        $_SESSION['email'] = $email; // Armazena o usuário na sessão
-        $_SESSION['nome'] = $contaDados['nomeConta']; // Pega o tipo de Usuario no BD
-        $_SESSION['tipo'] = $contaDados['tipoConta']; // Pega o tipo de Usuario no BD
-        $_SESSION['id'] = $contaDados['idConta']; // Pega o id do Usuario no BD
-        header('Location: index.php');
-        exit();
-    } else {
-        $erro = "E-mail ou senha inválidos."; // Mensagem de erro
-    }
-}
-
-if (isset($_GET['erro'])) { // Caso tente acessar sem logar
-    $erro = "É necessário logar para acessar o site!"; ?> <!-- Aviso caso $erro = true-->
-
-    <div id="modal-erro-aviso" style="display: block;">
-        <div class="card-erro-aviso">
-            <h1>Acesso negado</h1>
-            <h2><?php echo $erro; ?></h2>
-            <button name="close-erro-aviso">Fechar Aviso</button>
+        <div id="modal-erro-aviso" style="display: block;">
+            <div class="card-erro-aviso">
+                <h1>Acesso negado</h1>
+                <h2><?php echo $erro; ?></h2>
+                <button name="close-erro-aviso">Fechar Aviso</button>
+            </div>
         </div>
-    </div>
-<?php } ?>
+    <?php } ?>
 
-
-
-    <?php include './navbar.php' ?>
 
     <!--login start--> <!--INÍCIO-->
         <div class="login-principal"> <!--Fundo-->
