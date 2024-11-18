@@ -111,24 +111,29 @@
                 margin-bottom: 5%;
             }
             .container-admin {
-                display: grid;
+                display: flex;
+                flex-direction: column;
                 background-color: var(--tema-terciario);
-                grid-template-columns: 50%;
+                align-items: center;
             }
             .container-admin a{
-                text-decoration:underline var(--tema-secundario);
                 color: var(--branco-principal);
-                font-size: 20px;
-                font-weight: 6px;
-                padding: 2% 0 0 2%;
+                font-size: var(--fonte-media);
+                font-weight: 800;
+                padding: 2% 1%;
+                text-decoration: none;
             }
             .container-admin a:hover{
-                color: var(--vermelho-principal);
-                border-bottom: 2px solid var(--vermelho-principal);
+                color: var(--tema-secundario);
+                text-decoration:underline var(--tema-secundario);
+                transition: .75s;
             }
-            .admin-button-2 {
-                padding-right: 2.5%;
-                color: var(--branco-principal);
+            .span-bloqueio {
+                display: flex;
+                flex-direction: column;
+                background-color: var(--tema-terciario);
+                align-items: center;
+                margin: 1% 0%;
             }
             /*ADMIN END*/
         </style>
@@ -199,14 +204,16 @@
             <!--admin start-->
             <div class="admin">
                 <div class="container-admin">
-                    <a href="../site/apresentarcontato.php" class="admin-button-1">Apresentar contatos</a>
-                    <a href="./apresentarcriarconta.php" class="admin-button-2">Apresentar contas</a>
-                    <a href="./apresentarcomentarios.php" class="admin-button-1">Apresentar comentários</a>
+                    <a href="../site/apresentarcontato.php">Apresentar Contatos</a>
+                    <a href="./apresentarcriarconta.php">Apresentar Contas</a>
+                    <a href="./apresentarcomentarios.php">Apresentar Comentários</a>
                 </div>
             </div>
             <!--admin end-->
             <?php else: ?><!-- Bloqueia o Container caso seja um user -->   
-            <span style="color:gray;">(Acesso Negado)</span>
+                <div class="span-bloqueio">
+                    <span style="color: var(--tema-secundario); text-aling:center; margin: 2.5%;">(Nada Para Ver Aqui)</span>
+                </div>
             <?php endif; ?>
 
         </div>

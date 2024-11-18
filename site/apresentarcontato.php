@@ -21,6 +21,7 @@
                     width: 80%;
                     margin: auto;
                     grid-template-columns: 25% 25%  25% 25%;
+                    min-height: 60vh;
                 }
                 .card-apresentarcontato {   /* CARD */
                     background-color: var(--branco-principal);
@@ -33,6 +34,8 @@
                     font-weight: 800;
                     background-color: var(--tema-terciario);
                     display: flex;
+                    justify-content: space-between;
+                    align-items: center;
                 }
                 .titulo-card-contato h1{
                     font-size: var(--fonte-pequena);
@@ -42,12 +45,12 @@
                 .botao-card-apresentarcontato {
                     display: flex;
                     flex-direction: row;
-                    aling-itens: center;
                     justify-content: end;
+                    width: 15%;
                 }
                 .botao-card-apresentarcontato a { /* EXCLUIR/ALTERNAR */
-                    width: 7.5%;
-                    margin: .5%;
+                    width: 50%;
+                    margin: 2.5%;
                     border-radius: 35%;
                     padding: 1%;
                     text-decoration: none;
@@ -59,13 +62,32 @@
                 .botao-card-apresentarcontato img {
                     width: 100%;
                 }
+                .card-contato-img { /* CONTA*/
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    width: 85%;
+                }
+                .card-contato-img h2{ 
+                    color: var(--branco-principal);
+                    font-size: var(--fonte-padrao);
+                    margin: 0 0 0 1%;
+                }
+                .card-contato-img img { /* IMG */
+                    border-radius: 50%;
+                    margin: 2.5% 4%;
+                }
                 .subtitulo-card-contato { /* SUBTÍTULO */
                     background-color: var(--tema-secundario);
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
                 }
                 .subtitulo-card-contato h2{
                     font-size: var(--muitoPequena);
                     color: var(--branco-principal);
                     padding: 1%;
+                    margin: 2.5%;
                 }
                 .texto-card-contato { /* TEXTO */
                     background-color: var(--tema-terciario);
@@ -86,10 +108,19 @@
                 <?php
                     $stmt = $pdo->prepare("SELECT * FROM tbContato");
                     $stmt -> execute();
-                    while($row = $stmt->fetch(PDO::FETCH_BOTH)){?>
+                    while($row = $stmt->fetch(PDO::FETCH_BOTH)){
+                        $stmtImg = $pdo->prepare("SELECT imgConta FROM tbConta WHERE nomeConta = :nomeConta");
+                        $stmtImg->bindParam(':nomeConta', $row["nomeContato"], PDO::PARAM_STR);
+                        $stmtImg -> execute();
+                        $imgRow = $stmtImg->fetch(PDO::FETCH_ASSOC);
+                        $imgConta = isset($imgRow["imgConta"]) ? $imgRow["imgConta"] : 0;
+                    ?>
                         <div class="card-apresentarcontato">
                             <div class="titulo-card-contato">
-                                <h1>Assunto: <?php echo $row["assuntoContato"]; ?></h1>
+                                <div class="card-contato-img"> <!-- img -->
+                                    <img src="images/imagensArquivos/conta/<?php echo $imgConta == 0 ? 'icons/semImagem.png' : $imgConta . '.png'; ?>" width="50"/>
+                                    <h2><?php echo $row["nomeContato"]; ?></h2> <!-- nome -->
+                                </div>
                                 <div class="botao-card-apresentarcontato"> <!-- botões -->
                                     <a href="alternarcontatoconsulta.php?id=<?php echo $row[0]?>&nome=<?php echo $row[1]?>&email=<?php echo $row[2]?>&assunto=<?php echo $row[3]?>&mensagem=<?php echo $row[4]?>">
                                         <img src="./images/imagensArquivos/noticias/icons/alternar.webp"> <!-- botão alternar -->
@@ -100,7 +131,7 @@
                                 </div>
                             </div>
                             <div class="subtitulo-card-contato">
-                                <h2>Nome: <?php echo $row["nomeContato"]; ?></h2>
+                                <h1><?php echo $row["assuntoContato"]; ?></h1> <!-- assunto -->
                             </div>
                             <div class="texto-card-contato">
                                 <h3><?php echo $row["mensagemContato"];?></h3>
