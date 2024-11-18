@@ -458,12 +458,14 @@ input[type="submit"]:hover {
     max-height: 460px;
     min-width: 15%;
     margin: 0 40px;
+    overflow: hidden;
     border-radius: 25px;
 }
 .involucroCard{
     border-radius: 25px;
     background-color: #e8f0fe;
-}.contImgCardSobre{
+}
+.contImgCardSobre{
     position: relative;
     row-gap: 8px;
     padding: 25px 0;
@@ -496,7 +498,8 @@ input[type="submit"]:hover {
 .sobrepos::after{
     border-radius: 0 25px 0 0;
     background-color: #e8f0fe;
-}.imgCardSobre{
+}
+.imgCardSobre{
     position: relative;
     height: 100px;
     width: 100px;
@@ -511,60 +514,34 @@ input[type="submit"]:hover {
     border-radius: 50%;
     border: 4px solid #1A4261;
 }
-.cursoCardSobre{
-    font-family: var(--fonte-padrao);
-    height: 50%;
-    width: auto;
-    overflow: hidden;
-}
-
-.nomeCursoCard{
+.nomeCursoCard{ 
+    font-size: 15px;
     color: #333;
     margin: 5px 50px ;
-    position: relative;
-    font-size: 15px;
-}
-.nomeCursoCard::before{
-    content: ''; 
-    position: absolute;
-    height: 2px;
-    width: 40px;
-    background-color: var(--tema-terciario);   
-    bottom: 4px;
-    border-radius: 3px;
 }
 .descricaoCursoCard{
-    font-family: var(--fonte-padrao);
-    font-size: 18px;
+    font-size: 14px;
     color: #443f3f;
     text-align: center;
-    margin-bottom: 20px;
-    position: relative;
+    margin: 25px;
 }
-/*.botaoCursoCard{
-    font-family: var(--fonte-padrao);
+.botaoCursoCard{
     border: none;
     font-size: 16px;
-    font-weight: bold;
     color: #e8f0fe;
     padding: 10px 20px;
     background-color: #4070f4;
     border-radius: 6px;
-    padding-left: 70px;
-    margin-top: 15px;
+    margin: auto;
     cursor: pointer;
-All: todas as propried. css alteradas terão uma transição para si.*
-    transition: all 0.3s ease-in-out;/*ease é uma função
-predefinida que cria uma aceleração suave no início e no final da transição,com uma velocidade constante no meio. *
+/*All: todas as propried. css alteradas terão uma transição para si.*/
+    transition: all 0.3s ease;/*ease é uma função
+predefinida que cria uma aceleração suave no início e no final da transição,com uma velocidade constante no meio.*/
 }
-.botaoCursoCard::after{
-    background-color: transparent;
-    color: #265df2;
-    transition: all 0.3s ease-in-out;
+.botaoCurso:hover{
+    background: #265df2;
 }
-
-
-/*.swiper-navBtn{
+.swiper-navBtn{
     color: #6E93f7;
     transition: color 0.3 ease;
 }
@@ -595,7 +572,7 @@ predefinida que cria uma aceleração suave no início e no final da transição
         display: none;
     }
 }
- sobre end */
+/* sobre end */
 
 /* contato start */
 .contato-principal {

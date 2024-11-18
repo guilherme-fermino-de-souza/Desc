@@ -1,4 +1,4 @@
-var Swiper = new Swiper(".slideCursos", {
+var swiper = new swiper(".slideCursos", {
     slidesPerView: 2,
     spaceBetween: 25,
     loop: true,
@@ -9,7 +9,7 @@ var Swiper = new Swiper(".slideCursos", {
       el: ".swiper-pagination",
       clickable: true,
       dynamicBullets: true,
-    },      /* swiper - card com navegação semelhante ao carrossel */
+    },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -22,7 +22,7 @@ var Swiper = new Swiper(".slideCursos", {
         slidesPerView: 2,
       },
     },
-      /*Se for possível usar uma scrollbar*/
+      // And if we need scrollbar
   scrollbar: {
     el: '.swiper-scrollbar',
   },
