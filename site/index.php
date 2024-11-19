@@ -53,10 +53,10 @@
 
 
 
-    <!-- JavaScript --> 
-    <script src="swiper-bundle.min.js"></script> <!-- swiper (deslizador) do card, parte 100% bootstrap-->
-    <script src="swip.js" ></script>
-    <script src="./java.js"></script> <!-- JavaScript - navbar responsiva-->
+    <!-- JavaScript --> <!--Às vezes é a barra... -->
+    <script src="/swiper-bundle.min.js"></script> <!-- swiper (deslizador) do card, parte 100% bootstrap-->
+    <script src="/swip.js" ></script>
+    <script src="./java.js"></script> <!-- JavaScript - navbar responsiva  [não precisa de ponto]-->
     <script src="./aviso.js"></script>
 </body>
 </html>
