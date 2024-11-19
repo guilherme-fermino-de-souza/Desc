@@ -9,69 +9,95 @@
         <title>Desenvolvedores</title>
         <style>
             /*CARD START*/
-            body{
+            body {
                 height: auto;
                 flex-grow: 1;
-            }
-            .cards {
-                display: flex;
-                justify-content: center;
-                width: 80%;
-                padding-bottom: 5%;
-            }
-            .container-cards {
-                display: grid;
-                background-color: var(--tema-terciario);
-                padding: 5%;
-                width: 80%;
-                margin: auto;
-                grid-template-columns: 20% 20% 20% 20%;
-                margin-top: 5%;
-                border-radius: 10px;
-                justify-content: space-around;
-                
+                background-color: var(--cinza-fonte-claro);
             }
 
-            .card{
+            /*.cards {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 width: 100%;
-                height: 110%;
-                display: flexbox;
-                background-color: var(--tema-secundario);
-                border: 10px;
+                padding-bottom: 5%;
+            }*/
+
+            .container-cards {
+                display: grid;
+                background-color: var(--cinza-fonte-claro);
+                padding: 5%;
+                width: 90%;
+                margin: auto;
+                grid-template-columns: repeat(4, 1fr); /*Dispõe esses cards em 4 colunas*/
+                gap: 20px;
+                margin-top: 5%;
+                border-radius: 10px;
+                justify-content: center /*space-around*/ ;
+            }
+
+            .card {
+                width: 101%;
+                height: auto;
+                background-color: var(--tema-terciario);
+                border: 3px solid var(--opcao-tema-quinto);
                 border-radius: 20px;
-                border-color: var(--tema-quartenario);
-                justify-content: space-around;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                padding: 20px;
+                transition: transform 0.4s ease-in; /**/
+            }
+
+            .card:hover {
+                transform: translateY(-10px);   /*Efeito de hover, vulgo elevação bacanérrima*/
+                border: 4px solid var(--tema-secundario);
+                transition: transform 0.4s ease-in;
             }
 
             .img-card {
                 display: flex;
                 justify-content: center;
+                align-items: center;
                 padding: 10%;
                 height: 50%;
             }
+
             .img-card img {
                 width: 10vw;
                 height: 10vw;
                 border-radius: 50%;
+                transition: transform 0.3s ease;
+            }
+
+            .img-card img:hover {
+                transform: scale(1.1); /*Efeito de zoom na img*/
             }
 
             .card h2 {
-                display: flex;
+                display: flexbox;
                 justify-content: center;
-                margin-top: 2%;
+                text-align: center;
+                font-size: var(--fonte-padrao);
                 color: var(--branco-principal);
-                font-size: var(--font-sm-link);
-                height: 25px;
+                margin-bottom: 10%;
             }
+            
             .text-card a {
                 display: flex;
-                font-size: font-sm-link;
+                font-size: var(--fonte-padrao);
                 color: var(--branco-principal);
+                align-items: start;
                 justify-content: center;
+                text-decoration: underline var(--tema-secundario);
             }
+            
             .text-card a:hover {
-                color: var(--vermelho-principal);
+                color: var(--preto-fonte);
+                text-decoration: underline var(--tema-secundario);
             }
+            
             .card p {
                 display: flex;
                 justify-content: center;
@@ -79,29 +105,168 @@
                 color: var(--preto-fonte);
                 height: 15px;
                 padding: 10%;
-                margin-bottom: 2.5px;
+                margin-top: -8%;
+                margin-bottom: 4px;
             }
+            
             .card button {
                 display: flex;
                 justify-content: center;
-                background-color: var(--branco-principal);
+                background-color: var(--tema-terciario);
                 border-radius: 15px;
-                border: 10px;
-                border-color: var(--preto-fonte);
+                border: 2px solid var(--tema-secundario);
                 font-size: 17px;
-                margin-top: 10%;
+                color: var(--branco-principal);
+                margin-top: 12%;
                 margin-inline: auto;
-                height: 25px;
+                padding: 10px 20px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            
+            .card button a{
+                text-decoration: none;
+                font-size: 17px;
+                color: var(--branco-principal);
             }
             .card button:hover {
-                display: flex;
-                justify-content: center;
-                background-color: var(--vermelho-principal); /* Define a cor de fundo com transparência */
-                color: var(--branco-principal);
-                transition: 0.5s;
-                
+                /*display: flex;
+                justify-content: center;*/
+                background-color: var(--tema-secundario); /*Define o fundo com opalescência*/
+                color: var(--preto-fonte);
+            }
+
+            .card button:hover a{
+                text-decoration: wavy;
+                font-size: 17px;
+                color: var(--preto-fonte);
+
+            }
+
+                /*Responsividade dos Cards em N telas*/
+            @media screen and (max-width: 768px) {
+                .container-cards {
+                    grid-template-columns: repeat(2, 1fr); /*2 colunas em ecrãs exíguos*/
+                }
+
+                .img-card img {
+                    width: 20vw;
+                    height: 20vw;
+                }
+            }
+
+            @media screen and (max-width: 480px) {
+                .container-cards {
+                    grid-template-columns: 1fr; /*1 coluna em schermos pequeníssimas*/
+                }
+
+                .img-card img {
+                    width: 30vw;
+                    height: 30vw;
+                }
             }
             /*CARD END*/
+
+            /*ADMIN START*/
+            .admin {
+                width: 80%;
+                margin: auto;
+                /**/margin-top: 5%;
+                margin-bottom: 5%;
+            }
+            
+            .container-admin {
+                display: flex;
+                flex-direction: column;
+                background-color: var(--tema-terciario);
+                align-items: center;
+            }
+            
+            .container-admin a{
+                color: var(--branco-principal);
+                font-size: var(--fonte-media);
+                font-weight: 800;
+                padding: 2% 1%;
+                text-decoration: none;
+            }
+            
+            .container-admin a:hover{
+                color: var(--tema-secundario);
+                text-decoration:underline var(--tema-secundario);
+                transition: .75s;
+            }
+            
+            .span-bloqueio {
+                display: flex;
+                flex-direction: column;
+                background-color: var(--tema-terciario);
+                align-items: center;
+                margin: 1% 0%;
+            }
+            /*ADMIN END*/
+        </style>
+    </head>
+    <body>
+        <?php include './navbar.php' ?>
+
+        <div class="conteudo-card">
+        <!--card start-->
+            <section id="cards">
+                <div class="container-cards">
+                        <div class="card">
+                            <div class="img-card">
+                                <img class="dev" img src="images/guil.enc" alt="guilherme.enc">
+                            </div>
+                            <div class="text-card">
+                                <h2>Guilherme Fermino de Souza</h2>
+                                <p><a href="https://github.com/guilherme-fermino-de-souza" target="_blank">GitHub</a></p>
+                            </div>
+                            <div class="button-card">
+                                <button type="button" class="bnt"><a href="https://www.instagram.com/fermino729/" target="_blank">Contate-me!</a></button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="img-card">
+                                <img class="dev" img src="images/gust.jpeg" alt="gusta.jpeg" >
+                            </div>
+                            <div class="text-card">
+                                <h2>Gustavo Fermino de Souza</h2> 
+                                <p><a href="https://github.com/GustaFer23" target="_blank">GitHub</a></p>
+                            </div>
+                            <div class="button-card">
+                                <button type="button" class="bnt"><a href="https://www.instagram.com/fermgustas/" target="_blank">Contate-me!</a></button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="img-card">
+                                <img class="dev" img src="images/leo.jpeg" alt="leonardo.jpeg">
+                            </div>
+                            <div class="text-card">
+                                <h2>Leonardo Lima de Souza Lopes</h2>
+                                <p><a href="https://github.com/leonardoLimaDeSouzaLopes" target="_blank">GitHub</a></p>
+                            </div>
+                            <div class="button-card">
+                                <button type="button" class="bnt"><a href="https://www.instagram.com/leonardolopested/" target="_blank">Contate-me!</a></button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="img-card">
+                                <img class="dev" img src="images/tia.jpeg" alt="thiago.jpeg">
+                            </div>
+                            <div class="text-card">
+                                <h2>Tiago Soares Magalhães</h2>
+                                <p><a href="https://github.com/TriaguinDev" target="_blank">GitHub</a></p>
+                            </div>
+                            <div class="button-card">
+                                <button type="button" class="btn"><a href="https://www.instagram.com/magalhae_2008/" target="_blank">Contate-me!</a></button>
+                            </div>
+                        </div>
+                        
+                </div>
+            </section>
+            <!--card end-->
 
             /*ADMIN START*/
             .admin {
@@ -141,7 +306,7 @@
     <body>
         <?php include './navbar.php' ?>
 
-        <div class="conteudo-card">
+       <div class="conteudo-card">
         <!--card start-->
             <section id="cards">
                 <div class="container-cards">
