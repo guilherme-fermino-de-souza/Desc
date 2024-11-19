@@ -113,10 +113,11 @@
         .titulo-card-comentario { /* TÍTULO */
             background-color: var(--tema-terciario);
             display: flex;
+            justify-content: space-between;
         }
         .titulo-card-comentario h1{
             font-weight: 600;
-            font-size: var(--fonte-padrao);
+            font-size: var(--fonte-1p5VW);
             color: var(--branco-principal);
             padding: 1%;
         }
@@ -124,13 +125,15 @@
             display: flex;
             flex-direction: row;
             aling-itens: center;
-            justify-content: end;
+            justify-content: space-around;
+            width: 15%;
         }
         .botao-card-apresentarcomentario a { /* EXCLUIR/ALTERNAR */
             width: 2%;
             margin: 0.1% 2.5%;
             border-radius: 35%;
             padding: .1%;
+            width: 13%;
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -147,7 +150,7 @@
             width: 100%;
         }
         .comentario h2{
-            font-size: var(--fonte-padrao);
+            font-size: var(--fonte-pequena);
             color: var(--branco-principal);
             margin: 0.5% 1%;
         }

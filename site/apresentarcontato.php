@@ -27,7 +27,7 @@
                     background-color: var(--branco-principal);
                     margin: 5% ;
                     border-radius: 5px;
-                    border: 5px solid var(--tema-terciario);
+                    border: 5px solid var(--tema-primario);
                     height: fit-content;
                 }
                 .titulo-card-contato { /* TÍTULO */
@@ -78,19 +78,20 @@
                     margin: 2.5% 4%;
                 }
                 .subtitulo-card-contato { /* SUBTÍTULO */
-                    background-color: var(--tema-secundario);
+                    background-color: var(--tema-primario);
                     display: flex;
                     flex-direction: row;
                     align-items: center;
                 }
-                .subtitulo-card-contato h2{
-                    font-size: var(--muitoPequena);
+                .subtitulo-card-contato h1{
+                    font-size: var(--fonte-padrao);
                     color: var(--branco-principal);
                     padding: 1%;
                     margin: 2.5%;
                 }
                 .texto-card-contato { /* TEXTO */
                     background-color: var(--tema-terciario);
+                    border: 2px solid var(--tema-secundario);
                     padding: 3%;
                 }
                 .texto-card-contato h3 {

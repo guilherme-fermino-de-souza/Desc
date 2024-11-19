@@ -35,6 +35,7 @@
                 justify-content: space-between;
                 background-color: var(--cinza-fonte-claro);
                 color: var(--preto-fonte);
+                align-items: center;
                 display: flex;
             }
             .titulo-card-painel h1{
@@ -45,15 +46,17 @@
             .titulo-card-painel a {
                 background-color: var(--cinza-fonte-claro);
         	    border-radius: 30%;
-                width: 20%;
+                width: 5%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 margin: 1.5%;
             }
             .titulo-card-painel img { /* EXCLUIR/LIXO*/
-                width: 30%;
-                margin-right: 0;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
             .titulo-card-painel a:hover {
                 background-color:  red;

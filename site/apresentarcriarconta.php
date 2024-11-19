@@ -21,65 +21,78 @@
                     width: 80%;
                     margin: auto;
                     grid-template-columns: 50%  50%;
+                    min-height: 60vh;
                 }
                 .card-apresentarcriarconta {  /* CARD */ 
                     background-color: var(--branco-principal);
                     margin: 5% ;
                     border-radius: 5px;
-                    border: 5px solid var(--tema-terciario);
-                    height: fit-content;
+                    border: 5px solid var(--tema-primario);
+                    height: fit-content; 
                 }
                 .titulo-card-conta { /* TÍTULO */
+                    font-weight: 800;
                     background-color: var(--tema-terciario);
                     display: flex;
+                    justify-content: space-between;
+                    align-items: center;
                 }
                 .titulo-card-conta h1{
                     font-size: var(--fonte-media);
                     color: var(--branco-principal);
                     padding: 1%;
                 }
-                .titulo-card-conta a { /* EXCLUIR */
-                    font-weight: 800;
-                    font-size: var(--fonte-media);
-                    color:  var(--tema-secundario);
-                    margin-left: auto;
+                .botao-card-apresentarconta {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: end;
+                    width: 20%;
+                }
+                .botao-card-apresentarconta a { /* EXCLUIR/ALTERNAR */
+                    width: 35%;
+                    margin: 2.5%;
+                    border-radius: 35%;
                     padding: 1%;
                     text-decoration: none;
                 }
-                .titulo-card-conta a:hover {
-                    color:  red;
+                .botao-card-apresentarconta a:hover {
+                    background-color:  red;
+                    transition: 0.75s;
+                }
+                .botao-card-apresentarconta img {
+                    width: 100%;
+                }
+                .card-conta-img { /* CONTA*/
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    width: 85%;
+                }
+                .card-conta-img h2{ 
+                    color: var(--branco-principal);
+                    font-size: var(--fonte-padrao);
+                    margin: 0 0 0 1%;
+                }
+                .card-conta-img img { /* IMG */
+                    border-radius: 50%;
+                    margin: 2.5% 4%;
                 }
                 .subtitulo-card-conta { /* SUBTÍTULO */
-                    background-color: var(--tema-secundario);
+                    background-color: var(--tema-primario);
+                    display: flex;
+                    flex-direction: column;
                 }
                 .subtitulo-card-conta h2{
-                    font-weight: 800;
                     font-size: var(--fonte-padrao);
                     color: var(--branco-principal);
                     padding: 1%;
+                    margin: .5%;
                 }
-                .texto-card-conta { /* TEXTO */
-                    background-color: var(--tema-terciario);
-                    padding: 3%;
-                }
-                .texto-card-conta h3 {
+                .subtitulo-card-conta h3 {
                     font-size: var(--fonte-padrao);
                     color: var(--branco-principal);
-                    text-indent: 3%;
-                }
-                .alterar-card-conta { /* ALTERAR */
-                    display: flex;
-                    justify-content: center;
-                    background-color: var(--tema-terciario);
-                }
-                .alterar-card-conta a {
-                    font-weight: 600;
-                    font-size: var(--fonte-padrao);
-                    color:  var(--tema-secundario);
-                    text-decoration: none;
-                }
-                .alterar-card-conta a:hover {
-                    color:  var(--branco-principal);
+                    padding: 1%;
+                    margin: .5%;
                 }
             </style>
             <title>Apresentar Conta</title>
@@ -94,17 +107,22 @@
                 while($row = $stmt->fetch(PDO::FETCH_BOTH)){?>
                     <div class="card-apresentarcriarconta">
                         <div class="titulo-card-conta">
-                            <h1>Nome: <?php echo $row["nomeConta"]; ?></h1>
-                            <a href="excluirconta.php?id=<?php echo $row[0]; ?>"> X </a>
+                            <div class="card-conta-img"> <!-- img -->
+                                <img src="images/imagensArquivos/conta/<?php echo $row["imgConta"] == 0 ? "icons/semImagem.png" : $row["imgConta"] . ".png"?>" width="50">
+                                <h1><?php echo $row["nomeConta"]; ?></h1>
+                            </div>
+                            <div class="botao-card-apresentarconta"> <!-- botões -->
+                                <a href="alternarcontaconsulta.php?id=<?php echo $row[0]?>&nome=<?php echo $row[1]?>&email=<?php echo $row[2]?>&senha=<?php echo $row[3]?>">
+                                    <img src="./images/imagensArquivos/noticias/icons/alternar.webp"> <!-- botão alternar -->
+                                </a>
+                                <a href="excluirconta.php?id=<?php echo $row[0]; ?>">
+                                    <img src="./images/imagensArquivos/noticias/icons/trash.png"> <!-- botão excluir -->
+                                </a>
+                            </div>
                         </div>
                         <div class="subtitulo-card-conta">
                             <h2>Email: <?php echo $row["emailConta"]; ?></h2>
-                        </div>
-                        <div class="texto-card-conta">
                             <h3>Tipo: <?php echo $row["tipoConta"]; ?></h3> 
-                        </div>
-                        <div class="alterar-card-conta">
-                            <a href="alternarcontaconsulta.php?id=<?php echo $row[0]?>&nome=<?php echo $row[1]?>&email=<?php echo $row[2]?>&senha=<?php echo $row[3]?>"> Alterar </a>
                         </div>
                     </div>
                 <?php } ?>    

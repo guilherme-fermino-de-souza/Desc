@@ -14,9 +14,10 @@
         .container-index-principal {
             display: flex;
             flex-direction: column;
-            background-image: url('https://media.istockphoto.com/id/1432727112/pt/foto/woman-programming-software-codes-overnight.jpg?s=2048x2048&w=is&k=20&c=fmotioE-VLCx-oK31MXvPJ1pA8ri2yjEEPBu4yJxSzc=');    
-            background-size: cover;
-            background-position: center;
+        }
+        .container-inicio {
+        background-image: url('https://media.istockphoto.com/id/1432727112/pt/foto/woman-programming-software-codes-overnight.jpg?s=2048x2048&w=is&k=20&c=fmotioE-VLCx-oK31MXvPJ1pA8ri2yjEEPBu4yJxSzc=');    
+        background-size: cover;
         }
         /*INDEX END*/
     </style>

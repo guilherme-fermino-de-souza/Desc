@@ -24,9 +24,6 @@
     box-sizing: border-box;
     font-family: var(--fonte-principal);
 }
-html, body {
-    min-height: 100vh;
-}
 /* modal navbar start*/
 .modal-login dialog::backdrop { /* fundo do modal */
     background-color: rgba(0, 0, 0, 0.5);
@@ -36,7 +33,7 @@ html, body {
     text-align: center;
     border-radius: .5rem;
     margin: auto;
-    height: 65%;
+    height: 75%;
 }
 .container-close-modal { /* container botão*/
     display: flex;

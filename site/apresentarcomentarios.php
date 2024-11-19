@@ -82,7 +82,11 @@
                 <?php
                     $stmt = $pdo->prepare("SELECT * FROM tbcomentarionoticia");
                     $stmt -> execute();
-                    while($row = $stmt->fetch(PDO::FETCH_BOTH)){?>
+                    while($row = $stmt->fetch(PDO::FETCH_BOTH)){
+                        $stmtNoticia = $pdo->prepare("SELECT tituloNoticias FROM tbNoticias WHERE idNoticias = :idNoticias");
+                        $stmtNoticia -> execute();
+                        $tituloRow = $stmtNoticia->fetch(PDO::FETCH_ASSOC);
+                        $?>
                         <div class="card-apresentarcomentario">
                             <div class="titulo-card-comentario">
                                 <h1>Notícia: <?php echo $row["noticia_id"]; ?> <!-- Título -->
