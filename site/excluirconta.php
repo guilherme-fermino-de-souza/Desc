@@ -7,4 +7,5 @@
 
     $stmt = $pdo->prepare("DELETE FROM tbConta WHERE idConta='$x'");
     $stmt ->execute();
+    header("location:apresentarcriarconta.php"); 
 ?>

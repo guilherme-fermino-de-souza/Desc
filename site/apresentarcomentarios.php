@@ -38,39 +38,71 @@
                     color: var(--branco-principal);
                     padding: 1%;
                 }
-                .titulo-card-comentario a { /* EXCLUIR */
-                    font-weight: 800;
-                    font-size: var(--fonte-media);
-                    color:  var(--tema-secundario);
-                    margin-left: auto;
+                .botao-card-apresentarcomentario {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    width: 10%;
+                }
+                .botao-card-apresentarcomentario a { /* EXCLUIR/ALTERNAR */
+                    width: 40%;
+                    margin: 2.5%;
+                    border-radius: 35%;
                     padding: 1%;
                     text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
-                .titulo-card-comentario a:hover {
-                    color:  red;
+                .botao-card-apresentarcomentario a:hover {
+                    background-color:  red;
+                    transition: 0.75s;
                 }
-                .comentario { /* SUBTÍTULO */
-                    background-color: var(--tema-secundario);
+                .botao-card-apresentarcomentario img {
+                    width: 70%;
                 }
-                .comentario h2{
-                    font-weight: 800;
+                .card-comentario-img { /* CONTA*/
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    width: 85%;
+                }
+                .card-comentario-img h2{ 
+                    color: var(--branco-principal);
+                    font-size: var(--fonte-padrao);
+                    margin: 0 0 0 1%;
+                }
+                .card-comentario-img img { /* IMG */
+                    border-radius: 50%;
+                    margin: 2.5% 4%;
+                }
+                .subtitulo-card-comentario { /* SUBTÍTULO */
+                    background-color: var(--tema-primario);
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
+                .subtitulo-card-comentario { /* SUBTÍTULO */
+                    background-color: var(--tema-primario);
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
+                .subtitulo-card-comentario h1{
                     font-size: var(--fonte-padrao);
                     color: var(--branco-principal);
-                    padding: 1%;
+                    padding: .1%;
+                    margin: .5%;
                 }
-                .alterar-card-comentario { /* ALTERAR */
-                    display: flex;
-                    justify-content: center;
+                .texto-card-comentario { /* TEXTO */
                     background-color: var(--tema-terciario);
+                    border: 2px solid var(--tema-secundario);
+                    padding: 3%;
                 }
-                .alterar-card-comentario a {
-                    font-weight: 600;
+                .texto-card-comentario h3 {
                     font-size: var(--fonte-padrao);
-                    color:  var(--tema-secundario);
-                    text-decoration: none;
-                }
-                .alterar-card-comentario a:hover {
-                    color:  var(--branco-principal);
+                    color: var(--branco-principal);
+                    text-indent: 3%;
                 }
             </style>
             <title>Apresentar Comentários</title>
@@ -84,20 +116,29 @@
                     $stmt -> execute();
                     while($row = $stmt->fetch(PDO::FETCH_BOTH)){
                         $stmtNoticia = $pdo->prepare("SELECT tituloNoticias FROM tbNoticias WHERE idNoticias = :idNoticias");
+                        $stmtNoticia->bindParam(':idNoticias', $row["noticia_id"], PDO::PARAM_STR);
                         $stmtNoticia -> execute();
                         $tituloRow = $stmtNoticia->fetch(PDO::FETCH_ASSOC);
-                        $?>
+                        $tituloNoticia = isset($tituloRow["tituloNoticias"])? $tituloRow["tituloNoticias"] : 'Título não encontrado';?>
                         <div class="card-apresentarcomentario">
                             <div class="titulo-card-comentario">
-                                <h1>Notícia: <?php echo $row["noticia_id"]; ?> <!-- Título -->
-                                    Nome: <?php echo $row["nomeComentarioNoticia"]; ?></h1>
-                                <a href="excluircomentario.php?id=<?php echo $row[0]; ?>"> X </a> <!-- EXCLUIR -->
+                                <div class="card-comentario-img"> <!-- img -->
+                                    <h1><?php echo $tituloNoticia; ?> </h1><!-- Título -->
+                                </div>
+                                <div class="botao-card-apresentarcomentario"> <!-- botões -->
+                                    <a href="alternarcomentarioconsulta.php?id=<?php echo $row[0]?>&nome=<?php echo $row[1]?>&comentario=<?php echo $row[2]?>">
+                                        <img src="./images/imagensArquivos/noticias/icons/alternar.webp"/>
+                                    </a> <!-- ALTERAR -->
+                                    <a href="excluircomentario.php?id=<?php echo $row[0]; ?>">   
+                                        <img src="./images/imagensArquivos/noticias/icons/trash.png"/>
+                                    </a> <!-- EXCLUIR -->
+                                </div>
                             </div>
-                            <div class="comentario">
-                                <h2><?php echo $row["mensagemComentarioNoticia"]; ?></h2> <!-- Cometário -->
+                            <div class="subtitulo-card-comentario">
+                                <h1><?php echo $row["nomeComentarioNoticia"]; ?></h1>
                             </div>
-                            <div class="alterar-card-comentario"> <!-- ALTERAR -->
-                                <a href="alternarcomentarioconsulta.php?id=<?php echo $row[0]?>&nome=<?php echo $row[1]?>&comentario=<?php echo $row[2]?>"> Alterar </a> 
+                            <div class="texto-card-comentario">
+                                <h3><?php echo $row["mensagemComentarioNoticia"]; ?></h3> <!-- Cometário -->
                             </div>
                         </div>
                 <?php } ?>  

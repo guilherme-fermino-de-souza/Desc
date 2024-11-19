@@ -7,6 +7,7 @@
             <div class="footer-part">
                 <div class="left-logo">
                     <h1>NEWSWALL ETEC GUAIANASES</h1>
+                    <h2>Rede de notícias em primeira mão da Etec de Guaianazes</h2>
                 </div>
             </div>
 
@@ -22,7 +23,8 @@
             <div class="footer-part">
                 <h1>Mais</h1>
                 <hr>
-                <H2>Inscreva-se para uma melhor experiência =></H2>
+                <h2 class="links-footer">Acesse o site principal do Centro Paula Souza <a href="https://www.cps.sp.gov.br/" target="_blank">Aqui</a></h2>
+                <h2 class="links-footer">Oportunidades <a href="https://carreiras.cps.sp.gov.br/" target="_blank">Carreiras</a></h2>
             </div>
 
         </div>

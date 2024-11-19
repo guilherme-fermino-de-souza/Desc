@@ -113,7 +113,7 @@
         </style>
     </head>
     <body>
-        <?php include './navbar.php' ?>
+        <?php include './navbar.php'?>
         <div class="alternarcontaconsulta-principal">
             <div class="alternarcontaconsulta">
                 <form action="alterarconta.php" method="post">      
