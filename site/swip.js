@@ -78,8 +78,8 @@ let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item'); //thumbnai
 let tempoDom = document.querySelector('.carrossel .tempo'); //timeDom e carousel e time[HTML]
 
 thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-let tempoOperando = 3000; //timeRunning
-let tempoProxAuto = 7000; //timeAutoNext
+let tempoOperando = 100; //timeRunning
+let tempoProxAuto = 10000; //timeAutoNext
 
 proxDom.onclick = function(){ 
     showSlider('proximo');    //nextDom e next
@@ -90,34 +90,32 @@ anteDom.onclick = function(){
 }
 
 let operarInterim; //runTimeOut
-let operarProxAuto = setTimeout(() => { //runNextAuto
+let operarAuto = setTimeout(() => { //runNextAuto
     proxDom.click();
 }, tempoProxAuto);
 function showSlider(type){
-  let SliderItemsDom = SliderDom.querySelectorAll('.carrossel .list .item');
-  let thumbnailItemsDom = document.querySelectorAll('.carrossel .thumbnail .item');
-  
-  // Lógica de transição para "proximo" (next)
-  if(type === 'proximo'){ 
-      SliderDom.appendChild(SliderItemsDom[0]);  // Move o primeiro item para o final
-      thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);  // Move o primeiro thumbnail para o final
-      carrosselDom.classList.add('proximo');  // Adiciona a classe "proximo" para animação
-  } else { // Lógica de transição para "anterior" (prev)
-      SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);  // Move o último item para o início
-      thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);  // Move o último thumbnail para o início
-      carrosselDom.classList.add('anterior');  // Adiciona a classe "anterior" para animação
-  }
+    let  SliderItemsDom = document.querySelectorAll('.carrossel .list .item');
+    let thumbnailItemsDom = document.querySelectorAll('.carrossel .thumbnail .item');
+    
+    if(type === 'proximo'){ //next
+        SliderDom.appendChild(SliderItemsDom[0]);
+        thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+        carrosselDom.classList.add('proximo'); //next
+    }else{
+        SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+        let posicaoUltimoItem = SliderItemsDom.length - 1;
+        SliderDom.prepend(SliderItemsDom[posicaoUltimoItem]);
+        thumbnailBorderDom.prepend(thumbnailItemsDom[posicaoUltimoItem]);
+        carrosselDom.classList.add('anterior'); //prev
+    }
+    clearTimeout(operarInterim)
+    operarInterim = setTimeout(() => {
+      carrosselDom.classList.remove('proximo'); //next
+      carrosselDom.classList.remove('anterior'); //prev
+    }, tempoOperando);
 
-  // Remove a animação de transição após o tempo
-  clearTimeout(operarInterim);
-  operarInterim = setTimeout(() => {
-      carrosselDom.classList.remove('proximo'); // next
-      carrosselDom.classList.remove('anterior'); // prev
-  }, tempoOperando);
-
-  // Reinicia o auto próximo
-  clearTimeout(operarProxAuto);
-  operarProxAuto = setTimeout(() => {
+    clearTimeout(operarAuto);
+    operarAuto = setTimeout(() => {
       proxDom.click();
-  }, tempoProxAuto);
+    }, tempoProxAuto);
 }

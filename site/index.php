@@ -54,7 +54,7 @@
 
 
     <!-- JavaScript --> <!--Às vezes é a barra... -->
-    <script src="/swip.js" ></script>
+    <script src="./swip.js" ></script>
     <script src="./java.js"></script> <!-- JavaScript - navbar responsiva  [não precisa de ponto]-->
     <script src="./aviso.js"></script>
 </body>

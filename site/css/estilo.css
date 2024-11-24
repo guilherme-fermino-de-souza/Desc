@@ -444,7 +444,7 @@ input[type="submit"]:hover {
 .img-sobre img{
     height: 25vw;
 }
-/*Card dos Cursos em Sobre, início*/
+/*Card dos Cursos em Sobre, início
 .contSlideCursos{
     height: auto;
     max-height: 480px;
@@ -510,7 +510,7 @@ input[type="submit"]:hover {
 .imgCardSobre .Sobreimg{
     height: 100%;
     width: 100%;
-    object-fit: cover; /*redimensiona o objeto a manter proporção e ocupar todo espaço de seu container*/
+    object-fit: cover;*/ /*redimensiona o objeto a manter proporção e ocupar todo espaço de seu container
     border-radius: 50%;
     border: 4px solid #1A4261;
 }
@@ -536,10 +536,10 @@ input[type="submit"]:hover {
     background-color: #4070f4;
     border-radius: 6px;
     margin: auto;
-    cursor: pointer;
-/*All: todas as propried. css alteradas terão uma transição para si.*/
-    transition: all 0.3s ease;/*ease é uma função
-predefinida que cria uma aceleração suave no início e no final da transição,com uma velocidade constante no meio.*/
+    cursor: pointer;*/
+/*All: todas as propried. css alteradas terão uma transição para si.
+    transition: all 0.3s ease;*//*ease é uma função
+predefinida que cria uma aceleração suave no início e no final da transição,com uma velocidade constante no meio.
 }
 .botaoCurso:hover{
     background: #265df2;
@@ -574,7 +574,7 @@ predefinida que cria uma aceleração suave no início e no final da transição
     .swiper-navBtn{
         display: none;
     }
-}
+}*/
 /* sobre end */
 
 /* contato start */

@@ -42,7 +42,7 @@
                             <div class="item">
                                 <img src="images/imagensArquivos/cursos/dS.jpg" alt="Curso de DS" class="Sobreimg">
                                 <div class="contentCarroselCard">
-                                    <div class="autor">NEWSWALL</div>
+                                    <div class="autor">NEWS WALL ETEC</div>
                                     <div class="titulo">Curso técnico e integrado</div>
                                     <div class="topico">Desenvolvimento de Sistemas</div>
                                     <div class="des">
@@ -57,7 +57,7 @@
                             <div class="item">
                                 <img src="images/imagensArquivos/cursos/nutri.jpg" alt="Curso de Nutrição" class="Sobreimg">
                                 <div class="contentCarroselCard">
-                                    <div class="autor">NEWSWALL</div>
+                                    <div class="autor">NEWS WALL ETEC</div>
                                     <div class="titulo">Curso técnico e integrado</div>
                                     <div class="topico">Nutrição e Dietética</div>
                                     <div class="des">
@@ -71,7 +71,7 @@
                             <div class="item">
                                 <img src="images/imagensArquivos/cursos/admin.webp" alt="Curso de Administração" class="Sobreimg">
                                 <div class="contentCarroselCard">
-                                    <div class="autor">NEWSWALL</div>
+                                    <div class="autor">NEWS WALL ETEC</div>
                                     <div class="titulo">Curso técnico e integrado</div>
                                     <div class="topico">Administração</div>
                                     <div class="des">
@@ -85,7 +85,7 @@
                             <div class="item">
                                 <img src="images/imagensArquivos/cursos/edific.jpg" alt="Curso de Edificações" class="Sobreimg">
                                 <div class="contentCarroselCard">
-                                    <div class="autor">NEWSWALL</div>
+                                    <div class="autor">NEWS WALL ETEC</div>
                                     <div class="titulo">Curso técnico</div>
                                     <div class="topico">Edificações</div>
                                     <div class="des">   <!-- <div class="des"> -->
@@ -108,7 +108,7 @@
                                             Desenvolvimento de Sistemas (modular ou com EM)  
                                         </div>
                                         <div class="description"> <!-- Description -->
-                                        O curso técnico em Desenvolvimento de Sistemas da Etec de Guaianazes prepara você para desenvolver soluções sociais e empresariais para problemas diversos através da tecnologia. Você aprenderá a construir softwares, aplicativos e sistemas, desde o planejamento até a implementação. As aulas te ensinarão a dominar linguagens de programação, a trabalhar com bancos de dados e a utilizar ferramentas de desenvolvimento. Ao final do curso, você estará pronto para ingressar no mercado de trabalho e participar da criação de soluções tecnológicas que transformam o mundo! 
+                                        O curso técnico em Desenvolvimento de Sistemas da Etec de Guaianazes prepara você para desenvolver soluções sociais e empresariais para problemas diversos através da tecnologia...
                                         </div>
                                     </div>
                                 </div>
@@ -119,7 +119,7 @@
                                             Nutrição e Dietética (modular ou com EM
                                         </div>
                                         <div class="description"> <!-- Description -->
-                                            Durante o curso técnico em Nutrição e Dietética da Etec de Guaianazes o aluno aprenderá sobre os tipos de alimentos, o corpo humano e seu funcionamento. Estudará técnicas para orientar as pessoas com uma alimentação equilibrada de acordo com os diferentes biotipos e rotinas. O curso tem base na química e na biologia, para compreender a ação das calorias fornecidas pelos alimentos no organismo e seu processo de metabolismo no corpo humano, e matemática, para cálculos no desenvolvimento de cardápios. O estudante também terá noções de gestão de pessoas para aprender a liderar equipes!
+                                            Durante o curso técnico em Nutrição e Dietética da Etec de Guaianazes o aluno aprenderá sobre os tipos de alimentos, o corpo humano e seu funcionamento...
                                         </div>
                                     </div>
                                 </div>
@@ -127,10 +127,10 @@
                                     <img src="images/imagensArquivos/cursos/admin.webp" alt="Curso de Administração" class="Sobreimg">
                                     <div class="contentCarroselCard">
                                         <div class="title"> <!-- Name Slider -->
-                                            <h5>Administração</h5>
+                                            Administração
                                         </div>
                                         <div class="description"> <!-- Description -->
-                                            O curso técnico em Administração da Etec de Guaianazes visa incutir em seus cursandos valores de empreededorismo, atendimento às demandas dos clientes, análise de potencial de produtos/serviços e do comportamento do consumidor, e definição de metas para negócios. Uma possibilidade de aprofundar os conhecimetos adquiridos nesse curso é por meio da obtenção do diploma superior em Processos Gerenciais pela Fatec, ainda que este curso técnico certamente seja o bastate para adentrar no mercado de trabalho para cargos iniciais da área.
+                                            O curso técnico em Administração da Etec de Guaianazes visa incutir em seus cursandos valores de empreededorismo, atendimento às demandas dos clientes...
                                         </div>
                                     </div>
                                 </div>
@@ -138,10 +138,10 @@
                                     <img src="images/imagensArquivos/cursos/edific.jpg" alt="Curso de Edificações" class="Sobreimg">
                                     <div class="contentCarroselCard">
                                         <div class="title"> <!-- Name Slider -->
-                                            <h5>Edificações</h5>
+                                            Edificações
                                         </div>
                                         <div class="description"> <!-- Description -->
-                                        O curso técnico em Edificações da Etec de Guaianazes tem por principais disciplinas o Desenho, para elaboração e desenvolvimento de projetos de engenharia e arquitetura; Tecnologia dos Materiais de Construção, para selecionar e controlar a qualidade dos materiais; Tecnologia das Construções, para supervisionar e aprimorar os processos de construção; e Planejamento e Controle das Obras, para assegurar o cumprimento dos prazos e custos. Além disso, o aluno utiliza Matemática, para calcular proporções, áreas e volumes, e Química, para compreender as propriedades dos materiais.
+                                        O curso técnico em Edificações da Etec de Guaianazes tem por principais disciplinas o Desenho, para elaboração e desenvolvimento de projetos de engenharia...
                                         </div>
                                     </div>
                                 </div>

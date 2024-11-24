@@ -8,50 +8,69 @@
 }*/
 
 .carrossel{ 
-  height: 1000vw;
+  height: 100vw;
   max-height: 100vh;/*680px 100vh*/
   min-height: 25vh;
-  /*margin-top: -50px;900px 100vw*/
-  overflow: hidden;
+  /*margin-top: -50px;900px 100vw
+  overflow: hidden;*/
+  width: 100%;
   position: relative;
   margin-left: auto;
+  overflow: hidden;
 }
 .carrossel .list .item{
   width: 100%;
   height: 100%;
   position: absolute;
-  inset: 0 0 0 0;
+  inset: 0 -5% 0 0; /*top, left, bottom, right - msm linha*/
 }
-.carrossel .list .item img{
+.carrossel .list .item .Sobreimg img{
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 .carrossel .list .item .contentCarroselCard{
   position: absolute;
-  top: 20%;
   width: 1140px;
+  top: 10%;
   max-width: 80%;
-  left: 50%;
+  left: 45%;
   transform: translateX(-50%);
-  padding-right: 30%;
+  padding-right: 10%;
+  gap: 13px;
   box-sizing: border-box;
   color: #fff;
   text-shadow: 0 5px 10px #0004;
 }
 .carrossel .list .item .autor{
+  padding: 10px;
   font-weight: bold;
+  color: var(--tema-primario);
   letter-spacing: 10px;
 }
-.carrossel .list .item .titulo, .carrossel .list .item .topico{
+.carrossel .list .item .titulo, 
+.carrossel .list .item .topico{
+  padding: 15px; 
+  color: var(--tema-secundario);
   font-size: 30px; /*5em*/
   font-weight: bold;
   line-height: 8px; /*1.3em*/
 }
 .carrossel .list .item .topico{
-  color: #f1683a;
+  color: var(--tema-secundario); /*#f1683a*/
+}
+.carrossel .list .item .des{
+  border-radius: 25px;
+  background-color: var(--tema-terciario) 40%;
+  color: var(--tema-primario);
+  font-family: var(--fonte-1p5VW);
+  font-weight: 500;
 }
 .carrossel .list .item .botaoCarrossel{
+  color: #6E93f7;
+  transition: color 0.3 ease;
+  font-size: 40px;
+  background: var(--cinza-principal);
   display: grid;
   grid-template-columns: repeat(2, 130px);
   grid-template-rows: 40px;
@@ -60,18 +79,23 @@
 }
 .carrossel .list .item .botaoCarrossel button{
   border: none;
-  background-color: #eee;
+  border-radius: 3.5%;
   letter-spacing: 3px;
-  font-family: Poppins;
+  font-family: var(--fonte-1p5VW);
   font-weight: 500;
 }
 
 .carrossel .list .item .botaoCarrossel button a{
   text-decoration: none;
   font-family: var(--fonte-1p5VW);
+  color: var(--tema-primario);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 5px;
 }
 /* thumbail */
-.thumbnail{
+.carrossel .thumbnail{
   position: absolute;
   bottom: 50px;
   left: 50%;
@@ -80,33 +104,35 @@
   display: flex;
   gap: 20px;
 }
-.thumbnail .item{
+.carrossel .thumbnail .item{
   width: 150px;
   height: 220px;
   flex-shrink: 0;
   position: relative;
 }
-.thumbnail .item img{
+.carrossel .thumbnail .item img{
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
 }
-.thumbnail .item .contentCarroselCard{
+.carrossel .thumbnail .item .contentCarroselCard{
   color: #fff;
   position: absolute;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
+  margin: auto;
+  overflow: hidden;
+  text-align: center;
 }
-.thumbnail .item .contentCarroselCard .titulo{
+.carrossel .thumbnail .item .contentCarroselCard .title{
   font-weight: 500;
 }
-.thumbnail .item .contentCarroselCard .description{
+.carrossel .thumbnail .item .contentCarroselCard .description{
   font-weight: 300;
+  max-height: 50px;
+  overflow: hidden;
 }
 /* arrows */
-.setas{
+.carrossel .setas{
   position: absolute;
   top: 80%;
   right: 52%;
@@ -117,7 +143,7 @@
   gap: 10px;
   align-items: center;
 }
-.setas button{
+.carrossel .setas button{
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -126,10 +152,10 @@
   color: #fff;
   font-family: monospace;
   font-weight: bold;
-  transition: .5s;
+  transition: 0.4s;
   z-index: 100;
 }
-.setas button:hover{
+.carrossel .setas button:hover{
   background-color: #fff;
   color: #000;
 }
@@ -150,9 +176,9 @@
   transform: translateY(50px);
   filter: blur(20px);
   opacity: 0;
-  animation: showContentCarroselCard .5s 1s linear 1 forwards;
+  animation: showContent .5s 1s linear 1 forwards;
 }
-@keyframes showContentCarroselCard{
+@keyframes showContent{
   to{
       transform: translateY(0);
       filter: blur(0);
@@ -178,6 +204,7 @@
   position: absolute;
   bottom: 50px;
   left: 50%;
+  object-fit: cover;
   border-radius: 30px;
   animation: showImage .5s linear 1 forwards;
 }
@@ -187,7 +214,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      border-radius: 0;
+      border-radius: 1.5%;
   }
 }
 
@@ -205,22 +232,22 @@
   }
 }
 .carrossel.proximo .thumbnail{
-  animation: effectProximo.5s linear 1 forwards;
+  animation: effectNext .5s linear 1 forwards;
 }
 
-@keyframes effectProximo{
+@keyframes effectNext{
   from{
       transform: translateX(150px);
   }
 }
 
-/* running time/operando o tempo */
+/* running time/operando o tempo ou tempo operando */
 
-.carrossel .tempo{
+.tempo{
   position: absolute;
-  z-index: 1000;
+  z-index: 100;
   width: 0%;
-  height: 3px;
+  height: 5px;
   background-color: #f1683a;
   left: 0;
   top: 0;
@@ -228,9 +255,9 @@
 
 .carrossel.proximo .tempo,
 .carrossel.anterior .tempo{
-  animation: runningTime 3s linear 1 forwards;
+  animation: timeRunning 10s linear 1 forwards;
 }
-@keyframes runningTime{
+@keyframes timeRunning{
   from{ width: 100%}
   to{width: 0}
 }
