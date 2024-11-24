@@ -72,6 +72,6 @@
         echo "Por favor, preencha todos os campos.";
     }
 
-    header("Location: criarConta.php");
+    header("Location: login.php");
     exit();
 ?>

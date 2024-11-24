@@ -40,27 +40,29 @@
 /* erro aviso start */
 .modal-erro-aviso { /* O fundo da mensagem*/
     position: fixed;
-    top: 0;
-    left: 0;
-
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.3);
-
+    background-color: rgba(0, 0, 0, 0.7); /* Um fundo mais escuro para o modal */
     z-index: 10;
+}
+.container-erro-aviso {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 .card-erro-aviso {
     box-sizing: border-box;
-    width: 570px;
+    width: 80%; /* Ajuste de largura para tornar o modal mais flexível */
+    max-width: 500px; /* Largura máxima do modal */
     position: absolute;
-    left: 50%;
-    margin-left: -285px;
-    top: 50%;
-    font: bold 14px sans-serif;
-    border-radius: 3px;
-    background-color:  #ffffff;
-    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.12);
-    padding: 45px 50px;
+    font: bold;
+    border-radius: 35px;
+    background-color:  var(--cinza-fonte-claro);
+    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.92);
+    padding: 4% 5%;
+    text-align: center;
 }
 .card-erro-aviso button{
     border-radius: 10%;
@@ -81,16 +83,17 @@
 .login-principal { /* Fundo */
     display: flex;
     justify-content: center; /* Horizontal alignment */
-    align-items: center;     /* Vertical alignment */
+    align-items: center;     /* Vertical alignment 
     background-image: url('./images/Etec-Butbunito-1.jpg');
     background-position: center;
-    background-size: cover;
+    background-size: cover;*/
+    background-color: var(--tema-primario);
     height: 100vh;
 }
 .login { /* Container Principal Login*/
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 35%;
     background-color: var(--cinza-fonte-claro);
     border: 2px solid var(--tema-secundario); /* Largura, estilo e cor da borda */
     border-radius: 25px; 
@@ -183,11 +186,13 @@ input[type="submit"]:hover { /* Quando Clicar no Botão Enviar Azul*/
     if (isset($_GET['erro'])) { // Caso tente acessar sem logar
         $erro = "É necessário logar para acessar o site!"; ?> <!-- Aviso caso $erro = true-->
 
-        <div id="modal-erro-aviso" style="display: block;">
-            <div class="card-erro-aviso">
-                <h1>Acesso negado</h1>
-                <h2><?php echo $erro; ?></h2>
-                <button name="close-erro-aviso">Fechar Aviso</button>
+        <div id="modal-erro-aviso" class="modal-erro-aviso" style="display: block;">
+            <div class="container-erro-aviso">
+                <div class="card-erro-aviso">
+                    <h1>Acesso negado</h1>
+                    <h2><?php echo $erro; ?></h2>
+                    <button name="close-erro-aviso">Fechar Aviso</button>
+                </div>
             </div>
         </div>
     <?php } ?>
@@ -217,7 +222,7 @@ input[type="submit"]:hover { /* Quando Clicar no Botão Enviar Azul*/
                 </div>
         </div>
 
-    <script src="./js/java.js"></script>  
+    <script src="./java.js"></script>  
     <script src="./loginErro.js"></script> <!-- Aviso caso $erro = true-->
 </body>
 

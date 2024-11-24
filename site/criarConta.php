@@ -10,17 +10,15 @@
         /*CONTA START*/
 .conta-principal {
     display: flex;
-    justify-content: center; /* Horizontal alignment */
-    align-items: center;     /* Vertical alignment */
-    background-image: url('./images/Etec-Butbunito-1.jpg');
-    background-position: center;
-    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--tema-primario);
     height: 100vh;
 }
 .conta {
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 35%;
     background-color: var(--cinza-fonte-claro);
     border: 2px solid var(--tema-secundario); /* Largura, estilo e cor da borda */
     border-radius: 25px; 
