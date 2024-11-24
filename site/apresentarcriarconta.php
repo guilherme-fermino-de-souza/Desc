@@ -112,7 +112,7 @@
                                 <h1><?php echo $row["nomeConta"]; ?></h1>
                             </div>
                             <div class="botao-card-apresentarconta"> <!-- botões -->
-                                <a href="alternarcontaconsulta.php?id=<?php echo $row[0]?>&nome=<?php echo $row[1]?>&email=<?php echo $row[2]?>&senha=<?php echo $row[3]?>">
+                                <a href="alternarcontaconsulta.php?id=<?php echo $row[0]?>&nome=<?php echo $row[1]?>&email=<?php echo $row[2]?>&senha=<?php echo $row[3]?>&idImgConta=<?php echo $row[5]?>">
                                     <img src="./images/imagensArquivos/noticias/icons/alternar.webp"> <!-- botão alternar -->
                                 </a>
                                 <a href="excluirconta.php?id=<?php echo $row[0]; ?>">
