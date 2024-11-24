@@ -1,11 +1,17 @@
-const button = document.querySelector('button[name="modal-login"]')
-const modal = document.querySelector("dialog")
-const buttonClose = document.querySelector('button[name="close-modal"]')
+// Espera até que o DOM esteja carregado
+document.addEventListener("DOMContentLoaded", function () {
+    // Pegando o modal e o botão de fechar
+    const modalErro = document.getElementById("modal-erro-aviso");
+    const closeModalBtn = document.getElementById("close-erro-aviso");
 
-button.onclick = function () {
-    modal.showModal()
-}
+    // Função para fechar o modal e restaurar o scroll
+    closeModalBtn.addEventListener("click", function () {
+        modalErro.style.display = "none"; // Fecha o modal
+        document.body.style.overflow = "auto"; // Restaura o scroll da página
+    });
 
-buttonClose.onclick = function () {
-    modal.close()
-}
+    // Se o modal for exibido, desabilitar o scroll
+    if (modalErro.style.display === "block") {
+        document.body.style.overflow = "hidden"; // Bloqueia o scroll da página
+    }
+});
