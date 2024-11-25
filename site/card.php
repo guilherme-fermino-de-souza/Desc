@@ -30,15 +30,16 @@
                 width: 90%;
                 margin: auto;
                 grid-template-columns: repeat(4, 1fr); /*Dispõe esses cards em 4 colunas*/
-                gap: 20px;
+                gap: 30px;
                 margin-top: 5%;
                 border-radius: 10px;
-                justify-content: center /*space-around*/ ;
+                justify-content: center; /*space-around*/ 
             }
 
             .card {
                 width: 101%;
                 height: auto;
+                position: relative;
                 background-color: var(--tema-terciario);
                 border: 3px solid var(--opcao-tema-quinto);
                 border-radius: 20px;
@@ -47,19 +48,22 @@
                 align-items: center;
                 justify-content: space-between;
                 padding: 20px;
-                transition: transform 0.4s ease-in; /**/
+                transform: 0.7s ease, box-shadow 0.7s ease; /*a transition fik mais branda*/
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             }
 
             .card:hover {
+                height: auto;
                 transform: translateY(-10px);   /*Efeito de hover, vulgo elevação bacanérrima*/
                 border: 4px solid var(--tema-secundario);
-                transition: transform 0.4s ease-in;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
             }
 
             .img-card {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                object-fit: cover;
                 padding: 10%;
                 height: 50%;
             }
@@ -68,7 +72,8 @@
                 width: 10vw;
                 height: 10vw;
                 border-radius: 50%;
-                transition: transform 0.3s ease;
+                transition: transform 0.3s ease;                
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             }
 
             .img-card img:hover {
@@ -122,6 +127,7 @@
                 padding: 10px 20px;
                 cursor: pointer;
                 transition: background-color 0.3s ease;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             }
             
             .card button a{
@@ -188,9 +194,9 @@
                 text-decoration: none;
             }
             .container-admin a:hover{
-                color: var(--tema-secundario);
-                text-decoration:underline var(--tema-secundario);
-                transition: .75s;
+                color: var(--tema-quartenario);
+                text-decoration:underline var(--tema-quartenario);
+                transition: 0.75s;
             }
             .span-bloqueio {
                 display: flex;

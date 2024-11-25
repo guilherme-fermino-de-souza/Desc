@@ -2,9 +2,9 @@
     --branco-principal: #ffffff;
     /*SCARLET:FF2400;CANDY APPLE:FF0800; BLUE:035ca1*/
     --tema-primario:#265df2;
-    --tema-secundario:#FFE305;
-    --tema-terciario:#4070f4;
-    --tema-quartenario: #038C3E;
+    --tema-secundario:#FFd80e;
+    --tema-terciario:#0633b0;   /* 3406B3  */
+    --tema-quartenario: #FFB10E;    /*o correto é quaternário*/
     --preto-fonte: #000000;
     --cinza-fonte-claro: #e8f0fe;
     --cinza-fonte: #404040;
