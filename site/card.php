@@ -15,7 +15,7 @@
                 background-color: var(--cinza-fonte-claro);
             }
 
-            /*.cards {
+            /*#cards {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -27,17 +27,20 @@
                 display: grid;
                 background-color: var(--cinza-fonte-claro);
                 padding: 5%;
-                width: 90%;
+                width: 80%;
+                height: auto;
+                min-height: 600px;
                 margin: auto;
-                grid-template-columns: repeat(4, 1fr); /*Dispõe esses cards em 4 colunas*/
+                grid-template-columns: repeat(2, 1fr); /*Dispõe esses cards em 4 colunas*/
                 gap: 30px;
                 margin-top: 5%;
                 border-radius: 10px;
                 justify-content: center; /*space-around*/ 
+                transition: transform 1s ease-in-out, box-shadow 1s ease-in-out;
             }
 
             .card {
-                width: 101%;
+                width: 100%;
                 height: auto;
                 position: relative;
                 background-color: var(--tema-terciario);
@@ -47,54 +50,68 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: space-between;
-                padding: 20px;
-                transform: 0.7s ease, box-shadow 0.7s ease; /*a transition fik mais branda*/
+                padding: 30px;
+                transition: transform 1s ease-in-out, box-shadow 1s ease-in-out; /*a transition fik mais branda*/
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             }
 
             .card:hover {
-                height: auto;
                 transform: translateY(-10px);   /*Efeito de hover, vulgo elevação bacanérrima*/
                 border: 4px solid var(--tema-secundario);
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);            }
 
-            .img-card {
+            .card .img-card {
+                position: absolute;
+                top: 15px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                object-fit: cover;
                 padding: 10%;
-                height: 50%;
+                height: auto;
+                width: auto;
+                transition: transform 1s ease-in-out, box-shadow 1s ease-in-out;
             }
 
+            .card:hover .img-card {
+                top: -110px;
+                transform: scale(0.8);
+            }
             .img-card img {
-                width: 10vw;
-                height: 10vw;
-                border-radius: 50%;
-                transition: transform 0.3s ease;                
+                width: 1vw;
+                height: 1vw;
+                object-fit: cover;
+                border-radius: 50%;               
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+                transition: transform 0.4s ease;
             }
 
             .img-card img:hover {
                 transform: scale(1.1); /*Efeito de zoom na img*/
-            }
-
+            } 
+            
             .card h2 {
-                display: flexbox;
-                justify-content: center;
                 text-align: center;
                 font-size: var(--fonte-padrao);
                 color: var(--branco-principal);
-                margin-bottom: 10%;
+                margin-top: 14%;
+            }
+
+            .text-card{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                position: absolute;
+                gap: 18px;
+                top: 130%;
+                padding: 0px 30px;
+                height: 50px;
             }
             
             .text-card a {
                 display: flex;
+                justify-content: center;
                 font-size: var(--fonte-padrao);
                 color: var(--branco-principal);
-                align-items: start;
-                justify-content: center;
                 text-decoration: underline var(--tema-secundario);
             }
             
@@ -103,18 +120,14 @@
                 text-decoration: underline var(--tema-secundario);
             }
             
-            .card p {
-                display: flex;
-                justify-content: center;
+            .text-card p {
                 margin-top: 20px;
                 color: var(--preto-fonte);
                 height: 15px;
                 padding: 10%;
-                margin-top: -8%;
-                margin-bottom: 4px;
             }
             
-            .card button {
+            .button-card button {
                 display: flex;
                 justify-content: center;
                 background-color: var(--tema-terciario);
@@ -130,19 +143,19 @@
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             }
             
-            .card button a{
+            .button-card button a{
                 text-decoration: none;
                 font-size: 17px;
                 color: var(--branco-principal);
             }
-            .card button:hover {
+            .button-card button:hover {
                 /*display: flex;
                 justify-content: center;*/
                 background-color: var(--tema-secundario); /*Define o fundo com opalescência*/
                 color: var(--preto-fonte);
             }
 
-            .card button:hover a{
+            .button-card button:hover a{
                 text-decoration: wavy;
                 font-size: 17px;
                 color: var(--preto-fonte);
@@ -150,9 +163,9 @@
             }
 
                 /*Responsividade dos Cards em N telas*/
-            @media screen and (max-width: 768px) {
-                .container-cards {
-                    grid-template-columns: repeat(2, 1fr); /*2 colunas em ecrãs exíguos*/
+            @media screen and (max-width: 1024px) {
+                #container-cards {
+                    grid-template-columns: repeat(2, 1fr);
                 }
 
                 .img-card img {
@@ -161,14 +174,25 @@
                 }
             }
 
-            @media screen and (max-width: 480px) {
-                .container-cards {
-                    grid-template-columns: 1fr; /*1 coluna em schermos pequeníssimas*/
+            @media screen and (max-width: 768px) {
+                #container-cards {
+                    grid-template-columns: repeat(2, 1fr);
                 }
 
                 .img-card img {
-                    width: 30vw;
-                    height: 30vw;
+                    width: 17vw;
+                    height: 17vw;
+                }
+            }
+
+            @media screen and (max-width: 480px) {
+                #container-cards {
+                    grid-template-columns: 1fr;
+                }
+
+                .img-card img {
+                    width: 15vw;
+                    height: 15vw;
                 }
             }
             /*CARD END*/
@@ -216,52 +240,56 @@
                 <div class="container-cards">
                         <div class="card">
                             <div class="img-card">
-                                <img class="dev" img src="images/guil.enc" alt="guilherme.enc">
+                                <img src="images/guil.enc" alt="guilherme.enc">
                             </div>
+                            <h2>Guilherme Fermino de Souza</h2>
                             <div class="text-card">
-                                <h2>Guilherme Fermino de Souza</h2>
                                 <p><a href="https://github.com/guilherme-fermino-de-souza" target="_blank">GitHub</a></p>
+                            
+                                <div class="button-card">
+                                    <button type="button"><a class="ancora" href="https://www.instagram.com/fermino729/" target="_blank">Contate-me!</a></button>
                             </div>
-                            <div class="button-card">
-                                <button type="button" class="bnt"><a href="https://www.instagram.com/fermino729/" target="_blank">Contate-me!</a></button>
                             </div>
                         </div>
                         <div class="card">
                             <div class="img-card">
-                                <img class="dev" img src="images/gust.jpeg" alt="gusta.jpeg" >
+                                <img src="images/gust.jpeg" alt="gusta.jpeg" >
                             </div>
+                            <h2>Gustavo Fermino de Souza</h2>
                             <div class="text-card">
-                                <h2>Gustavo Fermino de Souza</h2> 
                                 <p><a href="https://github.com/GustaFer23" target="_blank">GitHub</a></p>
+                            
+                                <div class="button-card">
+                                    <button type="button"><a class="ancora" href="https://www.instagram.com/fermgustas/" target="_blank">Contate-me!</a></button>
                             </div>
-                            <div class="button-card">
-                                <button type="button" class="bnt"><a href="https://www.instagram.com/fermgustas/" target="_blank">Contate-me!</a></button>
                             </div>
                         </div>
 
                         <div class="card">
                             <div class="img-card">
-                                <img class="dev" img src="images/leo.jpeg" alt="leonardo.jpeg">
+                                <img src="images/leo.jpeg" alt="leonardo.jpeg">
                             </div>
+                            <h2>Leonardo Lima de Souza Lopes</h2>
                             <div class="text-card">
-                                <h2>Leonardo Lima de Souza Lopes</h2>
                                 <p><a href="https://github.com/leonardoLimaDeSouzaLopes" target="_blank">GitHub</a></p>
-                            </div>
-                            <div class="button-card">
-                                <button type="button" class="bnt"><a href="https://www.instagram.com/leonardolopested/" target="_blank">Contate-me!</a></button>
+                            
+                                <div class="button-card">
+                                    <button type="button"><a class="ancora" href="https://www.instagram.com/leonardolopested/" target="_blank">Contate-me!</a></button>
+                                </div>
                             </div>
                         </div>
 
                         <div class="card">
                             <div class="img-card">
-                                <img class="dev" img src="images/tia.jpeg" alt="thiago.jpeg">
+                                <img src="images/tia.jpeg" alt="thiago.jpeg">
                             </div>
+                            <h2>Tiago Soares Magalhães</h2>
                             <div class="text-card">
-                                <h2>Tiago Soares Magalhães</h2>
                                 <p><a href="https://github.com/TriaguinDev" target="_blank">GitHub</a></p>
-                            </div>
-                            <div class="button-card">
-                                <button type="button" class="btn"><a href="https://www.instagram.com/magalhae_2008/" target="_blank">Contate-me!</a></button>
+                            
+                                <div class="button-card">
+                                    <button type="button"><a class="ancora" href="https://www.instagram.com/magalhae_2008/" target="_blank">Contate-me!</a></button>
+                                </div> 
                             </div>
                         </div>
                         
