@@ -13,6 +13,7 @@
                 height: auto;
                 flex-grow: 1;
                 background-color: var(--cinza-fonte-claro);
+                font-family: var(--fonte-principal);
             }
 
             /*#cards {
@@ -27,104 +28,130 @@
                 display: grid;
                 background-color: var(--cinza-fonte-claro);
                 padding: 5%;
-                width: 80%;
+                width: 90%;
                 height: auto;
                 min-height: 600px;
                 margin: auto;
-                grid-template-columns: repeat(2, 1fr); /*Dispõe esses cards em 4 colunas*/
-                gap: 30px;
+                margin-bottom: 200px;
+                grid-template-columns: repeat(2, 1fr); /*Dispõe esses cards em 2 colunas*/
+                gap: 40px; /*Aumenta o espaçamento entre os cards*/
                 margin-top: 5%;
                 border-radius: 10px;
-                justify-content: center; /*space-around*/ 
-                transition: transform 1s ease-in-out, box-shadow 1s ease-in-out;
+                justify-content: center; /*Espaçamento entre os cards*/
             }
 
             .card {
-                width: 100%;
+                width: 90%;
                 height: auto;
                 position: relative;
                 background-color: var(--tema-terciario);
                 border: 3px solid var(--opcao-tema-quinto);
                 border-radius: 20px;
+                gap: 50px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: space-between;
                 padding: 30px;
-                transition: transform 1s ease-in-out, box-shadow 1s ease-in-out; /*a transition fik mais branda*/
+                transition: all transform 0.7s ease, background-color 1s ease, box-shadow 0.7s ease;
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+                z-index: 1;
+                overflow: hidden;
             }
 
             .card:hover {
-                transform: translateY(-10px);   /*Efeito de hover, vulgo elevação bacanérrima*/
+                transform: scale(1.2);   /*Efeito de hover, vulgo elevação bacanérrima*/
+                width: 90%;
+                height: 200%;
                 border: 4px solid var(--tema-secundario);
-                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);            }
+                /*background-color: var(--tema-primario);*/
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);           
+                z-index: 10;
+            }
 
-            .card .img-card {
+            .card .img-card { 
                 position: absolute;
-                top: 15px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                top: -34px;
                 padding: 10%;
                 height: auto;
                 width: auto;
-                transition: transform 1s ease-in-out, box-shadow 1s ease-in-out;
             }
 
             .card:hover .img-card {
-                top: -110px;
+                top: -60px;
                 transform: scale(0.8);
             }
             .img-card img {
-                width: 1vw;
-                height: 1vw;
+                width: 15vw; /*10vw*/
+                height: 15vw;
+                max-width: 120px;
+                max-height: 120px;
                 object-fit: cover;
-                border-radius: 50%;               
+                border-radius: 50%;
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-                transition: transform 0.4s ease;
+                transition: transform 0.6s ease;
             }
 
             .img-card img:hover {
-                transform: scale(1.1); /*Efeito de zoom na img*/
+                transform: scale(1.3); /*Efeito de zoom na img*/
             } 
             
             .card h2 {
+                margin-top: 19.2%;
                 text-align: center;
-                font-size: var(--fonte-padrao);
+                font-size: var(--fonte-media);
                 color: var(--branco-principal);
+            }
+
+            .card:hover h2 {
                 margin-top: 14%;
             }
 
-            .text-card{
+            .card .text-card{
                 display: flex;
                 flex-direction: column;
                 text-align: center;
                 position: absolute;
-                gap: 18px;
-                top: 130%;
+                top: 140%;
                 padding: 0px 30px;
-                height: 50px;
+                width: 100%;
+                height: 40px;
+                gap: 25px;
+                overflow: hidden;
+                transition: 0.7s
+            }
+
+            .card:hover .text-card{
+                top: 130px;
+                height: 300px;
+                transition: transform 0.7s ease, background-color 1s ease, box-shadow 0.7s ease;
             }
             
             .text-card a {
                 display: flex;
                 justify-content: center;
+                margin-top: 5%;
+                margin-bottom: 7%;
                 font-size: var(--fonte-padrao);
                 color: var(--branco-principal);
                 text-decoration: underline var(--tema-secundario);
             }
             
             .text-card a:hover {
-                color: var(--preto-fonte);
-                text-decoration: underline var(--tema-secundario);
+                text-decoration: underline var(--branco-principal);
             }
             
             .text-card p {
-                margin-top: 20px;
-                color: var(--preto-fonte);
                 height: 15px;
-                padding: 10%;
+                margin-top: 5%;
+                margin-bottom: 7%;
+            }
+
+            .text-card h4 {
+                top: -10%;
+                text-aling: center;
+                color: var(--branco-principal);
+                font-size: var(--fonte-padrao);
             }
             
             .button-card button {
@@ -135,7 +162,7 @@
                 border: 2px solid var(--tema-secundario);
                 font-size: 17px;
                 color: var(--branco-principal);
-                margin-top: 12%;
+                margin-top: 3%;
                 margin-inline: auto;
                 padding: 10px 20px;
                 cursor: pointer;
@@ -164,18 +191,23 @@
 
                 /*Responsividade dos Cards em N telas*/
             @media screen and (max-width: 1024px) {
-                #container-cards {
-                    grid-template-columns: repeat(2, 1fr);
+                .container-cards {
+                    grid-template-columns: repeat(2, 1fr); /*2 colunas */
                 }
 
                 .img-card img {
                     width: 20vw;
                     height: 20vw;
                 }
+
+                .card:hover {
+                    width: 115%; /*Ajuste para 115% em telinhas */
+                    height: 160%;
+                }
             }
 
             @media screen and (max-width: 768px) {
-                #container-cards {
+                .container-cards {
                     grid-template-columns: repeat(2, 1fr);
                 }
 
@@ -183,16 +215,26 @@
                     width: 17vw;
                     height: 17vw;
                 }
+
+                .card:hover {
+                    width: 110%; /*Ajusta pra 110% em telas medianas */
+                    height: 150%;
+                }
             }
 
             @media screen and (max-width: 480px) {
-                #container-cards {
-                    grid-template-columns: 1fr;
+                .container-cards {
+                    grid-template-columns: 1fr; /*1 coluninha*/
                 }
 
                 .img-card img {
                     width: 15vw;
                     height: 15vw;
+                }
+
+                .card:hover {
+                    width: 100%; /*tamanho original nas telas pequenas*/
+                    height: 130%;
                 }
             }
             /*CARD END*/
@@ -240,12 +282,12 @@
                 <div class="container-cards">
                         <div class="card">
                             <div class="img-card">
-                                <img src="images/guil.enc" alt="guilherme.enc">
+                                <img src="images/gui.jpeg" alt="gui.jpeg">
                             </div>
                             <h2>Guilherme Fermino de Souza</h2>
                             <div class="text-card">
                                 <p><a href="https://github.com/guilherme-fermino-de-souza" target="_blank">GitHub</a></p>
-                            
+                                <h4>Desenvolvedor Full-Stack, é o líder do grupo e coordena as atividades pelas quais cada membro deve responsabilizar-se.</h4>
                                 <div class="button-card">
                                     <button type="button"><a class="ancora" href="https://www.instagram.com/fermino729/" target="_blank">Contate-me!</a></button>
                             </div>
@@ -258,7 +300,7 @@
                             <h2>Gustavo Fermino de Souza</h2>
                             <div class="text-card">
                                 <p><a href="https://github.com/GustaFer23" target="_blank">GitHub</a></p>
-                            
+                                <h4>Desenvolvedor Front-end, esteve por trás de mudanças na aparência e conteúdo do site junto ao desenvolvedor-mor.</h4>
                                 <div class="button-card">
                                     <button type="button"><a class="ancora" href="https://www.instagram.com/fermgustas/" target="_blank">Contate-me!</a></button>
                             </div>
@@ -272,7 +314,7 @@
                             <h2>Leonardo Lima de Souza Lopes</h2>
                             <div class="text-card">
                                 <p><a href="https://github.com/leonardoLimaDeSouzaLopes" target="_blank">GitHub</a></p>
-                            
+                                <h4>Desenvolvedor Back-End, adaptou-se ao PHP após uma jornada de sucesso com JAVA, auxiliando seus pares quando requisitado.</h4>
                                 <div class="button-card">
                                     <button type="button"><a class="ancora" href="https://www.instagram.com/leonardolopested/" target="_blank">Contate-me!</a></button>
                                 </div>
@@ -286,13 +328,12 @@
                             <h2>Tiago Soares Magalhães</h2>
                             <div class="text-card">
                                 <p><a href="https://github.com/TriaguinDev" target="_blank">GitHub</a></p>
-                            
+                                <h4>Desenvolvedor do modelo de Banco de Dados, estruturou a base para a entrada e retenção de informações no site.</h4>
                                 <div class="button-card">
                                     <button type="button"><a class="ancora" href="https://www.instagram.com/magalhae_2008/" target="_blank">Contate-me!</a></button>
                                 </div> 
                             </div>
                         </div>
-                        
                 </div>
             </section>
             <!--card end-->
