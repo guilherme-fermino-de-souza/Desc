@@ -27,7 +27,7 @@
             <!-- Comentando comentário--> <!--INÍCIO
             <h1>CURSOS DISPONÍVEIS NA ETEC DE GUAIANAZES</h1>
             <div class="contSlideCursos">
-                <div class="slideCursos Swiper">-->
+                <div class="slideCursos Swiper">--
                     <div class="contInvolucroCard">
 
                       
@@ -35,9 +35,9 @@
                     
                     
                     
-                    <!-- carousel -->
+                    <!-- carousel --
                     <div class="carrossel proximo">
-                        <!-- list item -->
+                        <!-- list item --
                         <div class="list">
                             <div class="item">
                                 <img src="images/imagensArquivos/cursos/dS.jpg" alt="Curso de DS" class="Sobreimg">
@@ -46,7 +46,7 @@
                                     <div class="titulo">Curso técnico e integrado</div>
                                     <div class="topico">Desenvolvimento de Sistemas</div>
                                     <div class="des">
-                                        <!-- lorem 50 -->
+                                        <!-- lorem 50 --
                                         O curso técnico em Desenvolvimento de Sistemas da Etec de Guaianazes prepara você para desenvolver soluções sociais e empresariais para problemas diversos através da tecnologia. Você aprenderá a construir softwares, aplicativos e sistemas, desde o planejamento até a implementação. As aulas te ensinarão a dominar linguagens de programação, a trabalhar com bancos de dados e a utilizar ferramentas de desenvolvimento. Ao final do curso, você estará pronto para ingressar no mercado de trabalho e participar da criação de soluções tecnológicas que transformam o mundo!
                                     </div>
                                     <div class="botaoCarrossel">
@@ -88,7 +88,7 @@
                                     <div class="autor">NEWS WALL ETEC</div>
                                     <div class="titulo">Curso técnico</div>
                                     <div class="topico">Edificações</div>
-                                    <div class="des">   <!-- <div class="des"> -->
+                                    <div class="des">   <!-- <div class="des"> --
                                         O curso técnico em Edificações da Etec de Guaianazes tem por principais disciplinas o Desenho, para elaboração e desenvolvimento de projetos de engenharia e arquitetura; Tecnologia dos Materiais de Construção, para selecionar e controlar a qualidade dos materiais; Tecnologia das Construções, para supervisionar e aprimorar os processos de construção; e Planejamento e Controle das Obras, para assegurar o cumprimento dos prazos e custos. Além disso, o aluno utiliza Matemática, para calcular proporções, áreas e volumes, e Química, para compreender as propriedades dos materiais.
                                     </div>
                                     <div class="botaoCarrossel">
@@ -99,15 +99,15 @@
                         
 
 
-                            <!-- list thumbnail -->
+                            <!-- list thumbnail --
                             <div class="thumbnail">
                                 <div class="item">
                                     <img src="images/imagensArquivos/cursos/dS.jpg" alt="Curso de DS" class="Sobreimg">
                                     <div class="contentCarroselCard">
-                                        <div class="title"> <!-- Name Slider -->
+                                        <div class="title"> <!-- Name Slider --
                                             Desenvolvimento de Sistemas (modular ou com EM)  
                                         </div>
-                                        <div class="description"> <!-- Description -->
+                                        <div class="description"> <!-- Description --
                                         O curso técnico em Desenvolvimento de Sistemas da Etec de Guaianazes prepara você para desenvolver soluções sociais e empresariais para problemas diversos através da tecnologia...
                                         </div>
                                     </div>
@@ -115,10 +115,10 @@
                                 <div class="item">
                                     <img src="images/imagensArquivos/cursos/nutri.jpg" alt="Curso de Nutrição" class="Sobreimg">
                                     <div class="contentCarroselCard">
-                                        <div class="title"> <!-- Name Slider -->
+                                        <div class="title"> <!-- Name Slider --
                                             Nutrição e Dietética (modular ou com EM
                                         </div>
-                                        <div class="description"> <!-- Description -->
+                                        <div class="description"> <!-- Description --
                                             Durante o curso técnico em Nutrição e Dietética da Etec de Guaianazes o aluno aprenderá sobre os tipos de alimentos, o corpo humano e seu funcionamento...
                                         </div>
                                     </div>
@@ -126,10 +126,10 @@
                                 <div class="item">
                                     <img src="images/imagensArquivos/cursos/admin.webp" alt="Curso de Administração" class="Sobreimg">
                                     <div class="contentCarroselCard">
-                                        <div class="title"> <!-- Name Slider -->
+                                        <div class="title"> <!-- Name Slider --
                                             Administração
                                         </div>
-                                        <div class="description"> <!-- Description -->
+                                        <div class="description"> <!-- Description --
                                             O curso técnico em Administração da Etec de Guaianazes visa incutir em seus cursandos valores de empreededorismo, atendimento às demandas dos clientes...
                                         </div>
                                     </div>
@@ -137,21 +137,21 @@
                                 <div class="item">
                                     <img src="images/imagensArquivos/cursos/edific.jpg" alt="Curso de Edificações" class="Sobreimg">
                                     <div class="contentCarroselCard">
-                                        <div class="title"> <!-- Name Slider -->
+                                        <div class="title"> <!-- Name Slider --
                                             Edificações
                                         </div>
-                                        <div class="description"> <!-- Description -->
+                                        <div class="description"> <!-- Description --
                                         O curso técnico em Edificações da Etec de Guaianazes tem por principais disciplinas o Desenho, para elaboração e desenvolvimento de projetos de engenharia...
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="setas"> <!-- arrows -->
-                                <button id="anterior">←</button> <!-- prev -->
-                                <button id="proximo">→</button> <!-- next -->
+                            <div class="setas"> <!-- arrows --
+                                <button id="anterior">←</button> <!-- prev --
+                                <button id="proximo">→</button> <!-- next --
                             </div>
-                                <!-- time running/tempo operando -->
-                            <div class="tempo"></div> <!-- time -->
+                                <!-- time running/tempo operando --
+                            <div class="tempo"></div> <!-- time --
                         </div>
 
                         <!--
@@ -247,7 +247,7 @@
 
                                 <button class="botaoCursoCard"><a href='https://www.cps.sp.gov.br/etec/vestibulinho/' target="_blank">Vestibulinho</a></button>
                             </div>
-                        </div>  -->
+                        </div>  --
 
                 
                    </div> <!-- next prev 
