@@ -11,6 +11,9 @@
     <title>NewsEtec®</title>
     <style>
         /*INDEX START*/
+        body{
+            background-color: var(--cinza-fonte-claro);
+        }
         .container-index-principal {
             display: flex;
             flex-direction: column;
