@@ -65,7 +65,7 @@ function showSlider(type) {
     operarProxAuto = setTimeout(() => {
         proxDom.click();
     }, timeAutoNext);
-}*/
+}
 
 //CRÉDITOS PELO CÓDIGO: LUNDEV   step 1: get DOM
 let anteDom = document.getElementById('anterior');//prev
@@ -118,4 +118,4 @@ function showSlider(type){
     operarAuto = setTimeout(() => {
       proxDom.click();
     }, tempoProxAuto);
-}
+}*/
