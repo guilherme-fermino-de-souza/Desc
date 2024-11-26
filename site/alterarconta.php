@@ -1,11 +1,14 @@
 <?php  
-
+    session_start();
     include("conexao.php");
     include("imagemLocalConta.php");
+    
 
     $id = $_POST['idConta'];
     $nome = $_POST['nomeConta'];
+    $_SESSION['nome'] = $_POST['nomeConta'];
     $email = $_POST['emailConta'];
+    $_SESSION['email'] = $_POST['emailConta'];
     $senha = $_POST['senhaConta'];
     $numImg = $_POST['idImgConta'];
     $img = $_FILES['imgConta'];
@@ -51,8 +54,8 @@
             senhaConta='$senhaHash'
             WHERE idConta ='$id';
     ");	    
-	$stmt ->execute();    
+	$stmt ->execute();   
 
-    header("location:alternarcontaconsulta.php");    
+    header("location:index.php");    
     
 ?>

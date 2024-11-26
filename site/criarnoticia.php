@@ -28,7 +28,7 @@
         .criarnoticia {
             display: flex;
             flex-direction: column;
-            width: 25%;
+            width: 55%;
             background-color: var(--cinza-fonte-claro);
             border: 2px solid var(--tema-secundario); /* Largura, estilo e cor da borda */
             border-radius: 25px; 
@@ -59,10 +59,15 @@
             width: 80%;
             margin: auto;
         }
+        .card-textfield {
+            display: flex;
+            flex-direction: row;
+        }
         .textfield {
             display: flex;
             flex-direction: column;
             padding: 1%;
+            width: 50%;
         }
         .textfield label {
             font-size: var(--fonte-padrao);
@@ -140,6 +145,19 @@
             box-shadow: none;
             outline: none;
         }
+        .adicionarparagrafo { /* Paragrafo Botão*/
+            margin: .75%;
+            color: var(--preto-fonte);
+            background-color: var(--branco-principal);
+        }
+        .adicionarparagrafo :hover{ 
+            cursor: pointer;
+            color: var(--tema-primario);
+            background-color: var(--cinza-fonte-claro);
+        }
+        .paragrafosContainer input {
+            margin: .5%;
+        }
         .criarnoticia input[type="file"] {
             background-color: var(--tema-terciario);
             color: var(--branco-principal);
@@ -168,30 +186,35 @@
                     <div class="criarnoticia">  
                         <form class="form-criarnoticia" action="./inserirnoticia.php" method="post" enctype="multipart/form-data">
                             <h1> Criar Notícia</h1>
-                            <div class="textfield">
-                                <label class="label">Título</label>
-                                <input type="text" id="tituloNoticias" name="tituloNoticias" />
+                            <div class="card-textfield">
+                                <div class="textfield">
+                                    <label class="label">Título</label>
+                                    <input type="text" id="tituloNoticias" name="tituloNoticias" />
+                                </div>
+
+                                <div class="textfield">
+                                    <label class="label">Subtítulo</label>
+                                    <input type="text" id="subtituloNoticias" name="subtituloNoticias" />
+                                </div>
                             </div>
 
-                            <div class="textfield">
-                                <label class="label">Subtítulo</label>
-                                <input type="text" id="subtituloNoticias" name="subtituloNoticias" />
-                            </div>
+                            <div class="card-textfield">
+                                <div class="textfield">
+                                    <label class="label">Conteúdo</label> <br>
+                                    <textarea id="descricaoNoticias" name="descricaoNoticias" rows="2" cols="20"> </textarea>
+                                </div>
 
-                            <div class="textfield">
-                                <label class="label">Conteúdo</label> <br>
-                                <textarea id="descricaoNoticias" name="descricaoNoticias" rows="8" cols="60"> </textarea>
-                            </div>
+                                <div class="textfield-img">
+                                    <label class="label">Imagem(.png)</label> <br>
+                                    <input type="file" name="imgNoticias" accept=".png, .jpg, .jpeg, .gif, .webp, .tiff" placeholder="Insira a Imagem"/>
+                                </div>
+                            </div>  
 
-                            <div class="textfield-img">
-                                <label class="label">Imagem(.png)</label> <br>
-                                <input type="file" name="imgNoticias" accept=".png, .jpg, .jpeg, .gif, .webp, .tiff" placeholder="Insira a Imagem"/>
-                            </div>
-                            
-                            <div id="paragrafosContainer">
-                                
-                            </div>
-                            <button type="button" onclick="adicionarParagrafo()">Adicionar Parágrafo</button>
+                            <button class="adicionarparagrafo" type="button" onclick="adicionarParagrafo()">Adicionar Parágrafo</button>
+
+                                <div id="paragrafosContainer" class="paragrafosContainer">
+                                    
+                                </div>             
  
                             <div class="enviar">               
                                 <input type="submit" value="Enviar">
